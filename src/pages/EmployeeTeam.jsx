@@ -10,29 +10,29 @@ function EmployeeTeam() {
     <div>
     <Topbar/>
       <Sidebar/>
-      <div class="page-wrapper">
-        <div class="content container-fluid">
-          <div class="row">
-            <div class="col-xl-12 col-sm-12 col-12 mb-4">
-              <div class="breadcrumb-path ">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item">
+      <div className="page-wrapper">
+        <div className="content container-fluid">
+          <div className="row">
+            <div className="col-xl-12 col-sm-12 col-12 mb-4">
+              <div className="breadcrumb-path ">
+                <ul className="breadcrumb">
+                  <li className="breadcrumb-item">
                     <Link to="/">
                       <img
                         src="../assets/img/dash.png"
-                        class="mr-2"
+                        className="mr-2"
                         alt="breadcrumb"
                       />
                       Home
                     </Link>
                   </li>
-                  <li class="breadcrumb-item active"> Employees</li>
+                  <li className="breadcrumb-item active"> Employees</li>
                 </ul>
                 <h3>Employees</h3>
               </div>
             </div>
-            <div class="col-xl-12 col-sm-12 col-12 mb-4">
-              <div class="head-link-set">
+            <div className="col-xl-12 col-sm-12 col-12 mb-4">
+              <div className="head-link-set">
                 <ul>
                   <li>
                     <Link to="/employees">All</Link>
@@ -43,27 +43,27 @@ function EmployeeTeam() {
                     </Link>
                   </li>
                   <li>
-                    <Link class="active" to="/employees/team">Team</Link>
+                    <Link className="active" to="/employees/team">Team</Link>
                   </li>
                 </ul>
-                <a class="btn-add" data-toggle="modal" data-target="#addteam">
+                <a className="btn-add" data-toggle="modal" data-target="#addteam">
                   <i data-feather="plus"></i> Add Person
                 </a>
               </div>
             </div>
-            <div class="col-xl-12 col-sm-12 col-12 ">
-              <div class="card m-0">
-                <div class="card-body pb-0">
-                  <div class="row">
-                    <div class="col-xl-6">
-                      <div class="card">
-                        <div class="card-header">
-                          <div class="employee-head">
+            <div className="col-xl-12 col-sm-12 col-12 ">
+              <div className="card m-0">
+                <div className="card-body pb-0">
+                  <div className="row">
+                    <div className="col-xl-6">
+                      <div className="card">
+                        <div className="card-header">
+                          <div className="employee-head">
                             <h2>PHP</h2>
                             <ul>
                               <li>
                                 <a
-                                  class="edit_employee"
+                                  className="edit_employee"
                                   data-toggle="modal"
                                   data-target="#edit"
                                 >
@@ -72,7 +72,7 @@ function EmployeeTeam() {
                               </li>
                               <li>
                                 <a
-                                  class="edit_delete"
+                                  className="edit_delete"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -82,20 +82,20 @@ function EmployeeTeam() {
                             </ul>
                           </div>
                         </div>
-                        <div class="card-body">
-                          <div class="employee-content">
-                            <div class="employee-image">
-                              <div class="avatar-group">
-                                <div class="avatar avatar-xs group_img group_header">
+                        <div className="card-body">
+                          <div className="employee-content">
+                            <div className="employee-image">
+                              <div className="avatar-group">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-14.jpg"
                                   />
                                 </div>
-                                <div class="avatar avatar-xs group_img group_header">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-15.jpg"
                                   />
@@ -103,7 +103,7 @@ function EmployeeTeam() {
                               </div>
                             </div>
                             <a
-                              class="btn-addmember"
+                              className="btn-addmember"
                               data-toggle="modal"
                               data-target="#addteam"
                             >
@@ -113,15 +113,15 @@ function EmployeeTeam() {
                         </div>
                       </div>
                     </div>
-                    <div class="col-xl-6">
-                      <div class="card">
-                        <div class="card-header">
-                          <div class="employee-head">
+                    <div className="col-xl-6">
+                      <div className="card">
+                        <div className="card-header">
+                          <div className="employee-head">
                             <h2>Designing</h2>
                             <ul>
                               <li>
                                 <a
-                                  class="edit_employee"
+                                  className="edit_employee"
                                   data-toggle="modal"
                                   data-target="#edit"
                                 >
@@ -130,7 +130,7 @@ function EmployeeTeam() {
                               </li>
                               <li>
                                 <a
-                                  class="edit_delete"
+                                  className="edit_delete"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -140,20 +140,20 @@ function EmployeeTeam() {
                             </ul>
                           </div>
                         </div>
-                        <div class="card-body">
-                          <div class="employee-content">
-                            <div class="employee-image">
-                              <div class="avatar-group">
-                                <div class="avatar avatar-xs group_img group_header">
+                        <div className="card-body">
+                          <div className="employee-content">
+                            <div className="employee-image">
+                              <div className="avatar-group">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-14.jpg"
                                   />
                                 </div>
-                                <div class="avatar avatar-xs group_img group_header">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-15.jpg"
                                   />
@@ -161,7 +161,7 @@ function EmployeeTeam() {
                               </div>
                             </div>
                             <a
-                              class="btn-addmember"
+                              className="btn-addmember"
                               data-toggle="modal"
                               data-target="#addteam"
                             >
@@ -172,16 +172,16 @@ function EmployeeTeam() {
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-xl-6">
-                      <div class="card">
-                        <div class="card-header">
-                          <div class="employee-head">
+                  <div className="row">
+                    <div className="col-xl-6">
+                      <div className="card">
+                        <div className="card-header">
+                          <div className="employee-head">
                             <h2>IOS</h2>
                             <ul>
                               <li>
                                 <a
-                                  class="edit_employee"
+                                  className="edit_employee"
                                   data-toggle="modal"
                                   data-target="#edit"
                                 >
@@ -190,7 +190,7 @@ function EmployeeTeam() {
                               </li>
                               <li>
                                 <a
-                                  class="edit_delete"
+                                  className="edit_delete"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -200,20 +200,20 @@ function EmployeeTeam() {
                             </ul>
                           </div>
                         </div>
-                        <div class="card-body">
-                          <div class="employee-content">
-                            <div class="employee-image">
-                              <div class="avatar-group">
-                                <div class="avatar avatar-xs group_img group_header">
+                        <div className="card-body">
+                          <div className="employee-content">
+                            <div className="employee-image">
+                              <div className="avatar-group">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-14.jpg"
                                   />
                                 </div>
-                                <div class="avatar avatar-xs group_img group_header">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-15.jpg"
                                   />
@@ -221,7 +221,7 @@ function EmployeeTeam() {
                               </div>
                             </div>
                             <a
-                              class="btn-addmember"
+                              className="btn-addmember"
                               data-toggle="modal"
                               data-target="#addteam"
                             >
@@ -231,15 +231,15 @@ function EmployeeTeam() {
                         </div>
                       </div>
                     </div>
-                    <div class="col-xl-6">
-                      <div class="card">
-                        <div class="card-header">
-                          <div class="employee-head">
+                    <div className="col-xl-6">
+                      <div className="card">
+                        <div className="card-header">
+                          <div className="employee-head">
                             <h2>Android</h2>
                             <ul>
                               <li>
                                 <a
-                                  class="edit_employee"
+                                  className="edit_employee"
                                   data-toggle="modal"
                                   data-target="#edit"
                                 >
@@ -248,7 +248,7 @@ function EmployeeTeam() {
                               </li>
                               <li>
                                 <a
-                                  class="edit_delete"
+                                  className="edit_delete"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -258,20 +258,20 @@ function EmployeeTeam() {
                             </ul>
                           </div>
                         </div>
-                        <div class="card-body">
-                          <div class="employee-content">
-                            <div class="employee-image">
-                              <div class="avatar-group">
-                                <div class="avatar avatar-xs group_img group_header">
+                        <div className="card-body">
+                          <div className="employee-content">
+                            <div className="employee-image">
+                              <div className="avatar-group">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-14.jpg"
                                   />
                                 </div>
-                                <div class="avatar avatar-xs group_img group_header">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-15.jpg"
                                   />
@@ -279,7 +279,7 @@ function EmployeeTeam() {
                               </div>
                             </div>
                             <a
-                              class="btn-addmember"
+                              className="btn-addmember"
                               data-toggle="modal"
                               data-target="#addteam"
                             >
@@ -290,16 +290,16 @@ function EmployeeTeam() {
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-xl-6">
-                      <div class="card">
-                        <div class="card-header">
-                          <div class="employee-head">
+                  <div className="row">
+                    <div className="col-xl-6">
+                      <div className="card">
+                        <div className="card-header">
+                          <div className="employee-head">
                             <h2>Business</h2>
                             <ul>
                               <li>
                                 <a
-                                  class="edit_employee"
+                                  className="edit_employee"
                                   data-toggle="modal"
                                   data-target="#edit"
                                 >
@@ -307,27 +307,27 @@ function EmployeeTeam() {
                                 </a>
                               </li>
                               <li>
-                                <a class="edit_delete">
+                                <a className="edit_delete">
                                   <i data-feather="trash-2"></i>
                                 </a>
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div class="card-body">
-                          <div class="employee-content">
-                            <div class="employee-image">
-                              <div class="avatar-group">
-                                <div class="avatar avatar-xs group_img group_header">
+                        <div className="card-body">
+                          <div className="employee-content">
+                            <div className="employee-image">
+                              <div className="avatar-group">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-14.jpg"
                                   />
                                 </div>
-                                <div class="avatar avatar-xs group_img group_header">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-15.jpg"
                                   />
@@ -335,7 +335,7 @@ function EmployeeTeam() {
                               </div>
                             </div>
                             <a
-                              class="btn-addmember"
+                              className="btn-addmember"
                               data-toggle="modal"
                               data-target="#addteam"
                             >
@@ -345,15 +345,15 @@ function EmployeeTeam() {
                         </div>
                       </div>
                     </div>
-                    <div class="col-xl-6">
-                      <div class="card">
-                        <div class="card-header">
-                          <div class="employee-head">
+                    <div className="col-xl-6">
+                      <div className="card">
+                        <div className="card-header">
+                          <div className="employee-head">
                             <h2>Testing</h2>
                             <ul>
                               <li>
                                 <a
-                                  class="edit_employee"
+                                  className="edit_employee"
                                   data-toggle="modal"
                                   data-target="#edit"
                                 >
@@ -361,27 +361,27 @@ function EmployeeTeam() {
                                 </a>
                               </li>
                               <li>
-                                <a class="edit_delete">
+                                <a className="edit_delete">
                                   <i data-feather="trash-2"></i>
                                 </a>
                               </li>
                             </ul>
                           </div>
                         </div>
-                        <div class="card-body">
-                          <div class="employee-content">
-                            <div class="employee-image">
-                              <div class="avatar-group">
-                                <div class="avatar avatar-xs group_img group_header">
+                        <div className="card-body">
+                          <div className="employee-content">
+                            <div className="employee-image">
+                              <div className="avatar-group">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-14.jpg"
                                   />
                                 </div>
-                                <div class="avatar avatar-xs group_img group_header">
+                                <div className="avatar avatar-xs group_img group_header">
                                   <img
-                                    class="avatar-img rounded-circle"
+                                    className="avatar-img rounded-circle"
                                     alt="User Image"
                                     src="../assets/img/profiles/avatar-15.jpg"
                                   />
@@ -389,7 +389,7 @@ function EmployeeTeam() {
                               </div>
                             </div>
                             <a
-                              class="btn-addmember"
+                              className="btn-addmember"
                               data-toggle="modal"
                               data-target="#addteam"
                             >
@@ -407,43 +407,43 @@ function EmployeeTeam() {
         </div>
       </div>
 
-      <div class="customize_popup">
+      <div className="customize_popup">
         <div
-          class="modal fade"
+          className="modal fade"
           id="addteam"
           tabindex="-1"
           aria-labelledby="staticBackdropLabela"
           aria-hidden="true"
         >
-          <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabela">
+          <div className="modal-dialog modal-lg modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="staticBackdropLabela">
                   Create New Team
                 </h5>
                 <button
                   type="button"
-                  class="close"
+                  className="close"
                   data-dismiss="modal"
                   aria-label="Close"
                 >
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
-              <div class="modal-body">
-                <div class=" col-md-12 p-0">
-                  <div class=" form-popup m-0">
+              <div className="modal-body">
+                <div className=" col-md-12 p-0">
+                  <div className=" form-popup m-0">
                     <input type="text" placeholder="Name" />
                   </div>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">
+              <div className="modal-footer">
+                <button type="button" className="btn btn-primary">
                   Add
                 </button>
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  className="btn btn-secondary"
                   data-dismiss="modal"
                 >
                   Cancel
@@ -453,43 +453,43 @@ function EmployeeTeam() {
           </div>
         </div>
       </div>
-      <div class="customize_popup">
+      <div className="customize_popup">
         <div
-          class="modal fade"
+          className="modal fade"
           id="edit"
           tabindex="-1"
           aria-labelledby="staticBackdropLa"
           aria-hidden="true"
         >
-          <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLa">
+          <div className="modal-dialog modal-lg modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="staticBackdropLa">
                   Edit Employee
                 </h5>
                 <button
                   type="button"
-                  class="close"
+                  className="close"
                   data-dismiss="modal"
                   aria-label="Close"
                 >
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
-              <div class="modal-body">
-                <div class=" col-md-12 p-0">
-                  <div class=" form-popup m-0">
+              <div className="modal-body">
+                <div className=" col-md-12 p-0">
+                  <div className=" form-popup m-0">
                     <input type="text" placeholder="Name" />
                   </div>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">
+              <div className="modal-footer">
+                <button type="button" className="btn btn-primary">
                   Add
                 </button>
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  className="btn btn-secondary"
                   data-dismiss="modal"
                 >
                   Cancel
@@ -499,28 +499,28 @@ function EmployeeTeam() {
           </div>
         </div>
       </div>
-      <div class="customize_popup">
+      <div className="customize_popup">
         <div
-          class="modal fade"
+          className="modal fade"
           id="delete"
           tabindex="-1"
           aria-labelledby="staticBackdropLabels1"
           aria-hidden="true"
         >
-          <div class="modal-dialog modal-dialog-centered ">
-            <div class="modal-content">
-              <div class="modal-header text-centers border-0">
-                <h5 class="modal-title text-center" id="staticBackdropLabels1">
+          <div className="modal-dialog modal-dialog-centered ">
+            <div className="modal-content">
+              <div className="modal-header text-centers border-0">
+                <h5 className="modal-title text-center" id="staticBackdropLabels1">
                   Are You Sure Want to Delete?
                 </h5>
               </div>
-              <div class="modal-footer text-centers">
-                <button type="button" class="btn btn-primary">
+              <div className="modal-footer text-centers">
+                <button type="button" className="btn btn-primary">
                   Delete
                 </button>
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  className="btn btn-secondary"
                   data-dismiss="modal"
                 >
                   Cancel

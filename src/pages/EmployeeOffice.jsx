@@ -9,35 +9,35 @@ function EmployeeOffice() {
     <div>
       <Topbar/>
       <Sidebar/>
-        <div class="page-wrapper">
-          <div class="content container-fluid">
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="breadcrumb-path ">
-                  <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
+        <div className="page-wrapper">
+          <div className="content container-fluid">
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="breadcrumb-path ">
+                  <ul className="breadcrumb">
+                    <li className="breadcrumb-item">
                       <Link to="/">
                         <img
                           src="../assets/img/dash.png"
-                          class="mr-2"
+                          className="mr-2"
                           alt="breadcrumb"
                         />
                         Home
                       </Link>
                     </li>
-                    <li class="breadcrumb-item active"> Employees</li>
+                    <li className="breadcrumb-item active"> Employees</li>
                   </ul>
                   <h3>Employees</h3>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="head-link-set">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="head-link-set">
                   <ul>
                     <li>
                       <Link to="/employees">All</Link>
                     </li>
                     <li>
-                    <Link class="active" to="Office">
+                    <Link className="active" to="Office">
                         Office
                       </Link>
                     </li>
@@ -47,40 +47,40 @@ function EmployeeOffice() {
                       </Link>
                     </li>
                   </ul>
-                  <a class="btn-add" href="add-employee.html">
+                  <a className="btn-add" href="add-employee.html">
                     <i data-feather="plus"></i> Add Person
                   </a>
                 </div>
               </div>
             </div>
-            <div class="row mb-3">
-              <div class="col-xl-10 col-sm-8 col-12 ">
-                <label class="employee_count">1 Office</label>
+            <div className="row mb-3">
+              <div className="col-xl-10 col-sm-8 col-12 ">
+                <label className="employee_count">1 Office</label>
               </div>
               
             </div>
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="card  card-lists">
-                  <div class="card-header  ">
-                    <h2 class="card-titles">Create New Office</h2>
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="card  card-lists">
+                  <div className="card-header  ">
+                    <h2 className="card-titles">Create New Office</h2>
                   </div>
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-xl-8 col-sm-12 col-12 ">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-xl-8 col-sm-12 col-12 ">
                         <input
                           type="text"
                           placeholder="Office Name"
-                          class="input-form"
+                          className="input-form"
                         />
                       </div>
-                      <div class="col-xl-2 col-sm-6 col-6 ">
-                        <a href="#" class="btn-create ">
+                      <div className="col-xl-2 col-sm-6 col-6 ">
+                        <a href="#" className="btn-create ">
                           Create Office{" "}
                         </a>
                       </div>
-                      <div class="col-xl-2 col-sm-6 col-6 ">
-                        <a href="#" class="btn-cancel ">
+                      <div className="col-xl-2 col-sm-6 col-6 ">
+                        <a href="#" className="btn-cancel ">
                           Cancel{" "}
                         </a>
                       </div>
@@ -89,71 +89,71 @@ function EmployeeOffice() {
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="card">
-                  <div class="card-header create-formhead">
-                    <h2 class="card-titles">
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="card">
+                  <div className="card-header create-formhead">
+                    <h2 className="card-titles">
                       Focus Technologies<span>Head Office</span>
                     </h2>
                     <a
                       data-toggle="modal"
                       data-target="#edit"
-                      class="edit-link"
+                      className="edit-link"
                     >
                       <i data-feather="edit"></i>{" "}
                     </a>
                   </div>
-                  <div class="card-body">
-                    <div class="member-formcontent member-row">
-                      <div class="member-head">
+                  <div className="card-body">
+                    <div className="member-formcontent member-row">
+                      <div className="member-head">
                         <h2>Members</h2>
-                        <div class="avatar-group">
-                          <div class="avatar avatar-xs group_img group_header">
+                        <div className="avatar-group">
+                          <div className="avatar avatar-xs group_img group_header">
                             <img
-                              class="avatar-img rounded-circle"
+                              className="avatar-img rounded-circle"
                               alt="User Image"
                               src="../assets/img/profiles/avatar-10.jpg"
                             />
                           </div>
-                          <div class="avatar avatar-xs group_img group_header">
+                          <div className="avatar avatar-xs group_img group_header">
                             <img
-                              class="avatar-img rounded-circle"
+                              className="avatar-img rounded-circle"
                               alt="User Image"
                               src="../assets/img/profiles/avatar-15.jpg"
                             />
                           </div>
-                          <div class="avatar avatar-xs group_img group_header">
+                          <div className="avatar avatar-xs group_img group_header">
                             <img
-                              class="avatar-img rounded-circle"
+                              className="avatar-img rounded-circle"
                               alt="User Image"
                               src="../assets/img/profiles/avatar-16.jpg"
                             />
                           </div>
-                          <div class="avatar avatar-xs group_img group_header">
+                          <div className="avatar avatar-xs group_img group_header">
                             <img
-                              class="avatar-img rounded-circle"
+                              className="avatar-img rounded-circle"
                               alt="User Image"
                               src="../assets/img/profiles/avatar-17.jpg"
                             />
                           </div>
-                          <div class="avatar avatar-xs group_img group_header">
+                          <div className="avatar avatar-xs group_img group_header">
                             <img
-                              class="avatar-img rounded-circle"
+                              className="avatar-img rounded-circle"
                               alt="User Image"
                               src="../assets/img/profiles/avatar-14.jpg"
                             />
                           </div>
-                          <div class="avatar avatar-xs group_img group_header">
+                          <div className="avatar avatar-xs group_img group_header">
                             <img
-                              class="avatar-img rounded-circle"
+                              className="avatar-img rounded-circle"
                               alt="User Image"
                               src="../assets/img/profiles/avatar-18.jpg"
                             />
                           </div>
                         </div>
                       </div>
-                      <div class="member_link">
+                      <div className="member_link">
                         <a
                           data-toggle="collapse"
                           href="#table"
@@ -165,8 +165,8 @@ function EmployeeOffice() {
                         </a>
                       </div>
                     </div>
-                    <div class="table-responsive collapse show" id="table">
-                      <table class="table  custom-table  no-footer">
+                    <div className="table-responsive collapse show" id="table">
+                      <table className="table  custom-table  no-footer">
                         <thead>
                           <tr>
                             <th>Name</th>
@@ -180,24 +180,24 @@ function EmployeeOffice() {
                         <tbody>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-13.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>Sean Black</label>
                               </div>
                             </td>
                             <td>
-                              <label class="action_label">
+                              <label className="action_label">
                                 Richard Wilson{" "}
                               </label>
                             </td>
                             <td>
-                              <label class="action_label2">Design </label>
+                              <label className="action_label2">Design </label>
                             </td>
                             <td>
                               <label>Focus Technologies </label>
@@ -205,8 +205,8 @@ function EmployeeOffice() {
                             <td>
                               <label>Team Lead</label>
                             </td>
-                            <td class="tab-select">
-                              <select class="select">
+                            <td className="tab-select">
+                              <select className="select">
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                               </select>
@@ -214,24 +214,24 @@ function EmployeeOffice() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-16.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>Linda Craver</label>
                               </div>
                             </td>
                             <td>
-                              <label class="action_label">
+                              <label className="action_label">
                                 Richard Wilson{" "}
                               </label>
                             </td>
                             <td>
-                              <label class="action_label2">IOS </label>
+                              <label className="action_label2">IOS </label>
                             </td>
                             <td>
                               <label>Focus Technologies </label>
@@ -239,8 +239,8 @@ function EmployeeOffice() {
                             <td>
                               <label>Team Lead</label>
                             </td>
-                            <td class="tab-select">
-                              <select class="select">
+                            <td className="tab-select">
+                              <select className="select">
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                               </select>
@@ -248,24 +248,24 @@ function EmployeeOffice() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-17.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>Jenni Sims</label>
                               </div>
                             </td>
                             <td>
-                              <label class="action_label">
+                              <label className="action_label">
                                 Richard Wilson{" "}
                               </label>
                             </td>
                             <td>
-                              <label class="action_label2">Android </label>
+                              <label className="action_label2">Android </label>
                             </td>
                             <td>
                               <label>Focus Technologies </label>
@@ -273,8 +273,8 @@ function EmployeeOffice() {
                             <td>
                               <label>Team Lead</label>
                             </td>
-                            <td class="tab-select">
-                              <select class="select">
+                            <td className="tab-select">
+                              <select className="select">
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                               </select>
@@ -282,24 +282,24 @@ function EmployeeOffice() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-19.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>Stacey Linville</label>
                               </div>
                             </td>
                             <td>
-                              <label class="action_label">
+                              <label className="action_label">
                                 Richard Wilson{" "}
                               </label>
                             </td>
                             <td>
-                              <label class="action_label2">Testing </label>
+                              <label className="action_label2">Testing </label>
                             </td>
                             <td>
                               <label>Focus Technologies </label>
@@ -307,8 +307,8 @@ function EmployeeOffice() {
                             <td>
                               <label>Team Lead</label>
                             </td>
-                            <td class="tab-select">
-                              <select class="select">
+                            <td className="tab-select">
+                              <select className="select">
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                               </select>
@@ -316,24 +316,24 @@ function EmployeeOffice() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-14.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>Maria Cotton</label>
                               </div>
                             </td>
                             <td>
-                              <label class="action_label">
+                              <label className="action_label">
                                 Richard Wilson{" "}
                               </label>
                             </td>
                             <td>
-                              <label class="action_label2">PHP </label>
+                              <label className="action_label2">PHP </label>
                             </td>
                             <td>
                               <label>Focus Technologies </label>
@@ -341,8 +341,8 @@ function EmployeeOffice() {
                             <td>
                               <label>Team Lead</label>
                             </td>
-                            <td class="tab-select">
-                              <select class="select">
+                            <td className="tab-select">
+                              <select className="select">
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                               </select>
@@ -350,24 +350,24 @@ function EmployeeOffice() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-18.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>John Gibbs</label>
                               </div>
                             </td>
                             <td>
-                              <label class="action_label">
+                              <label className="action_label">
                                 Richard Wilson{" "}
                               </label>
                             </td>
                             <td>
-                              <label class="action_label2">PHP </label>
+                              <label className="action_label2">PHP </label>
                             </td>
                             <td>
                               <label>Focus Technologies </label>
@@ -375,8 +375,8 @@ function EmployeeOffice() {
                             <td>
                               <label>Team Lead</label>
                             </td>
-                            <td class="tab-select">
-                              <select class="select">
+                            <td className="tab-select">
+                              <select className="select">
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                               </select>
@@ -384,22 +384,22 @@ function EmployeeOffice() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-10.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>Richard Wilson</label>
                               </div>
                             </td>
                             <td>
-                              <label class="action_label in_active">No </label>
+                              <label className="action_label in_active">No </label>
                             </td>
                             <td>
-                              <label class="action_label2">Business </label>
+                              <label className="action_label2">Business </label>
                             </td>
                             <td>
                               <label>Focus Technologies </label>
@@ -407,8 +407,8 @@ function EmployeeOffice() {
                             <td>
                               <label>Super Admin</label>
                             </td>
-                            <td class="tab-select">
-                              <select class="select">
+                            <td className="tab-select">
+                              <select className="select">
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                               </select>
@@ -424,44 +424,44 @@ function EmployeeOffice() {
           </div>
         </div>
 
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="edit"
             tabindex="-1"
             aria-labelledby="staticBackdropLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">
+            <div className="modal-dialog modal-lg modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabel">
                     Edit Office
                   </h5>
                   <button
                     type="button"
-                    class="close"
+                    className="close"
                     data-dismiss="modal"
                     aria-label="Close"
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=" col-md-12 p-0">
-                    <div class=" form-popup">
+                <div className="modal-body">
+                  <div className=" col-md-12 p-0">
+                    <div className=" form-popup">
                       <label>Office Name</label>
                       <input type="text" />
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-apply">
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-apply">
                     Apply
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel
