@@ -8,35 +8,35 @@ function Company() {
       <Topbar />
       <Sidebar />
       <div>
-        <div class="page-wrapper">
-          <div class="content container-fluid">
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="breadcrumb-path mb-4">
-                  <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
+        <div className="page-wrapper">
+          <div className="content container-fluid">
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="breadcrumb-path mb-4">
+                  <ul className="breadcrumb">
+                    <li className="breadcrumb-item">
                       <a href="index.html">
                         <img
                           src="assets/img/dash.png"
-                          class="mr-2"
+                          className="mr-2"
                           alt="breadcrumb"
                         />
                         Home
                       </a>
                     </li>
-                    <li class="breadcrumb-item active"> Company</li>
+                    <li className="breadcrumb-item active"> Company</li>
                   </ul>
                   <h3>Company </h3>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="row">
-                  <div class="col-xl-8 col-sm-12 col-12 d-flex ">
-                    <div class="card card-lists flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">Focus Technologies</h2>
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="row">
+                  <div className="col-xl-8 col-sm-12 col-12 d-flex ">
+                    <div className="card card-lists flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">Focus Technologies</h2>
                         <a
-                          class="edit-link"
+                          className="edit-link"
                           data-toggle="modal"
                           data-target="#editcompany"
                         >
@@ -44,10 +44,10 @@ function Company() {
                           <i data-feather="edit"></i>
                         </a>
                       </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col-xl-6 col-sm-12 col-12 d-flex ">
-                            <div class="member-registor flex-fill">
+                      <div className="card-body">
+                        <div className="row">
+                          <div className="col-xl-6 col-sm-12 col-12 d-flex ">
+                            <div className="member-registor flex-fill">
                               <ul>
                                 <li>
                                   <label>Register Number</label>
@@ -64,8 +64,8 @@ function Company() {
                               </ul>
                             </div>
                           </div>
-                          <div class="col-xl-6 col-sm-12 col-12 d-flex">
-                            <div class="member-address flex-fill">
+                          <div className="col-xl-6 col-sm-12 col-12 d-flex">
+                            <div className="member-address flex-fill">
                               <label>Address</label>
                               <span>
                                 Santiago de Surco Av.Caminos del Inca 1325
@@ -74,11 +74,11 @@ function Company() {
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-xl-12 col-sm-12 col-12 ">
-                            <div class="btn-link my-3">
+                        <div className="row">
+                          <div className="col-xl-12 col-sm-12 col-12 ">
+                            <div className="btn-link my-3">
                               <a
-                                class="btn btn-new"
+                                className="btn btn-new"
                                 data-toggle="modal"
                                 data-target="#addcompany"
                               >
@@ -90,26 +90,26 @@ function Company() {
                       </div>
                     </div>
                   </div>
-                  <div class="col-xl-4 col-sm-12 col-12 d-flex">
-                    <div class="card  flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">Focus Technologies</h2>
+                  <div className="col-xl-4 col-sm-12 col-12 d-flex">
+                    <div className="card  flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">Focus Technologies</h2>
                       </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col-xl-12 col-sm-12 col-12 ">
-                            <div class="member-edits">
+                      <div className="card-body">
+                        <div className="row">
+                          <div className="col-xl-12 col-sm-12 col-12 ">
+                            <div className="member-edits">
                               <ul>
                                 <li>
                                   <label>07448503267</label>
-                                  <a class="edit-link">
+                                  <a className="edit-link">
                                     {" "}
                                     <i data-feather="edit"></i>
                                   </a>
                                 </li>
                                 <li>
                                   <label>focustechnology.com</label>
-                                  <a class="edit-link">
+                                  <a className="edit-link">
                                     {" "}
                                     <i data-feather="edit"></i>
                                   </a>
@@ -118,13 +118,13 @@ function Company() {
                                   <label>
                                     <a
                                       href="/cdn-cgi/l/email-protection"
-                                      class="__cf_email__"
+                                      className="__cf_email__"
                                       data-cfemail="f29a80b2949d9187818697919a9c9d9e9d958bdc919d9f"
                                     >
                                       [email&#160;protected]
                                     </a>
                                   </label>
-                                  <a class="edit-link">
+                                  <a className="edit-link">
                                     {" "}
                                     <i data-feather="edit"></i>
                                   </a>
@@ -138,15 +138,15 @@ function Company() {
                   </div>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="card card-lists ">
-                  <div class="card-header">
-                    <h2 class="card-titles">DocumentsAdd </h2>
-                    <a class="btn btn-head"> Add Document </a>
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="card card-lists ">
+                  <div className="card-header">
+                    <h2 className="card-titles">DocumentsAdd </h2>
+                    <a className="btn btn-head"> Add Document </a>
                   </div>
-                  <div class="card-body p-0">
-                    <div class="table-responsive">
-                      <table class="table  custom-table  no-footer">
+                  <div className="card-body p-0">
+                    <div className="table-responsive">
+                      <table className="table  custom-table  no-footer">
                         <thead>
                           <tr>
                             <th>Type</th>
@@ -159,7 +159,7 @@ function Company() {
                         <tbody>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <img src="assets/img/pdf.png" alt="pdf" />
                               </div>
                             </td>
@@ -175,7 +175,7 @@ function Company() {
                             <td>
                               <label>
                                 <a
-                                  class="action_label4"
+                                  className="action_label4"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -186,7 +186,7 @@ function Company() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <img src="assets/img/word.png" alt="profile" />
                               </div>
                             </td>
@@ -202,7 +202,7 @@ function Company() {
                             <td>
                               <label>
                                 <a
-                                  class="action_label4"
+                                  className="action_label4"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -213,7 +213,7 @@ function Company() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <img src="assets/img/pdf.png" alt="pdf" />
                               </div>
                             </td>
@@ -229,7 +229,7 @@ function Company() {
                             <td>
                               <label>
                                 <a
-                                  class="action_label4"
+                                  className="action_label4"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -244,16 +244,16 @@ function Company() {
                   </div>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="row">
-                  <div class="col-xl-6 col-sm-12 col-12 d-flex">
-                    <div class="card card-lists flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="row">
+                  <div className="col-xl-6 col-sm-12 col-12 d-flex">
+                    <div className="card card-lists flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">
                           Focus Technologies<span>Head Office</span>
                         </h2>
                         <a
-                          class="edit-link"
+                          className="edit-link"
                           data-toggle="modal"
                           data-target="#editoffice"
                         >
@@ -261,48 +261,48 @@ function Company() {
                           <i data-feather="edit"></i>
                         </a>
                       </div>
-                      <div class="card-body d-flex align-items-center">
-                        <div class=" member-head employee-image">
+                      <div className="card-body d-flex align-items-center">
+                        <div className=" member-head employee-image">
                           <h2>Members</h2>
-                          <div class="avatar-group">
-                            <div class="avatar avatar-xs group_img group_header">
+                          <div className="avatar-group">
+                            <div className="avatar avatar-xs group_img group_header">
                               <img
-                                class="avatar-img rounded-circle"
+                                className="avatar-img rounded-circle"
                                 alt="User Image"
                                 src="../assets/img/profiles/avatar-10.jpg"
                               />
                             </div>
-                            <div class="avatar avatar-xs group_img group_header">
+                            <div className="avatar avatar-xs group_img group_header">
                               <img
-                                class="avatar-img rounded-circle"
+                                className="avatar-img rounded-circle"
                                 alt="User Image"
                                 src="../assets/img/profiles/avatar-15.jpg"
                               />
                             </div>
-                            <div class="avatar avatar-xs group_img group_header">
+                            <div className="avatar avatar-xs group_img group_header">
                               <img
-                                class="avatar-img rounded-circle"
+                                className="avatar-img rounded-circle"
                                 alt="User Image"
                                 src="../assets/img/profiles/avatar-16.jpg"
                               />
                             </div>
-                            <div class="avatar avatar-xs group_img group_header">
+                            <div className="avatar avatar-xs group_img group_header">
                               <img
-                                class="avatar-img rounded-circle"
+                                className="avatar-img rounded-circle"
                                 alt="User Image"
                                 src="../assets/img/profiles/avatar-17.jpg"
                               />
                             </div>
-                            <div class="avatar avatar-xs group_img group_header">
+                            <div className="avatar avatar-xs group_img group_header">
                               <img
-                                class="avatar-img rounded-circle"
+                                className="avatar-img rounded-circle"
                                 alt="User Image"
                                 src="../assets/img/profiles/avatar-14.jpg"
                               />
                             </div>
-                            <div class="avatar avatar-xs group_img group_header">
+                            <div className="avatar avatar-xs group_img group_header">
                               <img
-                                class="avatar-img rounded-circle"
+                                className="avatar-img rounded-circle"
                                 alt="User Image"
                                 src="../assets/img/profiles/avatar-18.jpg"
                               />
@@ -312,17 +312,17 @@ function Company() {
                       </div>
                     </div>
                   </div>
-                  <div class="col-xl-6 col-sm-12 col-12  d-flex">
-                    <div class="card card-lists flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-title">Overview </h2>
-                        <a class="btn btn-head" href="manage.html">
+                  <div className="col-xl-6 col-sm-12 col-12  d-flex">
+                    <div className="card card-lists flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-title">Overview </h2>
+                        <a className="btn btn-head" href="manage.html">
                           {" "}
                           Manage Teams{" "}
                         </a>
                       </div>
-                      <div class="card-body">
-                        <div class="over-view-path">
+                      <div className="card-body">
+                        <div className="over-view-path">
                           <ul>
                             <li>
                               <label>Teams</label>
@@ -334,8 +334,8 @@ function Company() {
                             </li>
                           </ul>
                         </div>
-                        <div class="btn-set pl-0">
-                          <a class="btn btn-apply" href="employee.html">
+                        <div className="btn-set pl-0">
+                          <a className="btn btn-apply" href="employee.html">
                             People Directory
                           </a>
                         </div>
@@ -348,9 +348,9 @@ function Company() {
           </div>
         </div>
 
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="addcompany"
             data-backdrop="static"
             data-keyboard="false"
@@ -358,68 +358,68 @@ function Company() {
             aria-labelledby="staticBackdropLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">
+            <div className="modal-dialog modal-lg">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabel">
                     Add Company Information
                   </h5>
                   <button
                     type="button"
-                    class="close"
+                    className="close"
                     data-dismiss="modal"
                     aria-label="Close"
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=" col-md-12 p-0">
-                    <div class=" form-popup">
+                <div className="modal-body">
+                  <div className=" col-md-12 p-0">
+                    <div className=" form-popup">
                       <label>Office Name</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Registered Company Number</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Incorporation Date</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Vat Number</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Address line 1</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Address line 2</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>City</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Country</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Post - Code</label>
                       <input type="text" />
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-primary">
                     Add
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel
@@ -429,9 +429,9 @@ function Company() {
             </div>
           </div>
         </div>
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="editcompany"
             data-backdrop="static"
             data-keyboard="false"
@@ -439,68 +439,68 @@ function Company() {
             aria-labelledby="staticBackdropLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">
+            <div className="modal-dialog modal-lg">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabel">
                     Edit Company Information
                   </h5>
                   <button
                     type="button"
-                    class="close"
+                    className="close"
                     data-dismiss="modal"
                     aria-label="Close"
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=" col-md-12 p-0">
-                    <div class=" form-popup">
+                <div className="modal-body">
+                  <div className=" col-md-12 p-0">
+                    <div className=" form-popup">
                       <label>Office Name</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Registered Company Number</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Incorporation Date</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Vat Number</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Address line 1</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Address line 2</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>City</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Country</label>
                       <input type="text" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <label>Post - Code</label>
                       <input type="text" />
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-primary">
                     Add
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel
@@ -510,43 +510,43 @@ function Company() {
             </div>
           </div>
         </div>
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="editoffice"
             tabindex="-1"
             aria-labelledby="staticBackdropLabels"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabels">
+            <div className="modal-dialog modal-lg modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabels">
                     Edit Office
                   </h5>
                   <button
                     type="button"
-                    class="close"
+                    className="close"
                     data-dismiss="modal"
                     aria-label="Close"
                   >
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=" col-md-12 p-0">
-                    <div class=" form-popup">
+                <div className="modal-body">
+                  <div className=" col-md-12 p-0">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Office Name" />
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-primary">
                     Add
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel
@@ -556,31 +556,31 @@ function Company() {
             </div>
           </div>
         </div>
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="delete"
             tabindex="-1"
             aria-labelledby="staticBackdropLabels1"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-dialog-centered ">
-              <div class="modal-content">
-                <div class="modal-header text-centers border-0">
+            <div className="modal-dialog modal-dialog-centered ">
+              <div className="modal-content">
+                <div className="modal-header text-centers border-0">
                   <h5
-                    class="modal-title text-center"
+                    className="modal-title text-center"
                     id="staticBackdropLabels1"
                   >
                     Are You Sure Want to Delete?
                   </h5>
                 </div>
-                <div class="modal-footer text-centers">
-                  <button type="button" class="btn btn-primary">
+                <div className="modal-footer text-centers">
+                  <button type="button" className="btn btn-primary">
                     Delete
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel

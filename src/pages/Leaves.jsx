@@ -9,37 +9,37 @@ function Leaves() {
       <Topbar />
       <Sidebar />
       <div className="div">
-        <div class="page-wrapper">
-          <div class="content container-fluid">
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="breadcrumb-path ">
-                  <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
+        <div className="page-wrapper">
+          <div className="content container-fluid">
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="breadcrumb-path ">
+                  <ul className="breadcrumb">
+                    <li className="breadcrumb-item">
                       <a href="index.html">
                         <img
                           src="../assets/img/dash.png"
-                          class="mr-2"
+                          className="mr-2"
                           alt="breadcrumb"
                         />
                         Home
                       </a>
                     </li>
-                    <li class="breadcrumb-item active"> Leave</li>
+                    <li className="breadcrumb-item active"> Leave</li>
                   </ul>
                   <h3>Leave</h3>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-xl-6 col-sm-12 col-12 d-flex	">
-                <div class="card card-lists flex-fill">
-                  <div class="card-header">
-                    <h2 class="card-titles">
+            <div className="row">
+              <div className="col-xl-6 col-sm-12 col-12 d-flex	">
+                <div className="card card-lists flex-fill">
+                  <div className="card-header">
+                    <h2 className="card-titles">
                       Focus Technologies<span>Head Office</span>
                     </h2>
                     <a
-                      class="edit-link"
+                      className="edit-link"
                       data-toggle="modal"
                       data-target="#editmember"
                     >
@@ -47,48 +47,48 @@ function Leaves() {
                       <i data-feather="edit"></i>
                     </a>
                   </div>
-                  <div class="card-body d-flex align-items-center">
-                    <div class=" member-head employee-image">
+                  <div className="card-body d-flex align-items-center">
+                    <div className=" member-head employee-image">
                       <h2>Members</h2>
-                      <div class="avatar-group">
-                        <div class="avatar avatar-xs group_img group_header">
+                      <div className="avatar-group">
+                        <div className="avatar avatar-xs group_img group_header">
                           <img
-                            class="avatar-img rounded-circle"
+                            className="avatar-img rounded-circle"
                             alt="User Image"
                             src="../assets/img/profiles/avatar-10.jpg"
                           />
                         </div>
-                        <div class="avatar avatar-xs group_img group_header">
+                        <div className="avatar avatar-xs group_img group_header">
                           <img
-                            class="avatar-img rounded-circle"
+                            className="avatar-img rounded-circle"
                             alt="User Image"
                             src="../assets/img/profiles/avatar-15.jpg"
                           />
                         </div>
-                        <div class="avatar avatar-xs group_img group_header">
+                        <div className="avatar avatar-xs group_img group_header">
                           <img
-                            class="avatar-img rounded-circle"
+                            className="avatar-img rounded-circle"
                             alt="User Image"
                             src="../assets/img/profiles/avatar-16.jpg"
                           />
                         </div>
-                        <div class="avatar avatar-xs group_img group_header">
+                        <div className="avatar avatar-xs group_img group_header">
                           <img
-                            class="avatar-img rounded-circle"
+                            className="avatar-img rounded-circle"
                             alt="User Image"
                             src="../assets/img/profiles/avatar-17.jpg"
                           />
                         </div>
-                        <div class="avatar avatar-xs group_img group_header">
+                        <div className="avatar avatar-xs group_img group_header">
                           <img
-                            class="avatar-img rounded-circle"
+                            className="avatar-img rounded-circle"
                             alt="User Image"
                             src="../assets/img/profiles/avatar-14.jpg"
                           />
                         </div>
-                        <div class="avatar avatar-xs group_img group_header">
+                        <div className="avatar avatar-xs group_img group_header">
                           <img
-                            class="avatar-img rounded-circle"
+                            className="avatar-img rounded-circle"
                             alt="User Image"
                             src="../assets/img/profiles/avatar-18.jpg"
                           />
@@ -98,10 +98,10 @@ function Leaves() {
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                <div class="card flex-fill">
-                  <div class="card-body">
-                    <div class="employee_status text-center">
+              <div className="col-xl-3 col-sm-6 col-12 d-flex">
+                <div className="card flex-fill">
+                  <div className="card-body">
+                    <div className="employee_status text-center">
                       <img
                         alt="User Image"
                         src="../assets/img/profiles/avatar-17.jpg"
@@ -111,10 +111,10 @@ function Leaves() {
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                <div class="card flex-fill">
-                  <div class="card-body">
-                    <div class="employee_status text-center">
+              <div className="col-xl-3 col-sm-6 col-12 d-flex">
+                <div className="card flex-fill">
+                  <div className="card-body">
+                    <div className="employee_status text-center">
                       <img
                         alt="User Image"
                         src="../assets/img/profiles/avatar-18.jpg"
@@ -125,70 +125,70 @@ function Leaves() {
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="card">
-                  <div class="card-header">
-                    <h2 class="card-titles">Apply Leaves</h2>
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="card">
+                  <div className="card-header">
+                    <h2 className="card-titles">Apply Leaves</h2>
                   </div>
-                  <div class="form-creation">
-                    <div class="row">
-                      <div class="col-xl-6 col-sm-6 col-12 ">
-                        <div class="form-group">
+                  <div className="form-creation">
+                    <div className="row">
+                      <div className="col-xl-6 col-sm-6 col-12 ">
+                        <div className="form-group">
                           <label>
-                            Leave Type <span class="mandatory">*</span>{" "}
+                            Leave Type <span className="mandatory">*</span>{" "}
                           </label>
-                          <select class="select">
+                          <select className="select">
                             <option value="Select leave">Select leave</option>
                             <option value="leave">Casual leave</option>
                             <option value="leave">Earned leave</option>
                           </select>
                         </div>
                       </div>
-                      <div class="col-xl-6 col-sm-6 col-12 ">
-                        <div class="form-group">
+                      <div className="col-xl-6 col-sm-6 col-12 ">
+                        <div className="form-group">
                           <label>Remaining Leaves</label>
                           <input type="text" value="10" disabled />
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-xl-6 col-sm-12 col-12 ">
-                        <div class="form-group">
+                    <div className="row">
+                      <div className="col-xl-6 col-sm-12 col-12 ">
+                        <div className="form-group">
                           <label>From </label>
                           <input type="text" />
                         </div>
                       </div>
-                      <div class="col-xl-6 col-sm-12 col-12 ">
-                        <div class="form-group">
+                      <div className="col-xl-6 col-sm-12 col-12 ">
+                        <div className="form-group">
                           <label>To</label>
                           <input type="text" />
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-xl-6 col-sm-12 col-12 ">
-                        <div class="form-group">
+                    <div className="row">
+                      <div className="col-xl-6 col-sm-12 col-12 ">
+                        <div className="form-group">
                           <label>
-                            Half Day <span class="mandatory">*</span>{" "}
+                            Half Day <span className="mandatory">*</span>{" "}
                           </label>
-                          <select class="select">
+                          <select className="select">
                             <option value="Select leave">Select </option>
                             <option value="leave">Casual leave</option>
                             <option value="leave">Earned leave</option>
                           </select>
                         </div>
                       </div>
-                      <div class="col-xl-6 col-sm-12 col-12 ">
-                        <div class="form-group">
+                      <div className="col-xl-6 col-sm-12 col-12 ">
+                        <div className="form-group">
                           <label>Remaining Leaves</label>
                           <input type="text" value="2" disabled />
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-xl-12 col-sm-12 col-12 ">
-                        <div class="form-group">
+                    <div className="row">
+                      <div className="col-xl-12 col-sm-12 col-12 ">
+                        <div className="form-group">
                           <label>From </label>
                           <textarea rows="4" cols="50">
                             {" "}
@@ -196,13 +196,13 @@ function Leaves() {
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-xl-12 col-sm-12 col-12 ">
-                        <div class="form-btn">
-                          <a href="#" class="btn btn-apply">
+                    <div className="row">
+                      <div className="col-xl-12 col-sm-12 col-12 ">
+                        <div className="form-btn">
+                          <a href="#" className="btn btn-apply">
                             Apply
                           </a>
-                          <a href="#" class="btn btn-secondary">
+                          <a href="#" className="btn btn-secondary">
                             Cancel
                           </a>
                         </div>
@@ -212,15 +212,15 @@ function Leaves() {
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="card">
-                  <div class="card-header">
-                    <h2 class="card-titles">Leave Details</h2>
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="card">
+                  <div className="card-header">
+                    <h2 className="card-titles">Leave Details</h2>
                   </div>
-                  <div class="card-body p-0">
-                    <div class="table-responsive">
-                      <table class="table  custom-table  no-footer">
+                  <div className="card-body p-0">
+                    <div className="table-responsive">
+                      <table className="table  custom-table  no-footer">
                         <thead>
                           <tr>
                             <th>Date</th>
@@ -263,15 +263,15 @@ function Leaves() {
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="card ">
-                  <div class="card-header">
-                    <h2 class="card-titles">Leave Details</h2>
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="card ">
+                  <div className="card-header">
+                    <h2 className="card-titles">Leave Details</h2>
                   </div>
-                  <div class="card-body p-0">
-                    <div class="table-responsive">
-                      <table class="table  custom-table  no-footer">
+                  <div className="card-body p-0">
+                    <div className="table-responsive">
+                      <table className="table  custom-table  no-footer">
                         <thead>
                           <tr>
                             <th>Employee</th>
@@ -288,12 +288,12 @@ function Leaves() {
                         <tbody>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-13.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>Sean Black</label>
@@ -319,13 +319,13 @@ function Leaves() {
                             </td>
                             <td>
                               <label>
-                                <a class="action_label3">Approved</a>
+                                <a className="action_label3">Approved</a>
                               </label>
                             </td>
                             <td>
                               <label>
                                 <a
-                                  class="action_label4"
+                                  className="action_label4"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -336,12 +336,12 @@ function Leaves() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-16.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>Linda Craver</label>
@@ -367,13 +367,13 @@ function Leaves() {
                             </td>
                             <td>
                               <label>
-                                <a class="action_label3">Approved</a>
+                                <a className="action_label3">Approved</a>
                               </label>
                             </td>
                             <td>
                               <label>
                                 <a
-                                  class="action_label4"
+                                  className="action_label4"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -384,12 +384,12 @@ function Leaves() {
                           </tr>
                           <tr>
                             <td>
-                              <div class="table-img">
+                              <div className="table-img">
                                 <a href="profile.html">
                                   <img
                                     src="../assets/img/profiles/avatar-17.jpg"
                                     alt="profile"
-                                    class="img-table"
+                                    className="img-table"
                                   />
                                 </a>
                                 <label>Jenni Sims</label>
@@ -415,13 +415,13 @@ function Leaves() {
                             </td>
                             <td>
                               <label>
-                                <a class="action_label3">Approved</a>
+                                <a className="action_label3">Approved</a>
                               </label>
                             </td>
                             <td>
                               <label>
                                 <a
-                                  class="action_label4"
+                                  className="action_label4"
                                   data-toggle="modal"
                                   data-target="#delete"
                                 >
@@ -440,44 +440,44 @@ function Leaves() {
           </div>
         </div>
 
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="edit"
             tabindex="-1"
             aria-labelledby="staticBackdropLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">
+            <div className="modal-dialog modal-lg">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabel">
                     Edit Office
                   </h5>
                   <button
                     type="button"
-                    class="close"
+                    className="close"
                     data-dismiss="modal"
                     aria-label="Close"
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=" col-md-12 p-0">
-                    <div class=" form-popup">
+                <div className="modal-body">
+                  <div className=" col-md-12 p-0">
+                    <div className=" form-popup">
                       <label>Office Name</label>
                       <input type="text" />
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-apply">
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-apply">
                     Apply
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel
@@ -487,43 +487,43 @@ function Leaves() {
             </div>
           </div>
         </div>
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="editmember"
             tabindex="-1"
             aria-labelledby="staticBackdropLabels"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabels">
+            <div className="modal-dialog modal-lg modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabels">
                     Edit Member
                   </h5>
                   <button
                     type="button"
-                    class="close"
+                    className="close"
                     data-dismiss="modal"
                     aria-label="Close"
                   >
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=" col-md-12 p-0">
-                    <div class=" form-popup">
+                <div className="modal-body">
+                  <div className=" col-md-12 p-0">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Member Name" />
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-primary">
                     Save
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel
@@ -533,31 +533,31 @@ function Leaves() {
             </div>
           </div>
         </div>
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="delete"
             tabindex="-1"
             aria-labelledby="staticBackdropLabels1"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header text-centers border-0">
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header text-centers border-0">
                   <h5
-                    class="modal-title text-center"
+                    className="modal-title text-center"
                     id="staticBackdropLabels1"
                   >
                     Are You Sure Want to Delete?
                   </h5>
                 </div>
-                <div class="modal-footer text-centers">
-                  <button type="button" class="btn btn-primary">
+                <div className="modal-footer text-centers">
+                  <button type="button" className="btn btn-primary">
                     Delete
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel
