@@ -45,9 +45,9 @@ function EmployeeGrid() {
                     <Link to="/employees/team">Team</Link>
                   </li>
                   </ul>
-                  <a className="btn-add" href="add-employee.html">
-                    <i data-feather="plus"></i> Add Person
-                  </a>
+                  <Link className="btn-add" to="/add-employee">
+                    <i data-feather="plus"></i> Add Employee
+                  </Link>
                 </div>
               </div>
               <div className="col-xl-12 col-sm-12 col-12 mb-4">

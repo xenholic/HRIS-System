@@ -35,6 +35,7 @@ import ProfileTimeoff from "./pages/Profile-timeoff";
 import ProfileReview from "./pages/Profile-review";
 import ProfileSetting from "./pages/Profile-setting";
 import EmployeeGrid from "./pages/Employee-grid";
+import AddEmployee from "./components/AddEmployee";
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
        {/* <Route element={<RootLayout />}> */}
       <Route index element={<Dasboard />} />
       <Route path="/employees" element={<Employee />} />
+      <Route path="/add-employee" element={<AddEmployee />} />
       <Route path="/employees-grid" element={<EmployeeGrid />} />
       <Route path="/employees/office" element={<EmployeeOffice />} />
       <Route path="/employees/team" element={<EmployeeTeam />} />

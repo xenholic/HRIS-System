@@ -178,7 +178,7 @@ const date = new Date().toLocaleDateString();
                     <h5 className="card-title">Total Employees</h5>
                   </div>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                 <div className="mx-auto p-2 col-7">
                 <Pie
                 data={data}
@@ -191,28 +191,28 @@ const date = new Date().toLocaleDateString();
                   },
                 }}
                  />
-                  {/* <div class="text-center text-muted">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="mt-4">
-                          <p class="mb-2 text-truncate">
-                            <i class="fas fa-circle text-primary mr-1"></i>{" "}
+                  {/* <div className="text-center text-muted">
+                    <div className="row">
+                      <div className="col-4">
+                        <div className="mt-4">
+                          <p className="mb-2 text-truncate">
+                            <i className="fas fa-circle text-primary mr-1"></i>{" "}
                             Business
                           </p>
                         </div>
                       </div>
-                      <div class="col-4">
-                        <div class="mt-4">
-                          <p class="mb-2 text-truncate">
-                            <i class="fas fa-circle text-success mr-1"></i>{" "}
+                      <div className="col-4">
+                        <div className="mt-4">
+                          <p className="mb-2 text-truncate">
+                            <i className="fas fa-circle text-success mr-1"></i>{" "}
                             Testing
                           </p>
                         </div>
                       </div>
-                      <div class="col-4">
-                        <div class="mt-4">
-                          <p class="mb-2 text-truncate">
-                            <i class="fas fa-circle text-danger mr-1"></i>{" "}
+                      <div className="col-4">
+                        <div className="mt-4">
+                          <p className="mb-2 text-truncate">
+                            <i className="fas fa-circle text-danger mr-1"></i>{" "}
                             Development
                           </p>
                         </div>
@@ -223,15 +223,15 @@ const date = new Date().toLocaleDateString();
                 </div>
               </div>
             </div>
-            <div class="col-xl-6 d-flex">
-              <div class="card flex-fill">
-                <div class="card-header">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="card-title">Total Salary By Unit</h5>
+            <div className="col-xl-6 d-flex">
+              <div className="card flex-fill">
+                <div className="card-header">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <h5 className="card-title">Total Salary By Unit</h5>
                   </div>
                 </div>
-                <div class="card-body">
-                 <div className="mx-auto mt-80">
+                <div className="card-body">
+                 <div className="mx-auto">
                   <Line
                   style={{marginTop: "100px"}}
                   data={data2}

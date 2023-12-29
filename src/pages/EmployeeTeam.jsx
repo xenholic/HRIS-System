@@ -46,9 +46,9 @@ function EmployeeTeam() {
                     <Link className="active" to="/employees/team">Team</Link>
                   </li>
                 </ul>
-                <a className="btn-add" data-toggle="modal" data-target="#addteam">
-                  <i data-feather="plus"></i> Add Person
-                </a>
+                <Link className="btn-add" data-toggle="modal" data-target="#addteam">
+                  <i data-feather="plus"></i> Add Team
+                </Link>
               </div>
             </div>
             <div className="col-xl-12 col-sm-12 col-12 ">

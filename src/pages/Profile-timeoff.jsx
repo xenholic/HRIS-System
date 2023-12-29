@@ -10,29 +10,29 @@ function ProfileTimeoff() {
       <Topbar />
       <Sidebar />
       <div>
-        <div class="page-wrapper">
-          <div class="content container-fluid">
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="breadcrumb-path mb-4">
-                  <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
+        <div className="page-wrapper">
+          <div className="content container-fluid">
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="breadcrumb-path mb-4">
+                  <ul className="breadcrumb">
+                    <li className="breadcrumb-item">
                       <a href="index.html">
                         <img
                           src="assets/img/dash.png"
-                          class="mr-2"
+                          className="mr-2"
                           alt="breadcrumb"
                         />
                         Home
                       </a>
                     </li>
-                    <li class="breadcrumb-item active"> Profile</li>
+                    <li className="breadcrumb-item active"> Profile</li>
                   </ul>
                   <h3>Profile </h3>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="head-link-set">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="head-link-set">
                   <ul>
                     <li>
                       <Link to="/profile">Employement</Link>
@@ -47,7 +47,7 @@ function ProfileTimeoff() {
                       <Link to="/profile-payroll">Payroll</Link>
                     </li>
                     <li>
-                      <Link class="active" to="#">
+                      <Link className="active" to="#">
                         Timeoff
                       </Link>
                     </li>
@@ -60,21 +60,21 @@ function ProfileTimeoff() {
                   </ul>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="row">
-                  <div class="col-xl-6 col-sm-12 col-12 d-flex">
-                    <div class="card flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">Holidays List</h2>
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="row">
+                  <div className="col-xl-6 col-sm-12 col-12 d-flex">
+                    <div className="card flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">Holidays List</h2>
                       </div>
-                      <div class="card-body">
-                        <div class="col-xl-12 col-sm-12 col-12 mb-5 ">
-                          <div class="row">
-                            <div class="col-xl-8 col-sm-12 col-12 p-0">
-                              <div class="head-link-set">
+                      <div className="card-body">
+                        <div className="col-xl-12 col-sm-12 col-12 mb-5 ">
+                          <div className="row">
+                            <div className="col-xl-8 col-sm-12 col-12 p-0">
+                              <div className="head-link-set">
                                 <ul>
                                   <li>
-                                    <a class="active" href="#">
+                                    <a className="active" href="#">
                                       Upcoming
                                     </a>
                                   </li>
@@ -84,15 +84,15 @@ function ProfileTimeoff() {
                                 </ul>
                               </div>
                             </div>
-                            <div class="col-xl-4 col-sm-12 col-12 p-0 select-path">
-                              <select class="select">
+                            <div className="col-xl-4 col-sm-12 col-12 p-0 select-path">
+                              <select className="select">
                                 <option value="inactive">In Progress</option>
                                 <option value="active">Completed</option>
                               </select>
                             </div>
                           </div>
                         </div>
-                        <div class="table table-responsive custimze-table">
+                        <div className="table table-responsive custimze-table">
                           <table>
                             <thead>
                               <tr>
@@ -168,46 +168,46 @@ function ProfileTimeoff() {
                       </div>
                     </div>
                   </div>
-                  <div class="col-xl-6 col-sm-12 col-12 d-flex">
-                    <div class="card flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-title">Leave Off Details</h2>
+                  <div className="col-xl-6 col-sm-12 col-12 d-flex">
+                    <div className="card flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-title">Leave Off Details</h2>
                       </div>
-                      <div class="card-body p-0">
-                        <div class="card-body-inner">
+                      <div className="card-body p-0">
+                        <div className="card-body-inner">
                           <h3>Year</h3>
                           <label>01 January – 31 December</label>
                         </div>
-                        <div class="card-body-inner">
+                        <div className="card-body-inner">
                           <h3>Days Used</h3>
-                          <div class="card-range">
-                            <div class="card-set">
-                              <div class="card-days">5 days</div>
+                          <div className="card-range">
+                            <div className="card-set">
+                              <div className="card-days">5 days</div>
                             </div>
                           </div>
                           <h3>Days</h3>
                           <label>5 Used</label>
                         </div>
-                        <div class="card-body-inner">
+                        <div className="card-body-inner">
                           <h3>Non Deductible Days</h3>
                           <ul>
                             <li>
-                              <a class="btn btn-approved">5 Approved</a>
+                              <a className="btn btn-approved">5 Approved</a>
                             </li>
                             <li>
-                              <a class="btn btn-approved">7 Pending</a>
+                              <a className="btn btn-approved">7 Pending</a>
                             </li>
                           </ul>
                         </div>
-                        <div class="card-body-inner">
+                        <div className="card-body-inner">
                           <h3>Attendance</h3>
                           <label>3 Sick Days</label>
                           <label>2 Working from Home</label>
                         </div>
-                        <div class="card-body-inner select-path border-0">
+                        <div className="card-body-inner select-path border-0">
                           <h3>Time Off Approvers</h3>
-                          <div class="form-group">
-                            <select class="select">
+                          <div className="form-group">
+                            <select className="select">
                               <option value="inactive">Choose Approver</option>
                               <option value="active">Approved</option>
                             </select>

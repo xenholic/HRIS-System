@@ -10,29 +10,29 @@ function ProfileSetting() {
       <Topbar />
       <Sidebar />
       <div>
-        <div class="page-wrapper">
-          <div class="content container-fluid">
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="breadcrumb-path mb-4">
-                  <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
+        <div className="page-wrapper">
+          <div className="content container-fluid">
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="breadcrumb-path mb-4">
+                  <ul className="breadcrumb">
+                    <li className="breadcrumb-item">
                       <a href="index.html">
                         <img
                           src="assets/img/dash.png"
-                          class="mr-2"
+                          className="mr-2"
                           alt="breadcrumb"
                         />
                         Home
                       </a>
                     </li>
-                    <li class="breadcrumb-item active"> Profile</li>
+                    <li className="breadcrumb-item active"> Profile</li>
                   </ul>
                   <h3>Profile </h3>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="head-link-set">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="head-link-set">
                   <ul>  
                     <li>
                       <Link to="/profile">Employement</Link>
@@ -53,19 +53,19 @@ function ProfileSetting() {
                       <Link to="/profile-review">Reviews</Link>
                     </li>
                     <li>
-                      <Link class="active" to="#">
+                      <Link className="active" to="#">
                         Settings
                       </Link>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="row">
-                  <div class="col-xl-6 col-sm-12 col-12 d-flex">
-                    <div class="card flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="row">
+                  <div className="col-xl-6 col-sm-12 col-12 d-flex">
+                    <div className="card flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">
                           Change Password
                           <span>
                             Your password needs to be at least 8 characters
@@ -73,26 +73,26 @@ function ProfileSetting() {
                           </span>
                         </h2>
                       </div>
-                      <div class="card-body">
-                        <div class="form-group">
+                      <div className="card-body">
+                        <div className="form-group">
                           <input type="text" placeholder="Current Password" />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                           <input type="text" placeholder="New Password" />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                           <input type="text" placeholder="Repeat Password" />
                         </div>
-                        <div class="btn-set pl-0">
-                          <a class="btn btn-apply">Change My Password</a>
+                        <div className="btn-set pl-0">
+                          <a className="btn btn-apply">Change My Password</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-xl-6 col-sm-12 col-12 d-flex">
-                    <div class="card flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">
+                  <div className="col-xl-6 col-sm-12 col-12 d-flex">
+                    <div className="card flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">
                           Company Notification Settings
                           <span>
                             You will receive information across the whole
@@ -100,11 +100,11 @@ function ProfileSetting() {
                           </span>
                         </h2>
                       </div>
-                      <div class="card-body">
-                        <div class="company-set">
+                      <div className="card-body">
+                        <div className="company-set">
                           <ul>
                             <li>
-                              <div class="company-path checkworking">
+                              <div className="company-path checkworking">
                                 <input type="checkbox" id="che1" />
                                 <label for="che1">
                                   Weekly Summarize
@@ -116,7 +116,7 @@ function ProfileSetting() {
                               </div>
                             </li>
                             <li>
-                              <div class="company-path checkworking">
+                              <div className="company-path checkworking">
                                 <input type="checkbox" id="che2" />
                                 <label for="che2">
                                   Weekly Payroll Summarize
@@ -128,7 +128,7 @@ function ProfileSetting() {
                               </div>
                             </li>
                             <li>
-                              <div class="company-path checkworking">
+                              <div className="company-path checkworking">
                                 <input type="checkbox" id="che3" />
                                 <label for="che3">
                                   Visa Dates
@@ -141,8 +141,8 @@ function ProfileSetting() {
                             </li>
                           </ul>
                         </div>
-                        <div class="btn-set pl-0">
-                          <a class="btn btn-apply">
+                        <div className="btn-set pl-0">
+                          <a className="btn btn-apply">
                             Update Notification Settings
                           </a>
                         </div>
@@ -151,23 +151,23 @@ function ProfileSetting() {
                   </div>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="row">
-                  <div class="col-xl-12 col-sm-12 col-12 ">
-                    <div class="card ">
-                      <div class="card-header">
-                        <h2 class="card-titles">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="row">
+                  <div className="col-xl-12 col-sm-12 col-12 ">
+                    <div className="card ">
+                      <div className="card-header">
+                        <h2 className="card-titles">
                           Team Member Notification Settings
                           <span>
                             You will receive notifications only for Team Leads.
                           </span>
                         </h2>
                       </div>
-                      <div class="card-body">
-                        <div class="company-set">
+                      <div className="card-body">
+                        <div className="company-set">
                           <ul>
                             <li>
-                              <div class="company-path checkworking">
+                              <div className="company-path checkworking">
                                 <input type="checkbox" id="che6" />
                                 <label for="che6">
                                   Birthdays
@@ -179,7 +179,7 @@ function ProfileSetting() {
                               </div>
                             </li>
                             <li>
-                              <div class="company-path checkworking">
+                              <div className="company-path checkworking">
                                 <input type="checkbox" id="che7" />
                                 <label for="che7">
                                   Work Anniversaries
@@ -191,7 +191,7 @@ function ProfileSetting() {
                               </div>
                             </li>
                             <li>
-                              <div class="company-path checkworking">
+                              <div className="company-path checkworking">
                                 <input type="checkbox" id="che8" />
                                 <label for="che8">
                                   Key Dates
@@ -203,7 +203,7 @@ function ProfileSetting() {
                               </div>
                             </li>
                             <li>
-                              <div class="company-path checkworking">
+                              <div className="company-path checkworking">
                                 <input type="checkbox" id="che4" />
                                 <label for="che4">
                                   Off Boardings
@@ -215,7 +215,7 @@ function ProfileSetting() {
                               </div>
                             </li>
                             <li>
-                              <div class="company-path checkworking">
+                              <div className="company-path checkworking">
                                 <input type="checkbox" id="che5" />
                                 <label for="che5">
                                   Work From Home Notifications
@@ -228,8 +228,8 @@ function ProfileSetting() {
                             </li>
                           </ul>
                         </div>
-                        <div class="btn-set pl-0">
-                          <a class="btn btn-apply">
+                        <div className="btn-set pl-0">
+                          <a className="btn btn-apply">
                             Update Notification Settings
                           </a>
                         </div>
