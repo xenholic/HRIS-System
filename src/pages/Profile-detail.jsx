@@ -10,35 +10,35 @@ function ProfileDetail() {
       <Topbar />
       <Sidebar />
       <div>
-        <div class="page-wrapper">
-          <div class="content container-fluid">
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="breadcrumb-path mb-4">
-                  <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
+        <div className="page-wrapper">
+          <div className="content container-fluid">
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="breadcrumb-path mb-4">
+                  <ul className="breadcrumb">
+                    <li className="breadcrumb-item">
                       <Link to="/">
                         <img
                           src="assets/img/dash.png"
-                          class="mr-2"
+                          className="mr-2"
                           alt="breadcrumb"
                         />
                         Home
                       </Link>
                     </li>
-                    <li class="breadcrumb-item active"> Profile</li>
+                    <li className="breadcrumb-item active"> Profile</li>
                   </ul>
                   <h3>Profile </h3>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="head-link-set">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="head-link-set">
                   <ul>
                     <li>
                       <Link to="/profile">Employement</Link>
                     </li>
                     <li>
-                      <Link class="active" to="#">
+                      <Link className="active" to="#">
                         Detail
                       </Link>
                     </li>
@@ -60,16 +60,16 @@ function ProfileDetail() {
                   </ul>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="row">
-                  <div class="col-xl-4 col-sm-12 col-12 d-flex">
-                    <div class="card card-lists flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">Basic Information</h2>
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="row">
+                  <div className="col-xl-4 col-sm-12 col-12 d-flex">
+                    <div className="card card-lists flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">Basic Information</h2>
                         <ul>
                           <li>
                             <a
-                              class="add-link"
+                              className="add-link"
                               data-toggle="modal"
                               data-target="#editinformation"
                             >
@@ -78,7 +78,7 @@ function ProfileDetail() {
                           </li>
                           <li>
                             <a
-                              class="delete-link"
+                              className="delete-link"
                               data-toggle="modal"
                               data-target="#delete"
                             >
@@ -87,8 +87,8 @@ function ProfileDetail() {
                           </li>
                         </ul>
                       </div>
-                      <div class="card-body">
-                        <div class="member-info">
+                      <div className="card-body">
+                        <div className="member-info">
                           <ul>
                             <li>
                               <label>Preferred Name </label>
@@ -123,14 +123,14 @@ function ProfileDetail() {
                       </div>
                     </div>
                   </div>
-                  <div class="col-xl-4 col-sm-12 col-12 d-flex">
-                    <div class="card card-lists flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">Basic Information</h2>
+                  <div className="col-xl-4 col-sm-12 col-12 d-flex">
+                    <div className="card card-lists flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">Basic Information</h2>
                         <ul>
                           <li>
                             <a
-                              class="add-link"
+                              className="add-link"
                               data-toggle="modal"
                               data-target="#editinformations"
                             >
@@ -139,7 +139,7 @@ function ProfileDetail() {
                           </li>
                           <li>
                             <a
-                              class="delete-link"
+                              className="delete-link"
                               data-toggle="modal"
                               data-target="#delete"
                             >
@@ -148,8 +148,8 @@ function ProfileDetail() {
                           </li>
                         </ul>
                       </div>
-                      <div class="card-body">
-                        <div class="member-info">
+                      <div className="card-body">
+                        <div className="member-info">
                           <ul>
                             <li>
                               <label>Phone Number </label>
@@ -160,7 +160,7 @@ function ProfileDetail() {
                               <span>
                                 <a
                                   href="/cdn-cgi/l/email-protection"
-                                  class="__cf_email__"
+                                  className="__cf_email__"
                                   data-cfemail="7815190a11191b170c0c1716381d00191508141d561b1715"
                                 >
                                   [email&#160;protected]
@@ -184,16 +184,16 @@ function ProfileDetail() {
                       </div>
                     </div>
                   </div>
-                  <div class="col-xl-4 col-sm-12 col-12 ">
-                    <div class="card card-lists flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">Dates</h2>
-                        <a class="edit-link">
+                  <div className="col-xl-4 col-sm-12 col-12 ">
+                    <div className="card card-lists flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">Dates</h2>
+                        <a className="edit-link">
                           <i data-feather="edit"></i>
                         </a>
                       </div>
-                      <div class="card-body">
-                        <div class="member-info">
+                      <div className="card-body">
+                        <div className="member-info">
                           <ul>
                             <li>
                               <label>Phone Number </label>
@@ -204,7 +204,7 @@ function ProfileDetail() {
                               <span>
                                 <a
                                   href="/cdn-cgi/l/email-protection"
-                                  class="__cf_email__"
+                                  className="__cf_email__"
                                   data-cfemail="e984889b80888a869d9d8687a98c91888499858cc78a8684"
                                 >
                                   [email&#160;protected]
@@ -215,38 +215,38 @@ function ProfileDetail() {
                         </div>
                       </div>
                     </div>
-                    <div class="card card-lists flex-fill">
-                      <div class="card-header">
-                        <h2 class="card-titles">Contact</h2>
+                    <div className="card card-lists flex-fill">
+                      <div className="card-header">
+                        <h2 className="card-titles">Contact</h2>
                         <label>New Type</label>
                       </div>
-                      <div class="member-formcontent-path p-4">
-                        <div class="member-date  member-newformat">
+                      <div className="member-formcontent-path p-4">
+                        <div className="member-date  member-newformat">
                           <ul>
                             <li>
-                              <div class="form-group">
+                              <div className="form-group">
                                 <input
                                   type="text"
                                   placeholder="Add Start Date"
                                 />
-                                <div class="addon">
+                                <div className="addon">
                                   <i data-feather="calendar"></i>
                                 </div>
                               </div>
                             </li>
                             <li>
-                              <div class="form-group">
+                              <div className="form-group">
                                 <input
                                   type="text"
                                   placeholder="Add Visa Expiry Date"
                                 />
-                                <div class="addon">
+                                <div className="addon">
                                   <i data-feather="calendar"></i>
                                 </div>
                               </div>
                             </li>
                           </ul>
-                          <a class="btn my-3 btn-primary w-100 ">
+                          <a className="btn my-3 btn-primary w-100 ">
                             Add A Key Date
                           </a>
                         </div>
@@ -259,61 +259,61 @@ function ProfileDetail() {
           </div>
         </div>
 
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="editinformation"
             tabindex="-1"
             aria-labelledby="staticBackdropLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">
+            <div className="modal-dialog modal-lg modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabel">
                     Basic Information
                   </h5>
                   <button
                     type="button"
-                    class="close"
+                    className="close"
                     data-dismiss="modal"
                     aria-label="Close"
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=" col-md-12 p-0">
-                    <div class=" form-popup">
+                <div className="modal-body">
+                  <div className=" col-md-12 p-0">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Add Preferred Name" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="First Name" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Last Name" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Add Nationality" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Add Date of Birth" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Add Gender" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Add Blood Group" />
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-primary">
                     Add
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel
@@ -324,61 +324,61 @@ function ProfileDetail() {
           </div>
         </div>
 
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="editinformations"
             tabindex="-1"
             aria-labelledby="staticBackdropLabels"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabels">
+            <div className="modal-dialog modal-lg modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabels">
                     Add Contact
                   </h5>
                   <button
                     type="button"
-                    class="close"
+                    className="close"
                     data-dismiss="modal"
                     aria-label="Close"
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <div class=" col-md-12 p-0">
-                    <div class=" form-popup">
+                <div className="modal-body">
+                  <div className=" col-md-12 p-0">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Add Phone Number" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Login Email" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Add Personal Email" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input
                         type="text"
                         placeholder="Add Secondary Phone Number"
                       />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Add Web Site" />
                     </div>
-                    <div class=" form-popup">
+                    <div className=" form-popup">
                       <input type="text" placeholder="Connect Your Linkedin" />
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-primary">
                     Add
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel
@@ -389,31 +389,31 @@ function ProfileDetail() {
           </div>
         </div>
 
-        <div class="customize_popup">
+        <div className="customize_popup">
           <div
-            class="modal fade"
+            className="modal fade"
             id="delete"
             tabindex="-1"
             aria-labelledby="staticBackdropLabels1"
             aria-hidden="true"
           >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header text-centers border-0">
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header text-centers border-0">
                   <h5
-                    class="modal-title text-center"
+                    className="modal-title text-center"
                     id="staticBackdropLabels1"
                   >
                     Are You Sure Want to Delete?
                   </h5>
                 </div>
-                <div class="modal-footer text-centers">
-                  <button type="button" class="btn btn-primary">
+                <div className="modal-footer text-centers">
+                  <button type="button" className="btn btn-primary">
                     Delete
                   </button>
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Cancel

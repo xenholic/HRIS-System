@@ -47,9 +47,9 @@ function EmployeeOffice() {
                       </Link>
                     </li>
                   </ul>
-                  <a className="btn-add" href="add-employee.html">
+                  <Link className="btn-add" to="/add-employee">
                     <i data-feather="plus"></i> Add Person
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

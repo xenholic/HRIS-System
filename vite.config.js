@@ -12,6 +12,9 @@ export default defineConfig({
       '~bootstrap': resolve(__dirname, 'node_modules/bootstrap'),
     }
   },
+  buuild: {
+    outDir: '../dist'
+  },
   server: {
     port: 8080,
     hot: true

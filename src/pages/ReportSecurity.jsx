@@ -9,29 +9,29 @@ function ReportSecurity() {
       <Topbar />
       <Sidebar />
       <div className="div">
-        <div class="page-wrapper">
-          <div class="content container-fluid">
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="breadcrumb-path mb-4">
-                  <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
+        <div className="page-wrapper">
+          <div className="content container-fluid">
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="breadcrumb-path mb-4">
+                  <ul className="breadcrumb">
+                    <li className="breadcrumb-item">
                       <a href="index.html">
                         <img
                           src="assets/img/dash.png"
-                          class="mr-2"
+                          className="mr-2"
                           alt="breadcrumb"
                         />
                         Home
                       </a>
                     </li>
-                    <li class="breadcrumb-item active"> Reports</li>
+                    <li className="breadcrumb-item active"> Reports</li>
                   </ul>
                   <h3>Reports </h3>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="head-link-set">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="head-link-set">
                   <ul>
                   <li>
                       <Link to="/report">Team Reports</Link>
@@ -49,7 +49,7 @@ function ReportSecurity() {
                       <Link to="/report-email">Email Reports</Link>
                     </li>
                     <li>
-                      <Link class="active" to="/report-security">
+                      <Link className="active" to="/report-security">
                         Security Reports
                       </Link>
                     </li>
@@ -59,34 +59,34 @@ function ReportSecurity() {
                   </ul>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="form-set">
-                  <div class="row">
-                    <div class="col-xl-3 col-sm-6 col-12 ">
-                      <div class="form-group">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="form-set">
+                  <div className="row">
+                    <div className="col-xl-3 col-sm-6 col-12 ">
+                      <div className="form-group">
                         <input type="text" placeholder="start Date" />
                       </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                      <div class="form-group">
+                    <div className="col-xl-3 col-sm-6 col-12">
+                      <div className="form-group">
                         <input type="text" placeholder="From" />
                       </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12 ">
-                      <div class="form-group">
+                    <div className="col-xl-3 col-sm-6 col-12 ">
+                      <div className="form-group">
                         <input type="text" placeholder="To" />
                       </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12 ">
-                      <a class="btn btn-save">Apply Filter</a>
+                    <div className="col-xl-3 col-sm-6 col-12 ">
+                      <a className="btn btn-save">Apply Filter</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="card">
-                  <div class="table-responsive">
-                    <table class="table  custom-table no-footer">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="card">
+                  <div className="table-responsive">
+                    <table className="table  custom-table no-footer">
                       <thead>
                         <tr>
                           <th>Team Member </th>
@@ -99,12 +99,12 @@ function ReportSecurity() {
                       <tbody>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-15.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>Danny Ward</label>
@@ -114,7 +114,7 @@ function ReportSecurity() {
                             <label>
                               <a
                                 href="/cdn-cgi/l/email-protection"
-                                class="__cf_email__"
+                                className="__cf_email__"
                                 data-cfemail="9bfffaf5e2ecfae9ffdbfee3faf6ebf7feb5f8f4f6"
                               >
                                 [email&#160;protected]
@@ -125,7 +125,7 @@ function ReportSecurity() {
                             <label>Design Team Lead </label>
                           </td>
                           <td>
-                            <label class="action_label2">Design</label>
+                            <label className="action_label2">Design</label>
                           </td>
                           <td>
                             <label>Focus Technology</label>
@@ -133,12 +133,12 @@ function ReportSecurity() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-16.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>Linda Craver</label>
@@ -148,7 +148,7 @@ function ReportSecurity() {
                             <label>
                               <a
                                 href="/cdn-cgi/l/email-protection"
-                                class="__cf_email__"
+                                className="__cf_email__"
                                 data-cfemail="cda1a4a3a9acaebfacbba8bf8da8b5aca0bda1a8e3aea2a0"
                               >
                                 [email&#160;protected]
@@ -159,7 +159,7 @@ function ReportSecurity() {
                             <label>IOS Team Lead</label>
                           </td>
                           <td>
-                            <label class="action_label2">IOS</label>
+                            <label className="action_label2">IOS</label>
                           </td>
                           <td>
                             <label>Focus Technology</label>
@@ -167,12 +167,12 @@ function ReportSecurity() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-17.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>Jenni Sims</label>
@@ -182,7 +182,7 @@ function ReportSecurity() {
                             <label>
                               <a
                                 href="/cdn-cgi/l/email-protection"
-                                class="__cf_email__"
+                                className="__cf_email__"
                                 data-cfemail="9af0fff4f4f3e9f3f7e9daffe2fbf7eaf6ffb4f9f5f7"
                               >
                                 [email&#160;protected]
@@ -193,7 +193,7 @@ function ReportSecurity() {
                             <label>Android Team Lead</label>
                           </td>
                           <td>
-                            <label class="action_label2">Android</label>
+                            <label className="action_label2">Android</label>
                           </td>
                           <td>
                             <label>Focus Technology</label>
@@ -201,12 +201,12 @@ function ReportSecurity() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-14.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>Maria Cottons</label>
@@ -216,7 +216,7 @@ function ReportSecurity() {
                             <label>
                               <a
                                 href="/cdn-cgi/l/email-protection"
-                                class="__cf_email__"
+                                className="__cf_email__"
                                 data-cfemail="84e9e5f6ede5e7ebf0f0ebeac4e1fce5e9f4e8e1aae7ebe9"
                               >
                                 [email&#160;protected]
@@ -227,7 +227,7 @@ function ReportSecurity() {
                             <label>PHP Team Lead</label>
                           </td>
                           <td>
-                            <label class="action_label2">PHP</label>
+                            <label className="action_label2">PHP</label>
                           </td>
                           <td>
                             <label>Focus Technology</label>
@@ -235,12 +235,12 @@ function ReportSecurity() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-18.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>John Gibbs</label>
@@ -250,7 +250,7 @@ function ReportSecurity() {
                             <label>
                               <a
                                 href="/cdn-cgi/l/email-protection"
-                                class="__cf_email__"
+                                className="__cf_email__"
                                 data-cfemail="0c66636462687e757f686d60694c69746d617c6069226f6361"
                               >
                                 [email&#160;protected]
@@ -261,7 +261,7 @@ function ReportSecurity() {
                             <label>Business Team Lead</label>
                           </td>
                           <td>
-                            <label class="action_label2">Business</label>
+                            <label className="action_label2">Business</label>
                           </td>
                           <td>
                             <label>Focus Technology</label>
@@ -270,8 +270,8 @@ function ReportSecurity() {
                       </tbody>
                     </table>
                   </div>
-                  <div class="btn-set">
-                    <a class="btn btn-dwnd mt-3 mb-3">Download Report</a>
+                  <div className="btn-set">
+                    <a className="btn btn-dwnd mt-3 mb-3">Download Report</a>
                   </div>
                 </div>
               </div>

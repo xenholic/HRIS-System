@@ -10,32 +10,32 @@ function ReportPersonal() {
       <Topbar />
       <Sidebar />
       <div className="div">
-        <div class="page-wrapper">
-          <div class="content container-fluid">
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="breadcrumb-path mb-4">
-                  <ul class="breadcrumb">
-                    <li class="breadcrumb-item">
+        <div className="page-wrapper">
+          <div className="content container-fluid">
+            <div className="row">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="breadcrumb-path mb-4">
+                  <ul className="breadcrumb">
+                    <li className="breadcrumb-item">
                       <a href="index.html">
                         <img
                           src="assets/img/dash.png"
-                          class="mr-2"
+                          className="mr-2"
                           alt="breadcrumb"
                         />
                         Home
                       </a>
                     </li>
-                    <li class="breadcrumb-item active"> Reports</li>
+                    <li className="breadcrumb-item active"> Reports</li>
                   </ul>
                   <h3>Reports </h3>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="head-link-set">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="head-link-set">
                   <ul>
                     <li>
-                      <Link class="active" to="/report">
+                      <Link className="active" to="/report">
                         Team Reports
                       </Link>
                     </li>
@@ -60,48 +60,48 @@ function ReportPersonal() {
                   </ul>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="form-set">
-                  <div class="row">
-                    <div class="col-xl-3 col-sm-6 col-12 ">
-                      <div class="form-group">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="form-set">
+                  <div className="row">
+                    <div className="col-xl-3 col-sm-6 col-12 ">
+                      <div className="form-group">
                         <input type="text" placeholder="start Date" />
                       </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                      <div class="form-group">
+                    <div className="col-xl-3 col-sm-6 col-12">
+                      <div className="form-group">
                         <input type="text" placeholder="From" />
                       </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12 ">
-                      <div class="form-group">
+                    <div className="col-xl-3 col-sm-6 col-12 ">
+                      <div className="form-group">
                         <input type="text" placeholder="To" />
                       </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12 ">
-                      <a class="btn btn-save">Apply Filter</a>
+                    <div className="col-xl-3 col-sm-6 col-12 ">
+                      <a className="btn btn-save">Apply Filter</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="head-link-set">
+              <div className="col-xl-12 col-sm-12 col-12 mb-4">
+                <div className="head-link-set">
                   <ul>
                     <li>
                       <Link to="/report">Offical Reports</Link>
                     </li>
                     <li>
-                      <Link class="active" to="#">
+                      <Link className="active" to="#">
                         Personal Reports
                       </Link>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="col-xl-12 col-sm-12 col-12 ">
-                <div class="card">
-                  <div class="table-responsive">
-                    <table class="table  custom-table  no-footer">
+              <div className="col-xl-12 col-sm-12 col-12 ">
+                <div className="card">
+                  <div className="table-responsive">
+                    <table className="table  custom-table  no-footer">
                       <thead>
                         <tr>
                           <th>Reviewers</th>
@@ -117,12 +117,12 @@ function ReportPersonal() {
                       <tbody>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-13.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>Sean Black</label>
@@ -154,12 +154,12 @@ function ReportPersonal() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-16.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>Linda Craver</label>
@@ -191,12 +191,12 @@ function ReportPersonal() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-17.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label> Jenni Sims</label>
@@ -228,12 +228,12 @@ function ReportPersonal() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-19.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label> Stacey Linville</label>
@@ -265,12 +265,12 @@ function ReportPersonal() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-14.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>Maria Cotton</label>
@@ -302,12 +302,12 @@ function ReportPersonal() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-18.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>Sean Black</label>
@@ -339,12 +339,12 @@ function ReportPersonal() {
                         </tr>
                         <tr>
                           <td>
-                            <div class="table-img">
+                            <div className="table-img">
                               <a href="profile.html">
                                 <img
                                   src="assets/img/profiles/avatar-10.jpg"
                                   alt="profile"
-                                  class="img-table"
+                                  className="img-table"
                                 />
                               </a>
                               <label>Maria Cotton</label>
