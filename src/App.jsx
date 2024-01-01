@@ -55,6 +55,7 @@ function App() {
       <Route index element={<Dasboard />} />
       <Route path="/employees" element={<Employee />} />
       <Route path="/add-employee" element={<AddEmployee />} />
+      {/* <Route path="/add-employee/:id" element={<AddEmployee />} /> */}
       <Route path="/employees-grid" element={<EmployeeGrid />} />
       <Route path="/employees/office" element={<EmployeeOffice />} />
       <Route path="/employees/team" element={<EmployeeTeam />} />

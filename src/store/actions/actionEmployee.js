@@ -37,13 +37,11 @@ const fetchEmployees = () => {
     })
       .then((response) => {
         if (!response.ok) {
-          console.log("error");
           throw new Error("internal server error");
         }
         return response.json();
       })
       .then((data) => {
-        console.log(data, "ini action");
         dispatch(employeesSuccess(data));
       })
       .catch((error) => {
@@ -59,35 +57,34 @@ export const employeesSuccess = (payload) => {
   };
 };
 
-// const fetchProjectByIdCompany = (id) => {
-//   return (dispatch) => {
-//     fetch(`http://localhost:3000/companies/project/detail/${id}`, {
-//       headers: {
-//         access_token: localStorage.getItem("access_token"),
-//       },
-//     })
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error("internal server error");
-//         }
-//         return response.json();
-//       })
-//       .then((data) => {
-//         console.log(data, "ini action");
-//         dispatch(fetchProjectByIdCompanySuccess(data));
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
-// };
+const fetchEmployeeById = (id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/employees/${id}`, {
+      // headers: {
+      //   access_token: localStorage.getItem("access_token"),
+      // },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("internal server error");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        dispatch(fetchEmployeeByIdSuccess(data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+};
 
-// const fetchProjectByIdCompanySuccess = (payload) => {
-//   return {
-//     type: FETCH_PROJECT_COMPANY,
-//     payload,
-//   };
-// };
+const fetchEmployeeByIdSuccess = (payload) => {
+  return {
+    type: FETCH_EMPLOYEE_BY_ID_USER,
+    payload,
+  };
+};
 
 // const addProjectCompany = (input) => {
 //   return (dispatch) => {
@@ -157,7 +154,7 @@ export {
 //   loginCompany,
 //   registerCompany,
   fetchEmployees,
-//   fetchProjectByIdCompany,
+  fetchEmployeeById,
 //   addProjectCompany,
 //   paymentMidtrans,
 //   ratingCompany,

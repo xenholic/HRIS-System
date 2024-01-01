@@ -1,0 +1,578 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "superadmin@gmail.com",
+      "name": "SuperAdmin",
+      "passsword": "superadmin",
+      "role": "superadmin"
+    },
+    {
+      "id": 2,
+      "email": "admin@gmail.com",
+      "name": "sarah",
+      "passsword": "admin",
+      "role": "admin"
+    },
+    {
+      "id": 3,
+      "email": "staff@gmail.com",
+      "name": "Yusril",
+      "passsword": "staff",
+      "role": "staff"
+    },
+    {
+      "id": 4,
+      "email": "user@gmail.com",
+      "name": "Rizal",
+      "passsword": "user",
+      "role": "user"
+    },
+    {
+      "id": 5,
+      "email": "user1@gmail.com",
+      "name": "andri",
+      "passsword": "user",
+      "role": "user"
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "PT Greenland Resource",
+      "address": "Menara Batavia Karet-Tengsin Jakarta Pusat"
+    },
+    {
+      "id": 2,
+      "name": "PT E-Minerba",
+      "address": "Menara Batavia Karet-Tengsin Jakarta Pusat"
+    },
+    {
+      "id": 3,
+      "name": "PT Krakatau Steel",
+      "address": "Menara Batavia Karet-Tengsin Jakarta Pusat"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "rizal haris",
+      "address": "cipondoh - tangerang",
+      "email": "rizalhari@yahoo.co.id",
+      "salary": "Rp. 10.000.000",
+      "status": "active",
+      "profilePic": "https://e1.pxfuel.com/desktop-wallpaper/709/451/desktop-wallpaper-artstation-anime-profile-pic-thumbnail.jpg",
+      "position": "Manager",
+      "sertification": "www.google.com",
+      "company": "PT Greenland Resource",
+      "department": "CO/IN Trading",
+      "field": "office",
+      "religion": 1,
+      "startDateWorking": "01-01-2020",
+      "birthPlace": "Jakarta",
+      "personalData": {
+        "dateOfBirth": "1992-01-01",
+        "placeOfBirth": "Tangerang",
+        "gender": "male",
+        "educationData": {
+          "educationLevel": "Sarjana (S1)",
+          "yearsOfEducation": "2007-2010",
+          "major": "Tehnik Sipil",
+          "organizationExp": "HEAD of BUMN"
+        },
+        "familyData": {
+          "motherName": "tukimin",
+          "fatherName": "yanto",
+          "wifeName": "Lisa",
+          "mariageStatus": "Menikah",
+          "dependentsChild": {
+            "childCount": 2,
+            "child1": "Arya",
+            "child2": "Nina",
+            "child3": "Nunu",
+            "child4": "Nene"
+          }
+        },
+        "phoneNumber": "+6289707979797",
+        "nikNumber": "12312121231",
+        "bpjsTkNumber": "12345566454535344",
+        "bpjsKesNumber": "12345678901234568",
+        "npwp": "12334455",
+        "experience": "PT Semen Padang",
+        "lastDepartment": "Junior Geologist",
+        "personalCharacter": {
+          "weakness": "sangat ini itu",
+          "advantage": "Si paling ini itu"
+        },
+        "emergencyContact": {
+          "name": "Irma",
+          "relation": "Wife",
+          "address": "Menara Batavia Karet-Tengsin Jakarta Pusat",
+          "phoneNumber": "+4892184219378"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Febriyantino",
+      "address": "cipondoh - tangerang",
+      "email": "rizalhari@yahoo.co.id",
+      "salary": "Rp. 10.000.000",
+      "status": "active",
+      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDJGYE1qdMKgCAZXJTAAUD5pqWqHeDbjhfhA&usqp=CAU",
+      "position": "Staff",
+      "company": "PT Greenland Resource",
+      "department": "(PJO)",
+      "field": "site",
+      "religion": 1,
+      "startDateWorking": "01-01-2020",
+      "personalData": {
+        "dateOfBirth": "1990-01-01",
+        "placeOfBirth": "Tangerang",
+        "gender": "male",
+        "educationData": {
+          "educationLevel": 3,
+          "yearsOfEducation": "2007-2010",
+          "major": "Tehnik Sipil",
+          "organizationExp": "HEAD of BUMN"
+        },
+        "familyData": {
+          "motherName": "tukimin",
+          "fatherName": "yanto",
+          "wifeName": "Lisa",
+          "mariageStatus": 1,
+          "dependentsChild": {
+            "childCount": 2,
+            "boyName": "Arya",
+            "girlName": "Nina"
+          }
+        },
+        "phoneNumber": "+6289707979797",
+        "nikNumber": 12312121231,
+        "bpjsTkNumber": 12345566454535344,
+        "bpjsKesNumber": 12345678901234568,
+        "npwp": 12334455,
+        "experience": "PT Semen Padang",
+        "lastDepartment": "Junior Geologist",
+        "personalCharacter": {
+          "weakness": "sangat ini itu",
+          "advantage": "Si paling ini itu"
+        },
+        "emergencyContact": {
+          "name": "Irma",
+          "relation": "Wife",
+          "address": "Menara Batavia Karet-Tengsin Jakarta Pusat",
+          "phoneNumber": "+4892184219378"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Asri",
+      "address": "cipondoh - tangerang",
+      "email": "rizalhari@yahoo.co.id",
+      "salary": "Rp. 10.000.000",
+      "status": "active",
+      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeQFGZx0r6FPEmvct-zHk_tkYqvLjBf41uYg&usqp=CAU",
+      "position": "Manager",
+      "company": "PT Greenland Resource",
+      "department": "CEO",
+      "field": "site",
+      "religion": 1,
+      "startDateWorking": "01-01-2020",
+      "personalData": {
+        "dateOfBirth": "1990-01-01",
+        "placeOfBirth": "Tangerang",
+        "gender": "male",
+        "educationData": {
+          "educationLevel": 3,
+          "yearsOfEducation": "2007-2010",
+          "major": "Tehnik Sipil",
+          "organizationExp": "HEAD of BUMN"
+        },
+        "familyData": {
+          "motherName": "tukimin",
+          "fatherName": "yanto",
+          "wifeName": "Lisa",
+          "mariageStatus": 1,
+          "dependentsChild": {
+            "boyName": "Arya",
+            "girlName": "Nina"
+          }
+        },
+        "phoneNumber": "+6289707979797",
+        "nikNumber": 12312121231,
+        "bpjsTkNumber": 12345566454535344,
+        "bpjsKesNumber": 12345678901234568,
+        "npwp": 12334455,
+        "experience": "PT Semen Padang",
+        "lastDepartment": "Junior Geologist",
+        "personalCharacter": {
+          "weakness": "sangat ini itu",
+          "advantage": "Si paling ini itu"
+        },
+        "emergencyContact": {
+          "name": "Irma",
+          "relation": "Wife",
+          "address": "Menara Batavia Karet-Tengsin Jakarta Pusat",
+          "phoneNumber": "+4892184219378"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Yusril",
+      "address": "cipondoh - tangerang",
+      "email": "rizalhari@yahoo.co.id",
+      "salary": "Rp. 10.000.000",
+      "status": "leaves",
+      "profilePic": "data:image/jpeg;base64,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",
+      "position": "Staff",
+      "company": "PT Greenland Resource",
+      "department": "Manager HRD",
+      "field": "office",
+      "religion": 1,
+      "startDateWorking": "01-01-2020",
+      "personalData": {
+        "dateOfBirth": "1990-01-01",
+        "placeOfBirth": "Tangerang",
+        "gender": "male",
+        "educationData": {
+          "educationLevel": 3,
+          "yearsOfEducation": "2007-2010",
+          "major": "Tehnik Sipil",
+          "organizationExp": "HEAD of BUMN"
+        },
+        "familyData": {
+          "motherName": "tukimin",
+          "fatherName": "yanto",
+          "wifeName": "Lisa",
+          "mariageStatus": 1,
+          "dependentsChild": {
+            "boyName": "Arya",
+            "girlName": "Nina"
+          }
+        },
+        "phoneNumber": "+6289707979797",
+        "nikNumber": 12312121231,
+        "bpjsTkNumber": 12345566454535344,
+        "bpjsKesNumber": 12345678901234568,
+        "npwp": 12334455,
+        "experience": "PT Semen Padang",
+        "lastDepartment": "Junior Geologist",
+        "personalCharacter": {
+          "weakness": "sangat ini itu",
+          "advantage": "Si paling ini itu"
+        },
+        "emergencyContact": {
+          "name": "Irma",
+          "relation": "Wife",
+          "address": "Menara Batavia Karet-Tengsin Jakarta Pusat",
+          "phoneNumber": "+4892184219378"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Susendry",
+      "address": "cipondoh - tangerang",
+      "email": "susendry@yahoo.co.id",
+      "salary": "Rp. 15.000.000",
+      "status": "active",
+      "profilePic": "data:image/jpeg;base64,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",
+      "position": "Staff",
+      "company": "PT Greenland Resource",
+      "department": "Manager HRD",
+      "field": "office",
+      "religion": 1,
+      "startDateWorking": "01-01-2020",
+      "personalData": {
+        "dateOfBirth": "1990-01-01",
+        "placeOfBirth": "Tangerang",
+        "gender": "male",
+        "educationData": {
+          "educationLevel": 3,
+          "yearsOfEducation": "2007-2010",
+          "major": "Tehnik Sipil",
+          "organizationExp": "HEAD of BUMN"
+        },
+        "familyData": {
+          "motherName": "tukimin",
+          "fatherName": "yanto",
+          "wifeName": "Lisa",
+          "mariageStatus": 1,
+          "dependentsChild": {
+            "boyName": "Arya",
+            "girlName": "Nina"
+          }
+        },
+        "phoneNumber": "+6289707979797",
+        "nikNumber": 12312121231,
+        "bpjsTkNumber": 12345566454535344,
+        "bpjsKesNumber": 12345678901234568,
+        "npwp": 12334455,
+        "experience": "PT Semen Padang",
+        "lastDepartment": "Junior Geologist",
+        "personalCharacter": {
+          "weakness": "sangat ini itu",
+          "advantage": "Si paling ini itu"
+        },
+        "emergencyContact": {
+          "name": "Irma",
+          "relation": "Wife",
+          "address": "Menara Batavia Karet-Tengsin Jakarta Pusat",
+          "phoneNumber": "+4892184219378"
+        }
+      }
+    }
+  ],
+  "leaves": [
+    {
+      "id": 1,
+      "name": "haris",
+      "leave": 12,
+      "start": "12-12-2023",
+      "finish": "13-12-2023",
+      "reason": "Sakit",
+      "status": 0
+    },
+    {
+      "id": 2,
+      "name": "haris",
+      "leave": 12,
+      "start": "12-12-2023",
+      "finish": "13-12-2023",
+      "reason": "Sakit",
+      "status": 0
+    },
+    {
+      "id": 3,
+      "name": "haris",
+      "leave": 12,
+      "start": "12-12-2023",
+      "finish": "13-12-2023",
+      "reason": "Sakit",
+      "status": 0
+    },
+    {
+      "id": 4,
+      "name": "haris",
+      "leave": 12,
+      "start": "12-12-2023",
+      "finish": "13-12-2023",
+      "reason": "Sakit",
+      "status": 0
+    }
+  ],
+  "fields": [
+    {
+      "id": 1,
+      "fieldName": "On Site Field",
+      "fieldId": 1,
+      "roosterLevel": [
+        {
+          "id": 1,
+          "level": "Rooster Kru",
+          "remainingDays": 84,
+          "remainingLeaves": 14,
+          "leavesSchema": "12:2"
+        },
+        {
+          "id": 2,
+          "level": "Rooster Supervisor",
+          "remainingDays": 70,
+          "remainingLeaves": 14,
+          "leavesSchema": "10:2"
+        },
+        {
+          "id": 3,
+          "level": "Rooster Manager",
+          "remainingDays": 56,
+          "remainingLeaves": 14,
+          "leavesSchema": "8:2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldName": "Work from Office",
+      "fieldId": 2
+    },
+    {
+      "id": 3,
+      "fieldName": "Work from Home",
+      "fieldId": 3
+    }
+  ],
+  "workingStatus": [
+    {
+      "id": 1,
+      "statusName": "PKWTT",
+      "workingStatusId": 1
+    },
+    {
+      "id": 2,
+      "statusName": "PKWT",
+      "workingStatusId": 2
+    },
+    {
+      "id": 3,
+      "statusName": "THL",
+      "workingStatusId": 3
+    },
+    {
+      "id": 4,
+      "statusName": "Karyawan Tetap",
+      "workingStatusId": 4
+    }
+  ],
+  "poharea": [
+    {
+      "id": 1,
+      "areaName": "Tenaga Kerja Lokal"
+    },
+    {
+      "id": 2,
+      "areaName": "Tenaga Kerja Regional"
+    },
+    {
+      "id": 3,
+      "areaName": "Tenaga Kerja Nasional"
+    }
+  ],
+  "religions": [
+    {
+      "id": 1,
+      "name": "Islam",
+      "religionId": 1
+    },
+    {
+      "id": 2,
+      "name": "Kristen Protestan",
+      "religionId": 2
+    },
+    {
+      "id": 3,
+      "name": "Kristen Katolik",
+      "religionId": 3
+    },
+    {
+      "id": 4,
+      "name": "Budha",
+      "religionId": 4
+    },
+    {
+      "id": 5,
+      "name": "Hindu",
+      "religionId": 5
+    },
+    {
+      "id": 6,
+      "name": "Atheis",
+      "religionId": 6
+    }
+  ],
+  "gender": [
+    {
+      "id": 1,
+      "genderName": "Male",
+      "genderId": 1
+    },
+    {
+      "id": 2,
+      "genderName": "Female",
+      "genderId": 2
+    }
+  ],
+  "mariagestatus": [
+    {
+      "id": 1,
+      "status": "Single",
+      "mariageStatusId": 1
+    },
+    {
+      "id": 2,
+      "status": "Menikah",
+      "mariageStatusId": 2
+    },
+    {
+      "id": 3,
+      "status": "Cerai",
+      "mariageStatusId": 3
+    },
+    {
+      "id": 4,
+      "status": "Janda",
+      "mariageStatusId": 4
+    },
+    {
+      "id": 5,
+      "status": "Duda",
+      "mariageStatusId": 5
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "level": "Sarjana (S3)",
+      "educationId": 1
+    },
+    {
+      "id": 2,
+      "level": "Sarjana (S2)",
+      "educationId": 2
+    },
+    {
+      "id": 3,
+      "level": "Sarjana (S1)"
+    },
+    {
+      "id": 1,
+      "level": "D1/D2/D3"
+    },
+    {
+      "id": 1,
+      "level": "SMA/SMK"
+    },
+    {
+      "id": 1,
+      "level": "SMP"
+    },
+    {
+      "id": 1,
+      "level": "SD"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "projectName": "Tambang Nikel",
+      "location": "sorong-papua",
+      "progress": "on going",
+      "dueDate": "365",
+      "startDate": "11-05-2025"
+    },
+    {
+      "id": 2,
+      "projectName": "Tambang Nikel",
+      "location": "sorong-papua",
+      "progress": "hold",
+      "dueDate": "365",
+      "startDate": "11-05-2025"
+    }
+  ],
+  "recruitment": [
+    {
+      "id": 1,
+      "recruitmentName": "Haris",
+      "status": "interview",
+      "interviewr": "sarah"
+    },
+    {
+      "id": 2,
+      "recruitmentName": "Haris",
+      "status": "interview",
+      "interviewr": "yusril"
+    }
+  ]
+}

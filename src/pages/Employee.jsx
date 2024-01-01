@@ -1,24 +1,61 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/no-unknown-property */
-import { useEffect } from "react";
-import { 
-  // useSelector, 
-  useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import { Link } from "react-router-dom";
-import { fetchEmployees } from "../store/actions/actionEmployee";
-import EmployeeTable from "../components/EmployeeTable";
+import {
+  fetchEmployees,
+  fetchEmployeeById,
+} from "../store/actions/actionEmployee";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Row from "react-bootstrap/Row";
+// import EmployeeTable from "../components/EmployeeTable";
 
 function Employee() {
+  // const navigate = useNavigate();
+  // const [validated, setValidated] = useState(false);
+
+  // const handleSubmit = (event) => {
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+
+  //   setValidated(true);
+  // };
+  
   const dispatch = useDispatch();
-  // const employees = useSelector((state) => {
-  //   console.log(state.projectReducerCompany.projects);
-  //   return state.projectReducerCompany.projects;
-  // });
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [detailEmployee, setdetailEmployee] = useState({});
+
+  // Fetch employee data by id
+  const handleDetail = (id) => {
+    dispatch(fetchEmployeeById(id));
+    setdetailEmployee(employee);
+  };
+
+  const employees = useSelector((state) => {
+    return state.employeeReducer.employees;
+  });
+
+  const employee = useSelector((state) => {
+    return state.employeeReducer.employee;
+  });
 
   //fetch dari redux
   useEffect(() => {
     dispatch(fetchEmployees());
+    // dispatch(fetchEmployeeById());
   }, []);
   return (
     <div>
@@ -88,19 +125,286 @@ function Employee() {
                   <h2>Project Summery</h2>
                 </div>
                 <div className="table-responsive">
-                  {/* {employees.length ? (
-                    employees.map((item, index) => {
-                      return <EmployeeTable key={index} employee={item} />;
-                    })
-                  ) : (
-                    <p className="text-center text-lg">No Employee to show</p>
-                  )} */}
-                  <EmployeeTable />
+                  <table className="table  custom-table no-footer">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Company Name</th>
+                        <th>Department</th>
+                        <th>Field of Work</th>
+                        <th>Position</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {employees.length ? (
+                        employees.map((item, index) => {
+                          return (
+                            <tr>
+                              <td>
+                                <label className="">{index + 1}</label>
+                              </td>
+                              <td>
+                                <div className="table-img">
+                                  <Link to="profile">
+                                    <img
+                                      src={
+                                        item.profilePic
+                                          ? item.profilePic
+                                          : "assets/img/profiles/ava.jpg"
+                                      }
+                                      alt="profile"
+                                      className="img-table"
+                                    />
+                                    <label>{item.name}</label>
+                                  </Link>
+                                </div>
+                              </td>
+                              <td>
+                                <label className="action_label">
+                                  {item.company}{" "}
+                                </label>
+                              </td>
+                              <td>
+                                <label className="action_label2">
+                                  {item.department}{" "}
+                                </label>
+                              </td>
+                              <td>
+                                <label className="action_label2">
+                                  {item.field}
+                                </label>
+                              </td>
+                              <td>
+                                <label className="">{item.position} </label>
+                              </td>
+                              <td>
+                                <label className="action_label">
+                                  {item.status}
+                                </label>
+                              </td>
+                              <td>
+                                {/* <button
+                                  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"
+                                >
+                                  Employee Detail
+                                </button> */}
+                                <Button
+                                  onClick={() => {
+                                    handleShow();
+                                    handleDetail(item.id);
+                                  }}
+                                  variant="primary"
+                                >
+                                  {" "}
+                                  Employee Detail{" "}
+                                </Button>
+                              </td>
+                            </tr>
+                          );
+                        })
+                      ) : (
+                        <p className="text-center text-lg">
+                          No Employee to show
+                        </p>
+                      )}
+                      {/* <EmployeeTable /> */}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+
+        {/* Modal */}
+        {!detailEmployee ? 
+        <p>no data</p> : 
+        <Modal
+        size="xl"
+        show={show}
+        onHide={handleClose}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Detail Employee</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <Form> 
+            {/* <Row className="mb-3">
+      <Form.Group as={Col} md="4" controlId="validationCustom01">
+        <Form.Label>Name</Form.Label>
+        <Form.Control
+          required
+          type="text"
+          placeholder={detailEmployee.name}
+          defaultValue={detailEmployee.name}
+        />
+      </Form.Group>
+      <Form.Group as={Col} md="4" controlId="validationCustom02">
+        <Form.Label>email</Form.Label>
+        <Form.Control
+          required
+          type="email"
+          placeholder="Last name"
+          defaultValue={detailEmployee.email}
+        />
+      </Form.Group>
+      <Form.Group as={Col} md="4" controlId="validationCustomUsername">
+        <Form.Label>Username</Form.Label>
+        <InputGroup hasValidation>
+          <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+          <Form.Control
+            type="text"
+            placeholder="Username"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Please choose a username.
+          </Form.Control.Feedback>
+        </InputGroup>
+      </Form.Group>
+    </Row> */}
+             <table className="table table-th-block">
+              <tbody>
+                
+                <>
+                <tr>
+                  <td className="active">Name :</td>
+                   <td>{detailEmployee.name ? detailEmployee.name : "no data"}</td> 
+                  <td className="active">E-mail :</td>
+                   <td>{detailEmployee.email ? detailEmployee.email : "no data"}</td> 
+                </tr>
+                <tr>
+                  <td className="active">Company :</td>
+                   <td>{detailEmployee.company ? detailEmployee.company : "no data"}</td> 
+                  <td className="active">Address :</td>
+                   <td>{detailEmployee.address ? detailEmployee.address : "no data"}</td> 
+                </tr>
+                <tr>
+                  <td className="active">Department :</td>
+                   <td>{detailEmployee.department ? detailEmployee.department : "no data"}</td> 
+                  <td className="active">Position :</td>
+                   <td>{detailEmployee.position ? detailEmployee.position : "no data"}</td> 
+                </tr>
+                <tr>
+                  <td className="active">Salary :</td>
+                   <td>{detailEmployee.salary ? detailEmployee.salary : "no data"}</td> 
+                  <td className="active">Field of Working :</td>
+                   <td>{detailEmployee.field ? detailEmployee.field : "no data"}</td> 
+                </tr>
+                </>
+                <label className="mt-3 mb-3">Personal Data</label>
+                { detailEmployee.personalData ? 
+                <>
+               <tr>
+                 <td className="active">Date of Birth</td>
+                   <td>{detailEmployee.personalData.dateOfBirth ? detailEmployee.personalData.dateOfBirth : "no data"}</td> 
+
+                 <td className="active">Place of Birth</td>
+                  <td>{detailEmployee.personalData.placeOfBirth ? detailEmployee.personalData.placeOfBirth : "no data"}</td> 
+               </tr>
+               <tr>
+                 <td className="active">Gender</td>
+                  <td>{detailEmployee.personalData.gender ? detailEmployee.personalData.gender : "no data"}</td> 
+                 <td className="active">Phone Number</td>
+                  <td>{detailEmployee.personalData.phoneNumber}</td> 
+               </tr>
+               <tr>
+                 <td className="active">NIK</td>
+                  <td>{detailEmployee.personalData.nikNumber ? detailEmployee.personalData.nikNumber : "no data"}</td> 
+                 <td className="active">NPWP</td>
+                 <td>{detailEmployee.personalData.npwp ? detailEmployee.personalData.npwp : "no data"}</td> 
+               </tr>
+               <tr>
+                 <td className="active">BPJS Tenaga Kerja</td>
+                  <td>{detailEmployee.personalData.bpjsTkNumber}</td> 
+                 <td className="active">BPJS Kesehatan</td>
+                  <td>{detailEmployee.personalData.bpjsKesNumber}</td> 
+               </tr>
+               <tr>
+                 <td className="active">Majority</td>
+                  <td>{detailEmployee.personalData.educationData.major}</td> 
+                 <td className="active">Last Position</td>
+                  <td>{detailEmployee.personalData.lastDepartment}</td> 
+               </tr>
+               <tr>
+                 <td className="active">Education</td>
+                  <td>{detailEmployee.personalData.educationData.educationLevel}</td> 
+                 <td className="active">Year Education Finish</td>
+                  <td>{detailEmployee.personalData.educationData.yearsOfEducation}</td> 
+               </tr>
+               <tr>
+                 <td className="active">Organization Experiences</td>
+                  <td>{detailEmployee.personalData.educationData.organizationExp}</td> 
+               </tr>
+               <tr>
+               <td className="active">Experience</td>
+                  <td>{detailEmployee.personalData.experience}</td> 
+               </tr>
+               <label className="mt-3 mb-3">Family</label>
+               <tr>
+                 <td className="active">Father Name</td>
+                  <td>{detailEmployee.personalData.familyData.fatherName}</td> 
+                 <td className="active">Mother Name</td>
+                  <td>{detailEmployee.personalData.familyData.motherName}</td> 
+               </tr>
+               <tr>
+                 <td className="active">Wife / husband Name</td>
+                  <td>{detailEmployee.personalData.familyData.wifeName}</td> 
+                 <td className="active">Mariage Status</td>
+                  <td>{detailEmployee.personalData.familyData.mariageStatus}</td> 
+               </tr>
+               <tr>
+                 <td className="active">Anak ke -1</td>
+                  <td>{detailEmployee.personalData.familyData.dependentsChild.child1 ? detailEmployee.personalData.familyData.dependentsChild.child1 :"no data"}</td> 
+                 <td className="active">Anak ke -2</td>
+                  <td>{detailEmployee.personalData.familyData.dependentsChild.child2 ? detailEmployee.personalData.familyData.dependentsChild.child2 : "no data"}</td>
+               </tr>
+               <tr>
+                 <td className="active">Anak ke -3</td>
+                  <td>{detailEmployee.personalData.familyData.dependentsChild.child3 ? detailEmployee.personalData.familyData.dependentsChild.child3 :"no data"}</td> 
+                 <td className="active">Anak ke -4</td>
+                  <td>{detailEmployee.personalData.familyData.dependentsChild.child4 ? detailEmployee.personalData.familyData.dependentsChild.child4 : "no data"}</td>
+               </tr>
+               <label className="mt-3 mb-3">Emergency Contact</label>
+               <tr>
+                 <td className="active">Name :</td>
+                  <td>{detailEmployee.personalData.emergencyContact.name ? detailEmployee.personalData.emergencyContact.name : "no data"}</td> 
+                 <td className="active">Relation :</td>
+                  <td>{detailEmployee.personalData.emergencyContact.relation ? detailEmployee.personalData.emergencyContact.relation : "no data"}</td> 
+               </tr>  
+               <tr>
+                 <td className="active">Address :</td>
+                  <td>{detailEmployee.personalData.emergencyContact.address ? detailEmployee.personalData.emergencyContact.address : "no data"}</td> 
+                 <td className="active">Phone Number :</td>
+                  <td>{detailEmployee.personalData.emergencyContact.phoneNumber ? detailEmployee.personalData.emergencyContact.phoneNumber : "no data"}</td> 
+               </tr>  
+                </>
+              : <p>Loading...
+                Please wait !!</p>}
+               
+              </tbody>
+            </table>
+          </Form>
+        </Modal.Body> 
+
+          {/* button close modal  */}
+         <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal> 
+        }
       </div>
     </div>
   );

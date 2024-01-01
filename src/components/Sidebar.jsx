@@ -67,12 +67,12 @@ function Sidebar() {
                     <span> Company</span>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/calendar">
                     <img src="../assets/img/calendar.svg" alt="sidebar_img" />{" "}
                     <span>Calendar</span>
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/leaves">
                     <img src="../assets/img/leave.svg" alt="sidebar_img" />{" "}

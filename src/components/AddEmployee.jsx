@@ -248,6 +248,32 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">Department</div>
                           <select>
+                            <option value="Select department" selected disabled>
+                              Department
+                            </option>
+                            <option value="Kru Site">Kru Site</option>
+                            <option value="Driller">Driller</option>
+                            <option value="(PJO)">Penanggung Jawab Oprasional (PJO)</option>
+                            <option value="CEO">CEO</option>
+                            <option value="Bussiness Development">Bussiness Development</option>
+                            <option value="Tech Lead">Technical Leader</option>
+                            <option value="IT Lead">IT Lead</option>
+                            <option value="IT Sup">IT Support</option>
+                            <option value="IT Dev">IT Dev</option>
+                            <option value="Acc & Tax">Accounting & Tax Suuperintendent</option>
+                            <option value="HR Staff">Human Resource Staff</option>
+                            <option value="HR Superintendent">Human Resource Superintendent</option>
+                            <option value="Manager HRD">Manager Human Resource Department</option>
+                            <option value="Admin Site HSE / PR">Admin Site HSE / PR</option>
+                            <option value="Legal Contract">Legal Contract</option>
+                            <option value="PR">Public Relationship</option>
+                            <option value="LSO">Logistic Site Officer</option>
+                            <option value="Engineering Dept">Engineering Department</option>
+                            <option value="Geology Dept">Geology Department</option>
+                            <option value="Mining Dept">Mining Department</option>
+                            <option value="Project Coordinator">Project Coordinator</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="CO/IN Trading">CO / IN Trading Superintendent</option>
                             {/* <option v-htmlFor="dept in departmentData" :key="dept.id" :value="dept.id">{{ dept.departmentName }} </option> */}
                           </select>
                         </div>
