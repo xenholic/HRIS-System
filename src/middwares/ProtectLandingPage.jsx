@@ -1,14 +1,13 @@
-// import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-// export default function ProtectLandingPage(props) {
-//   let isLogin = localStorage.getItem("access_token");
-//   let isFreelancer = localStorage.getItem("role") === "freelancer";
-//   if (isLogin) {
-//     if (isFreelancer) {
-//       return <Navigate to={"/user"} />;
-//     } else {
-//       return <Navigate to={"/companies"} />;
-//     }
-//   }
+export default function ProtectLandingPage() {
+    
+  let isLogin = localStorage.getItem("access_token");
+  if (!isLogin) {
+      return <Navigate to={"/login"} />;
+
+  } else {
+        return <Navigate to={"/"} />;
+  }
 //   return props.children;
-// }
+}

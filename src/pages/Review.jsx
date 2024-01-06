@@ -2,9 +2,11 @@
 import Topbar from "../components/Topbar";
 import Sidebar from "../components/Sidebar";
 import { Link } from 'react-router-dom';
+
 // import AddReview from "../components/AddReview";
 
 function Review() {
+
   return (
     <div>
       <Topbar />
@@ -16,14 +18,14 @@ function Review() {
               <div className="breadcrumb-path ">
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <a href="index.html">
+                    <Link to="/">
                       <img
                         src="../assets/img/dash.png"
                         className="mr-2"
                         alt="breadcrumb"
                       />
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li className="breadcrumb-item active"> Reviews</li>
                 </ul>
@@ -42,9 +44,9 @@ function Review() {
                     <Link to="/review/review-type">Review Types</Link>
                   </li>
                 </ul>
-              <button type="button" className="btn-add" data-toggle="modal" data-target="#exampleModalCenter">
+              <Link to="/review/add-review" className="btn-add" data-toggle="modal" data-target="#exampleModalCenter">
                 Create Review
-                </button>
+                </Link>
               </div>
             </div>
             <div className="col-xl-12 col-sm-12 col-12 ">
@@ -214,7 +216,6 @@ function Review() {
           </div>
         </div>
       </div>
-
       <div className="customize_popup">
         <div
           className="modal fade"
@@ -246,10 +247,8 @@ function Review() {
           </div>
         </div>
       </div>
-
-            {/* modal */}
-      {/* <AddReview/> */}
     </div>
+    
   );
 }
 

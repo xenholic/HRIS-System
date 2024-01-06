@@ -4,16 +4,44 @@ import Sidebar from "../components/Sidebar";
 import { Link } from "react-router-dom";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, Title } from 'chart.js';
 import { Pie, Line } from 'react-chartjs-2';
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { faker } from '@faker-js/faker';
+import {
+  fetchEmployees
+} from "../store/actions/actionEmployee";
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, Title);
 
-export const data = {
+
+
+function Dasboard() {
+
+
+  const dispatch = useDispatch();
+
+
+  const employees = useSelector((state) => {
+    return state.employeeReducer.employees;
+  });
+const date = new Date().toLocaleDateString();
+
+const field = employees.filter((employee) => {
+    return employee.field === "on site"
+});
+const office = employees.filter((employee) => {
+  return employee.field === "office";
+});
+const leaves = employees.filter((employee) => {
+  return employee.status === "leaves";
+});
+
+const data = {
   labels: ['Field', 'Office', 'Leaves'],
   datasets: [
     {
       label: 'Employee',
-      data: [250, 50, 9],
+      data: [field.length, office.length, leaves.length],
       backgroundColor: [
         'rgb(173,255,47)',
         'rgb(0,191,255)',
@@ -32,7 +60,7 @@ export const data = {
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'Nov', 'Dec'];
 
-export const data2 = {
+const data2 = {
   labels,
   datasets: [
     {
@@ -50,7 +78,7 @@ export const data2 = {
   ],
 };
 
-export const options2 = {
+const options2 = {
   responsive: true,
   plugins: {
     legend: {
@@ -63,10 +91,10 @@ export const options2 = {
   },
 };
 
-function Dasboard() {
- 
-const date = new Date().toLocaleDateString();
-
+useEffect(() => {
+  dispatch(fetchEmployees());
+  // dispatch(fetchEmployeeById());
+}, []);
   return (
     <div>
       <Topbar />
@@ -122,7 +150,7 @@ const date = new Date().toLocaleDateString();
                 <div className="card-body">
                   <div className="card_widget_header">
                     <label>Employees</label>
-                    <h4>700</h4>
+                    <h4>{employees.length}</h4>
                   </div>
                   <div className="card_widget_img">
                     <img src="assets/img/dash1.png" alt="card-img" />

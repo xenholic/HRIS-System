@@ -1,46 +1,37 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
 
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../store/actions/actionEmployee";
 
 function Login() {
 
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  // const [formLogin, setFormLogin] = useState({
-  //   email: "",
-  //   password: "",
-  // });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [formLogin, setFormLogin] = useState({
+    email: "",
+    password: "",
+  });
 
-  // const inputDatahandler = (e) => {
-  //   e.preventDefault();
-  //   const newLogin = {
-  //     ...formLogin,
-  //   };
-  //   newLogin[e.target.name] = e.target.value;
-  //   setFormLogin(newLogin);
-  // };
-
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   console.log("haha");
-  //   console.log(formLogin, "<<< form login");
-  //   dispatch(loginUser(formLogin))
-  //     .then((response) => {
-  //       console.log(response, "data");
-  //       localStorage.setItem("access_token", response.data.access_token);
-  //       localStorage.setItem("username", response.data.username);
-  //       localStorage.setItem("email", response.data.email);
-  //       localStorage.setItem("id", response.data.id);
-  //       localStorage.setItem("profilePic", response.data.profilePic);
-  //       localStorage.setItem("role", "freelancer");
-  //       navigate("/user");
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     }); 
-  // };
+  const submitHandler = () => {
+    // console.log("haha");
+    // console.log(formLogin, "<<< form login");
+    dispatch(login(formLogin))
+      .then((response) => {
+        // console.log(response, "data");
+        localStorage.setItem("access_token", response.data.access_token);
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("email", response.data.email);
+        localStorage.setItem("id", response.data.id);
+        localStorage.setItem("profilePic", response.data.profilePic);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      }); 
+  };
 
   // const login = async (provider) => {
   //   const result = await signInWithPopup(auth, provider);
@@ -79,15 +70,28 @@ function Login() {
                 <div className="login-right-wrap">
                   <h1>Login</h1>
                   <p className="account-subtitle">Welcome to PTGR Super System</p>
-                  <form action="index.html">
+                  <form action="/" method="POST">
                     <div className="form-group">
                       <label className="form-control-label">Email Address</label>
-                      <input type="email" className="form-control" />
+                      <input
+                          onChange={(e) => {
+                            setFormLogin({
+                              ...formLogin,
+                              email: e.target.value,
+                            });
+                          }}
+                      type="email" className="form-control" />
                     </div>
                     <div className="form-group">
                       <label className="form-control-label">Password</label>
                       <div className="pass-group">
                         <input
+                          onChange={(e) => {
+                            setFormLogin({
+                              ...formLogin,
+                              password: e.target.value,
+                            });
+                          }}
                           type="password"
                           className="form-control pass-input"
                         />
@@ -103,30 +107,31 @@ function Login() {
                               className="custom-control-input"
                               id="cb1"
                             />
-                            <label className="custom-control-label" for="cb1">
+                            <label className="custom-control-label">
                               Remember me
                             </label>
                           </div>
                         </div>
                         <div className="col-6 text-right">
-                          <a className="forgot-link" href="forgot-password.html">
+                          <a className="forgot-link" href="/login">
                             Forgot Password ?
                           </a>
                         </div>
                       </div>
                     </div>
                     <button
+                    onClick={submitHandler()}
                       className="btn btn-lg btn-block btn-primary"
                       type="submit"
                     >
                       Login
                     </button>
-                    <div className="login-or">
+                    {/* <div className="login-or">
                       <span className="or-line"></span>
                       <span className="span-or">or</span>
-                    </div>
+                    </div> */}
 
-                    <div className="social-login mb-3">
+                    {/* <div className="social-login mb-3">
                       <span>Login with</span>
                       <a href="#" className="facebook">
                         <i className="fab fa-facebook-f"></i>
@@ -134,7 +139,7 @@ function Login() {
                       <a href="#" className="google">
                         <i className="fab fa-google"></i>
                       </a>
-                    </div>
+                    </div> */}
 
                     <div className="text-center dont-have">
                     If you need account{" "}
