@@ -1,46 +1,30 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable no-undef */
 /* eslint-disable react/no-unknown-property */
+
+import { Link } from "react-router-dom";
+import Topbar from "../components/Topbar";
+import Sidebar from "../components/Sidebar";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
-import { Link } from "react-router-dom";
 import {
   fetchEmployees,
   fetchEmployeeById,
 } from "../store/actions/actionEmployee";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import Row from "react-bootstrap/Row";
-// import EmployeeTable from "../components/EmployeeTable";
 
-function Employee() {
-  // const navigate = useNavigate();
-  // const [validated, setValidated] = useState(false);
-
-  // const handleSubmit = (event) => {
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
-
-  //   setValidated(true);
-  // };
-
+function EmployeeField() {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [detailEmployee, setdetailEmployee] = useState({});
 
-  // Fetch employee data by id
-  const handleDetail = (_id) => {
-    dispatch(fetchEmployeeById(_id));
+  const handleDetail = (id) => {
+    dispatch(fetchEmployeeById(id));
     setdetailEmployee(employee);
   };
 
@@ -52,7 +36,6 @@ function Employee() {
     return state.employeeReducer.employee;
   });
 
-  //fetch dari redux
   useEffect(() => {
     dispatch(fetchEmployees());
     // dispatch(fetchEmployeeById());
@@ -64,13 +47,13 @@ function Employee() {
       <div className="page-wrapper">
         <div className="content container-fluid">
           <div className="row">
-            <div className="col-xl-12 col-sm-12 col-12">
-              <div className="breadcrumb-path mb-4">
+            <div className="col-xl-12 col-sm-12 col-12 mb-4">
+              <div className="breadcrumb-path ">
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item">
                     <Link to="/">
                       <img
-                        src="assets/img/dash.png"
+                        src="../assets/img/dash.png"
                         className="mr-2"
                         alt="breadcrumb"
                       />
@@ -86,235 +69,241 @@ function Employee() {
               <div className="head-link-set">
                 <ul>
                   <li>
-                    <Link className="active" to="/employees">
-                      All
-                    </Link>
+                    <Link to="/employees">All</Link>
                   </li>
                   <li>
                     <Link to="/employees/office">Office</Link>
                   </li>
                   <li>
-                    <Link to="/employees/field">Field</Link>
+                    <Link className="active" to="/employees/field">Field</Link>
                   </li>
                 </ul>
                 <Link className="btn-add" to="/add-employee">
-                  <i data-feather="plus"></i> Add Employee
+                  <i data-feather="plus"></i> Add Person
                 </Link>
               </div>
             </div>
-            <div className="col-xl-12 col-sm-12 col-12 mb-4">
-              <div className="row">
-                <div className="col-xl-10 col-sm-8 col-12 ">
-                  <label className="employee_count">
-                    {employees.length} People
-                  </label>
+          </div>
+          {/* <div className="row mb-3">
+            <div className="col-xl-10 col-sm-8 col-12 ">
+              <label className="employee_count">1 Office</label>
+            </div>
+          </div> */}
+          {/* <div className="row">
+            <div className="col-xl-12 col-sm-12 col-12 ">
+              <div className="card  card-lists">
+                <div className="card-header  ">
+                  <h2 className="card-titles">Create New Office</h2>
                 </div>
-                <div className="col-xl-1 col-sm-2 col-12 ">
-                  <Link to="/employees-grid" className="btn-view ">
-                    <img src="../assets/img/grid.svg"></img>{" "}
-                  </Link>
-                </div>
-                <div className="col-xl-1 col-sm-2 col-12 ">
-                  <Link to="#" className="btn-view active">
-                    <img src="../assets/img/list.svg"></img>{" "}
-                  </Link>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-xl-8 col-sm-12 col-12 ">
+                      <input
+                        type="text"
+                        placeholder="Office Name"
+                        className="input-form"
+                      />
+                    </div>
+                    <div className="col-xl-2 col-sm-6 col-6 ">
+                      <a href="#" className="btn-create ">
+                        Create Office{" "}
+                      </a>
+                    </div>
+                    <div className="col-xl-2 col-sm-6 col-6 ">
+                      <a href="#" className="btn-cancel ">
+                        Cancel{" "}
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-xl-12 col-sm-12 col-12 mb-4">
+          </div> */}
+          <div className="row">
+            <div className="col-xl-12 col-sm-12 col-12 ">
               <div className="card">
-                <div className="table-heading">
-                  <h2>Project Summery</h2>
+                <div className="card-header create-formhead">
+                  <h2 className="card-titles">
+                    Focus Technologies<span>Head Office</span>
+                  </h2>
+                  <a
+                    data-toggle="modal"
+                    data-target="#edit"
+                    className="edit-link"
+                  >
+                    <i data-feather="edit"></i>{" "}
+                  </a>
                 </div>
-                <div className="table-responsive">
-                  <table className="table  custom-table no-footer">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Company Name</th>
-                        <th>Department</th>
-                        <th>Field of Work</th>
-                        <th>Position</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {employees.length ? (
-                        employees.map((item, index) => {
-                          return (
-                            <tr>
-                              <td>
-                                <label className="">{index + 1}</label>
-                              </td>
-                              <td>
-                                <div className="table-img">
-                                 {item.profilePic ? ( <img
-                                    onClick={() => {
-                                      handleShow();
-                                      handleDetail(item._id);
-                                    }}
-                                    src={
-                                      item.profilePic
-                                        ? item.profilePic
-                                        : "assets/img/profiles/ava.jpg"
-                                    }
-                                    alt="profile"
-                                    className="img-table"
-                                  />)
-                                : ( <img
+                <div className="card-body">
+                  <div className="member-formcontent member-row">
+                    <div className="member-head">
+                      <h2>Members</h2>
+                      <div className="avatar-group">
+                        {employees.length ? (
+                          employees.map((item) => {
+                            if(item.field === "site")
+                            return (
+                              <div className="avatar avatar-xs group_img group_header">
+                                <img
                                   onClick={() => {
                                     handleShow();
-                                    handleDetail(item._id);
+                                    handleDetail(item.id);
                                   }}
-                                  src="../assets/img/profile.jpg"
-                                  alt="profile"
-                                  className="img-table"
-                                  />)}
-                                  {/* // <img
-                                  //   onClick={() => {
-                                  //     handleShow();
-                                  //     handleDetail(item.id);
-                                  //   }}
-                                  //   src={
-                                  //     item.profilePic
-                                  //       ? item.profilePic
-                                  //       : "assets/img/profiles/ava.jpg"
-                                  //   }
-                                  //   alt="profile"
-                                  //   className="img-table"
-                                  // /> */}
-                                  <label>{item.name}</label>
-                                </div>
-                              </td>
-                              <td>
-                                {item.companyId ? (
+                                  className="avatar-img rounded-circle"
+                                  alt="User Image"
+                                  src={
+                                    item.profilePic
+                                      ? item.profilePic
+                                      : "assets/img/profiles/ava.jpg"
+                                  }
+                                />
+                              </div>
+                            );
+                          })
+                        ) : (
+                          <p className="text-center text-lg">
+                            No Employee to show
+                          </p>
+                        )}
+
+                        {/* <div className="avatar avatar-xs group_img group_header">
+                            <img
+                              className="avatar-img rounded-circle"
+                              alt="User Image"
+                              src="../assets/img/profiles/avatar-15.jpg"
+                            />
+                          </div>
+                          <div className="avatar avatar-xs group_img group_header">
+                            <img
+                              className="avatar-img rounded-circle"
+                              alt="User Image"
+                              src="../assets/img/profiles/avatar-16.jpg"
+                            />
+                          </div>
+                          <div className="avatar avatar-xs group_img group_header">
+                            <img
+                              className="avatar-img rounded-circle"
+                              alt="User Image"
+                              src="../assets/img/profiles/avatar-17.jpg"
+                            />
+                          </div>
+                          <div className="avatar avatar-xs group_img group_header">
+                            <img
+                              className="avatar-img rounded-circle"
+                              alt="User Image"
+                              src="../assets/img/profiles/avatar-14.jpg"
+                            />
+                          </div>
+                          <div className="avatar avatar-xs group_img group_header">
+                            <img
+                              className="avatar-img rounded-circle"
+                              alt="User Image"
+                              src="../assets/img/profiles/avatar-18.jpg"
+                            />
+                          </div> */}
+                      </div>
+                    </div>
+                    <div className="member_link">
+                      <a
+                        data-toggle="collapse"
+                        href="#table"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="table"
+                      >
+                        <i data-feather="chevron-down"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div className="table-responsive collapse show" id="table">
+                    <table className="table  custom-table  no-footer">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Company Name</th>
+                          <th>Department</th>
+                          <th>Field of Work</th>
+                          <th>Position</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {employees.length ? (
+                          employees.map((item) => {
+                            if(item.field === "site")
+                            return (
+                              <tr>
+                                <td>
+                                  <div className="table-img">
+                                    <Link to="profile">
+                                      <img
+                                        src={
+                                          item.profilePic
+                                            ? item.profilePic
+                                            : "assets/img/profiles/ava.jpg"
+                                        }
+                                        alt="profile"
+                                        className="img-table"
+                                      />
+                                      <label>{item.name}</label>
+                                    </Link>
+                                  </div>
+                                </td>
+                                <td>
                                   <label className="action_label">
-                                  {item.companyId}{" "}
-                                </label>
-                                ) : (
+                                    {item.company}{" "}
+                                  </label>
+                                </td>
+                                <td>
+                                  <label className="action_label2">
+                                    {item.department}{" "}
+                                  </label>
+                                </td>
+                                <td>
+                                  <label className="action_label2">
+                                    {item.field}
+                                  </label>
+                                </td>
+                                <td>
+                                  <label className="">{item.position} </label>
+                                </td>
+                                <td>
                                   <label className="action_label">
-                                    No company Data
-                                </label>)}
-                                {/* <label className="action_label">
-                                  {item.company}{" "}
-                                </label> */}
-                              </td>
-                              <td>
-                                <label className="action_label2">
-                                  {item.department}{" "}
-                                </label>
-                              </td>
-                              <td>
-                                <label className="action_label2">
-                                  {item.field}
-                                </label>
-                              </td>
-                              <td>
-                                <label className="">{item.position} </label>
-                              </td>
-                              <td>
-                                <label className="action_label">
-                                  {item.status}
-                                </label>
-                              </td>
-                              <td>
-                                {/* <button
+                                    {item.status}
+                                  </label>
+                                </td>
+                                <td>
+                                  {/* <button
                                   type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"
                                 >
                                   Employee Detail
                                 </button> */}
-                                <Button
-                                  onClick={() => {
-                                    handleShow();
-                                    handleDetail(item._id);
-                                  }}
-                                  variant="primary"
-                                >
-                                  {" "}
-                                  Employee Detail{" "}
-                                </Button>
-                              </td>
-                            </tr>
-                          );
-                        })
-                      ) : (
-                        <p className="text-center text-lg">
-                          No Employee to show
-                        </p>
-                      )}
-                      {/* <EmployeeTable /> */}
-                    </tbody>
-                  </table>
+                                  <Button
+                                    onClick={() => {
+                                      handleShow();
+                                      handleDetail(item.id);
+                                    }}
+                                    variant="primary"
+                                  >
+                                    {" "}
+                                    Employee Detail{" "}
+                                  </Button>
+                                </td>
+                              </tr>
+                            );
+                          })
+                        ) : (
+                          <p className="text-center text-lg">
+                            No Employee to show
+                          </p>
+                        )}
+                        {/* <EmployeeTable /> */}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-                  <div className="row pagination_path">
-                    <div className="col-sm-12 col-md-5 ml-10">
-                      <div
-                        className="dataTables_info"
-                        role="status"
-                        aria-live="polite"
-                      >
-                        Showing 1 to 10 of 12 entries
-                      </div>
-                    </div>
-                    <div className="col-sm-12 col-md-7">
-                      <div className="dataTables_paginate paging_simple_number">
-                        <ul className="pagination">
-                          <li className="paginate_button page-item previous disabled">
-                            <a
-                              href="#"
-                              data-dt-idx="0"
-                              tabindex="0"
-                              className="page-link btnnavingation"
-                            >
-                              <i data-feather="arrow-left"></i>
-                            </a>
-                          </li>
-                          <li className="paginate_button page-item ">
-                            <a href="#" className="page-link">
-                              1
-                            </a>
-                          </li>
-                          <li className="paginate_button page-item ">
-                            <a href="#" tabindex="0" className="page-link">
-                              2
-                            </a>
-                          </li>
-                          <li className="paginate_button page-item ">
-                            <a href="#" tabindex="0" className="page-link">
-                              3
-                            </a>
-                          </li>
-                          <li className="paginate_button page-item ">
-                            <a href="#" tabindex="0" className="page-link">
-                              4
-                            </a>
-                          </li>
-                          <li className="paginate_button page-item ">
-                            <a href="#" tabindex="0" className="page-link">
-                              . . .
-                            </a>
-                          </li>
-                          <li className="paginate_button page-item ">
-                            <a href="#" tabindex="0" className="page-link">
-                              10
-                            </a>
-                          </li>
-                          <li className="paginate_button page-item next">
-                            <a
-                              href="#"
-                              tabindex="0"
-                              className="page-link btnnavingation"
-                            >
-                              <i data-feather="arrow-right"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
             </div>
           </div>
         </div>
@@ -418,7 +407,7 @@ function Employee() {
                       <tr>
                         <td className="active">Salary :</td>
                         <td>
-                          Rp {detailEmployee.salary
+                          {detailEmployee.salary
                             ? detailEmployee.salary
                             : "no data"}
                         </td>
@@ -484,7 +473,7 @@ function Employee() {
                             {detailEmployee.personalData.educationData.major}
                           </td>
                           <td className="active">Last Position</td>
-                          <td>{detailEmployee.personalData.lastPosition}</td>
+                          <td>{detailEmployee.personalData.lastDepartment}</td>
                         </tr>
                         <tr>
                           <td className="active">Education</td>
@@ -529,7 +518,7 @@ function Employee() {
                         <tr>
                           <td className="active">Wife / husband Name</td>
                           <td>
-                            {detailEmployee.personalData.familyData.spouseName}
+                            {detailEmployee.personalData.familyData.wifeName}
                           </td>
                           <td className="active">Mariage Status</td>
                           <td>
@@ -543,17 +532,17 @@ function Employee() {
                           <td className="active">Anak ke -1</td>
                           <td>
                             {detailEmployee.personalData.familyData
-                              .dependentsChild.childName1
+                              .dependentsChild.child1
                               ? detailEmployee.personalData.familyData
-                                  .dependentsChild.childName1
+                                  .dependentsChild.child1
                               : "no data"}
                           </td>
                           <td className="active">Anak ke -2</td>
                           <td>
                             {detailEmployee.personalData.familyData
-                              .dependentsChild.childName2
+                              .dependentsChild.child2
                               ? detailEmployee.personalData.familyData
-                                  .dependentsChild.childName2
+                                  .dependentsChild.child2
                               : "no data"}
                           </td>
                         </tr>
@@ -561,17 +550,17 @@ function Employee() {
                           <td className="active">Anak ke -3</td>
                           <td>
                             {detailEmployee.personalData.familyData
-                              .dependentsChild.childName3
+                              .dependentsChild.child3
                               ? detailEmployee.personalData.familyData
-                                  .dependentsChild.childName4
+                                  .dependentsChild.child3
                               : "no data"}
                           </td>
                           <td className="active">Anak ke -4</td>
                           <td>
                             {detailEmployee.personalData.familyData
-                              .dependentsChild.childName4
+                              .dependentsChild.child4
                               ? detailEmployee.personalData.familyData
-                                  .dependentsChild.childName4
+                                  .dependentsChild.child4
                               : "no data"}
                           </td>
                         </tr>
@@ -636,4 +625,4 @@ function Employee() {
   );
 }
 
-export default Employee;
+export default EmployeeField;

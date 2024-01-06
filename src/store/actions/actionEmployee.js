@@ -1,49 +1,49 @@
 /* eslint-disable no-unused-vars */
-// import axios from "axios";
+import axios from "axios";
 // import swal from "sweetalert";
 import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES } from "./actionType";
 
-// const loginCompany = (input) => {
-//   return (dispatch) => {
-//     return axios
-//       .post("http://localhost:3000/companies/login", input)
-//       .then((response) => {
-//         return response;
-//       })
-//       .catch((error) => {
-//         swal(error.response.data.message);
-//       });
-//   };
-// };
+const login = (input) => {
+  return (dispatch) => {
+    return axios
+      .post("http://localhost:3000/login", input)
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {
+        // swal(error.response.data.message);
+        console.log(error)
+      });
+  };
+};
 
-// const registerCompany = (input) => {
-//   return (dispatch) => {
-//     return fetch(`http://localhost:3000/companies/register`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(input),
-//     });
-//   };
-// };
+const register = (input) => {
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(input),
+    });
+  };
+};
 
 const fetchEmployees = () => {
   return (dispatch) => {
     fetch("http://localhost:3000/employees", {
-    //   headers: {
-    //     access_token: localStorage.getItem("access_token"),
-    //   },
+      headers: {
+        access_token: localStorage.getItem("access_token"),
+      },
     })
       .then((response) => {
+        console.log(response, "ini response")
         if (!response.ok) {
-          console.log("error");
           throw new Error("internal server error");
         }
         return response.json();
       })
       .then((data) => {
-        console.log(data, "ini action");
         dispatch(employeesSuccess(data));
       })
       .catch((error) => {
@@ -59,48 +59,76 @@ export const employeesSuccess = (payload) => {
   };
 };
 
-// const fetchProjectByIdCompany = (id) => {
-//   return (dispatch) => {
-//     fetch(`http://localhost:3000/companies/project/detail/${id}`, {
-//       headers: {
-//         access_token: localStorage.getItem("access_token"),
-//       },
-//     })
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error("internal server error");
-//         }
-//         return response.json();
-//       })
-//       .then((data) => {
-//         console.log(data, "ini action");
-//         dispatch(fetchProjectByIdCompanySuccess(data));
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
-// };
+const fetchEmployeeById = (_id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/employee/${_id}`, {
+      headers: {
+        access_token: localStorage.getItem("access_token"),
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("internal server error");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        dispatch(fetchEmployeeByIdSuccess(data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+};
 
-// const fetchProjectByIdCompanySuccess = (payload) => {
-//   return {
-//     type: FETCH_PROJECT_COMPANY,
-//     payload,
-//   };
-// };
+const fetchEmployeeByIdSuccess = (payload) => {
+  return {
+    type: FETCH_EMPLOYEE_BY_ID_USER,
+    payload,
+  };
+};
 
-// const addProjectCompany = (input) => {
-//   return (dispatch) => {
-//     return fetch(`http://localhost:3000/companies/project`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         access_token: localStorage.getItem("access_token"),
-//       },
-//       body: JSON.stringify(input),
-//     });
-//   };
-// };
+const addNewEmployee = (data) => {
+  return (dispatch) => {
+    return axios
+      .post("http://localhost:3000/employee", data)
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {
+        // swal(error.response.data.message);
+        console.log(error)
+      });
+  };
+};
+
+const fetchCompany = (data) => {
+  return (dispatch) => {
+    return axios
+      .get("http://localhost:3000/companies", data)
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {
+        // swal(error.response.data.message);
+        console.log(error)
+      });
+  };
+};
+
+const addCompany = (data) => {
+  return (dispatch) => {
+    return axios
+      .post("http://localhost:3000/companies", data)
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {
+        // swal(error.response.data.message);
+        console.log(error)
+      });
+  };
+};
 
 // const paymentMidtrans = (id) => {
 //   return (dispatch) => {
@@ -154,10 +182,13 @@ export const employeesSuccess = (payload) => {
 // };
 
 export {
-//   loginCompany,
-//   registerCompany,
+  login,
+  register,
   fetchEmployees,
-//   fetchProjectByIdCompany,
+  fetchEmployeeById,
+  addNewEmployee,
+  addCompany,
+  fetchCompany
 //   addProjectCompany,
 //   paymentMidtrans,
 //   ratingCompany,

@@ -1,13 +1,13 @@
 import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES } from "../actions/actionType";
 
-const initialState = { projects: [], project: {} };
+const initialState = { employees: [], employee: {} };
 
 function employeeReducer(state = initialState, action) {
     switch (action.type) {
         case FETCH_EMPLOYEE_BY_ID_USER:
-            return { ...state, project: action.payload }
+            return { ...state, employee: action.payload }
         case FETCH_EMPLOYEES:
-            return { ...state, projects: action.payload };
+            return { ...state, employees: action.payload };
         default:
             return state;
     }

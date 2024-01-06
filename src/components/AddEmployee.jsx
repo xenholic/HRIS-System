@@ -1,79 +1,78 @@
+/* eslint-disable no-unused-vars */
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
-// import { Link, useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addNewEmployee } from "../store/actions/actionEmployee";
 
 function AddEmployee() {
-  // const navigate = useNavigate();
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [inputFormEmployee, setInputFormEmployee] = useState({
-      name: "",
-      address:"",
-      email: "",
-      salary: "",
-      status: "",
-      profilePic: "",
-      positionId: "",
-      companyId: "",
-      departmentId: "",
-      fieldId: "",
-      religion: "",
-      startDateWorking: "",
-      personalData: {
-        dateOfBirth: "",
-        placeOfBirth: "",
-        gender: "",
-        educationData: {
-          educationLevel: "",
-          yearsOfEducation: "",
-          major: "",
-          organizationExp: "",
-        },
-        familyData: {
-          motherName: "",
-          fatherName: "",
-          wifeName: "",
-          mariageStatus: "",
-          dependentsChild: {
-            childName1: "",
-            childName2: "",
-            childName3: "",
-            childName4: ""
-          }
-        },
-        phoneNumber: "",
-        nikNumber: "",
-        bpjsTkNumber: "",
-        bpjsKesNumber: "",
-        npwp: "",
-        experience: "",
-        lastDepartment: "",
-        personalCharacter: {
-          weakness: "",
-          advantage: ""
-        },
-        emergencyContact: {
-          name: "",
-          relation: "",
-          address: "",
-          phoneNumber: ""
-        }
-      }
+    name: "",
+    address: "",
+    email: "",
+    salary: "",
+    status: "",
+    profilePic: "",
+    position: "",
+    companyId: "",
+    department: "",
+    field: "",
+    religion: "",
+    contractType: "",
+    startDateWorking: "",
+    pohArea: "",
+    dateOfBirth: "",
+    placeOfBirth: "",
+    gender: "",
+    educationLevel: "",
+    yearsOfEducation: "",
+    major: "",
+    organizationExp: "",
+    motherName: "",
+    fatherName: "",
+    spouseName: "",
+    mariageStatus: "",
+    childName1: "",
+    childName2: "",
+    childName3: "",
+    childName4: "",
+    phoneNumber: "",
+    domisiliSekarang: "",
+    nikNumber: "",
+    lastSalary: "",
+    bpjsTkNumber: "",
+    bpjsKesNumber: "",
+    npwp: "",
+    experience: "",
+    lastDepartment: "",
+    weakness: "",
+    advantage: "",
+    emergencyContactname: "",
+    emergencyContactrelation: "",
+    emergencyContactaddress: "",
+    emergencyContactphoneNumber: "",
   });
 
-  // const handleAddEmployee = (e) => {
-  //   e.preventDefault();
-  //   dispatch(addEmployee(inputFormEmployee))
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         navigate("/employees");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
+  const [checkbox, setCheckbox] = useState(false);
+  const checkboxOn = () => setCheckbox(true);
+  // const checkboxOff = () => setCheckbox(false);
+
+  const handleAddEmployee = (e) => {
+    e.preventDefault();
+    dispatch(addNewEmployee(inputFormEmployee))
+      .then((response) => {
+        if (response.ok) {
+          navigate("/employees");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
       <Topbar />
@@ -104,14 +103,14 @@ function AddEmployee() {
                     <div className="row">
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
-                          <label htmlFor="firstName">First Name</label>
+                          <label htmlFor="firstName">Name</label>
                           <input
-                           onChange={(e) => {
-                            setInputFormEmployee({
-                              ...inputFormEmployee,
-                              firstName: e.target.value,
-                            });
-                          }}
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                name: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="firstName"
                             placeholder="First Name"
@@ -121,13 +120,13 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label" htmlFor="lastName">
-                            Last Name
+                            address
                           </div>
                           <input
                             onChange={(e) => {
                               setInputFormEmployee({
                                 ...inputFormEmployee,
-                                lastName: e.target.value,
+                                address: e.target.value,
                               });
                             }}
                             type="text"
@@ -141,21 +140,24 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">E-mail</div>
-                          <input 
+                          <input
                             onChange={(e) => {
                               setInputFormEmployee({
                                 ...inputFormEmployee,
                                 email: e.target.value,
                               });
                             }}
-                          type="text" id="email" placeholder="Email" />
+                            type="text"
+                            id="email"
+                            placeholder="Email"
+                          />
                         </div>
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Phone Number</div>
                           <input
-                             onChange={(e) => {
+                            onChange={(e) => {
                               setInputFormEmployee({
                                 ...inputFormEmployee,
                                 phoneNumber: e.target.value,
@@ -189,6 +191,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">Date of Birth</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                dateOfBirth: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="dateOfBirth"
                             placeholder="DD MM YYYY"
@@ -201,6 +209,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">NIK Number</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                nikNumber: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="nikNumber"
                             placeholder="Nomor Induk Kewarganegaraan"
@@ -210,7 +224,17 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Gender</div>
-                          <select>
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                gender: e.target.value,
+                              });
+                            }}
+                          >
+                            <option value="" selected disabled>
+                              Select Gender
+                            </option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                           </select>
@@ -221,16 +245,48 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Mariage Status</div>
-                          <select>
-                            {/* <option v-htmlFor="mariage in mariageStatusData" :key="mariage.id" :value="mariage.id">{{ mariage.status }} </option> */}
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                mariageStatus: e.target.value,
+                              });
+                            }}
+                          >
+                            <option value="" selected disabled>
+                              Select Mariage Status
+                            </option>
+                            <option value="single">Single</option>
+                            <option value="menikah">Menikah</option>
+                            <option value="duda">Duda</option>
+                            <option value="janda">Janda</option>
+                            <option value="cerai">Cerai</option>
                           </select>
                         </div>
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Point of Hire</div>
-                          <select>
-                            {/* <option v-htmlFor="pohArea in pohAreaData" :key="pohArea.id" :value="pohArea.id">{{ pohArea.areaName }}</option> */}
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                pohArea: e.target.value,
+                              });
+                            }}
+                          >
+                            <option value="" selected disabled>
+                              Select POH Area
+                            </option>
+                            <option value="Tenaga Kerja Lokal">
+                              Tenaga Kerja Lokal
+                            </option>
+                            <option value="Tenaga Kerja Regional">
+                              Tenaga Kerja Regional
+                            </option>
+                            <option value="Tenaga Kerja Nasional">
+                              Tenaga Kerja Nasional
+                            </option>
                           </select>
                         </div>
                       </div>
@@ -238,16 +294,96 @@ function AddEmployee() {
                     <div className="row">
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
-                          <div className="label">Company</div>
-                          <select>
-                            {/* <option v-htmlFor="comp in companiesData" :key="comp.id" :value="comp.id"> {{ comp.name }} </option> */}
+                          <div className="label">Religion</div>
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                religion: e.target.value,
+                              });
+                            }}
+                          >
+                            <option value="" selected disabled>
+                              Select Religion
+                            </option>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen Protestan">
+                              Kristen Protestan
+                            </option>
+                            <option value="Kristen Katolik">
+                              Kristen Katolik
+                            </option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Hindu">Hindu</option>
                           </select>
                         </div>
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Department</div>
-                          <select>
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                department: e.target.value,
+                              });
+                            }}
+                          >
+                            <option value="Select department" selected disabled>
+                              Department
+                            </option>
+                            <option value="" selected disabled>
+                              Select Department
+                            </option>
+                            <option value="Kru Site">Kru Site</option>
+                            <option value="Driller">Driller</option>
+                            <option value="(PJO)">
+                              Penanggung Jawab Oprasional (PJO)
+                            </option>
+                            <option value="CEO">CEO</option>
+                            <option value="Bussiness Development">
+                              Bussiness Development
+                            </option>
+                            <option value="Tech Lead">Technical Leader</option>
+                            <option value="IT Lead">IT Lead</option>
+                            <option value="IT Sup">IT Support</option>
+                            <option value="IT Dev">IT Dev</option>
+                            <option value="Acc & Tax">
+                              Accounting & Tax Suuperintendent
+                            </option>
+                            <option value="HR Staff">
+                              Human Resource Staff
+                            </option>
+                            <option value="HR Superintendent">
+                              Human Resource Superintendent
+                            </option>
+                            <option value="Manager HRD">
+                              Manager Human Resource Department
+                            </option>
+                            <option value="Admin Site HSE / PR">
+                              Admin Site HSE / PR
+                            </option>
+                            <option value="Legal Contract">
+                              Legal Contract
+                            </option>
+                            <option value="PR">Public Relationship</option>
+                            <option value="LSO">Logistic Site Officer</option>
+                            <option value="Engineering Dept">
+                              Engineering Department
+                            </option>
+                            <option value="Geology Dept">
+                              Geology Department
+                            </option>
+                            <option value="Mining Dept">
+                              Mining Department
+                            </option>
+                            <option value="Project Coordinator">
+                              Project Coordinator
+                            </option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="CO/IN Trading">
+                              CO / IN Trading Superintendent
+                            </option>
                             {/* <option v-htmlFor="dept in departmentData" :key="dept.id" :value="dept.id">{{ dept.departmentName }} </option> */}
                           </select>
                         </div>
@@ -257,16 +393,41 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Position</div>
-                          <select>
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                position: e.target.value,
+                              });
+                            }}
+                          >
                             {/* <option v-htmlFor="pos in positionData" :key="pos.id" :value="pos.id"> {{ pos.positionName }} </option> */}
+                            <option value="" selected disabled>
+                              Select Position
+                            </option>
+                            <option value="manager">Manager</option>
+                            <option value="staff">staff</option>
                           </select>
                         </div>
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Field of Working</div>
-                          <select id="fieldOfWorking">
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                field: e.target.value,
+                              });
+                            }}
+                            id="fieldOfWorking"
+                          >
                             {/* <option v-htmlFor="fow in fieldData" :key="fow.id" :value="fow.id">{{ fow.fieldName }} </option> */}
+                            <option value="" selected disabled>
+                              Select Field
+                            </option>
+                            <option value="on site">On Site</option>
+                            <option value="office">Office</option>
                           </select>
                         </div>
                       </div>
@@ -276,6 +437,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">BPJS Kesehatan</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                bpjsKesNumber: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="bpjsKesNumber"
                             placeholder="Nomor BPJS Kesehatan"
@@ -286,6 +453,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">BPJS Ketenagakerjaan</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                bpjsTkNumber: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="bpjsTKesNumber"
                             placeholder="Nomor BPJS Ketenagakerjaan"
@@ -296,18 +469,51 @@ function AddEmployee() {
                     <div className="row">
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
-                          <div className="label">Address</div>
+                          <div className="label">npwp</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                npwp: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="address"
-                            placeholder="Alamat Lengkap"
+                            placeholder="No NPWP"
                           />
                         </div>
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
-                          <div className="label">Photo Profile</div>
-                          <input type="file" id="profilePic" />
+                          <div className="label">Domisil Sekarang</div>
+                          <input 
+                          onClick={checkboxOn}
+                          type="checkbox" id="Domisili Sekarang"/><span>{" "}Ceklist jika domisili sama dengan KTP</span>
+                          
+                          { !checkbox ? 
+                           <input
+                           onChange={(e) => {
+                             setInputFormEmployee({
+                               ...inputFormEmployee,
+                               domisiliSekarang: e.target.value,
+                             });
+                           }}
+                           type="text"
+                           id="address"
+                           placeholder="Domisi Sekarang"
+                         />:  <input
+                         onChange={(e) => {
+                           setInputFormEmployee({
+                             ...inputFormEmployee,
+                             domisiliSekarang: e.target.value,
+                           });
+                         }}
+                         type="text"
+                         id="address"
+                         placeholder="Domisi Sekarang" disabled
+                       />
+                        }
+
                         </div>
                       </div>
                     </div>
@@ -330,7 +536,26 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Tertiary Education</div>
-                          <select>
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                educationLevel: e.target.value,
+                              });
+                            }}
+                          >
+                            <option value="" selected disabled>
+                              Select Education Level
+                            </option>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
+                            <option value="D1">D1</option>
+                            <option value="D2">D2</option>
+                            <option value="D3">D3</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>
+                            <option value="S3">S3</option>
                             {/* <option v-htmlFor="edu in educationData" :key="edu.id" :value="edu.id">{{ edu.level }} </option> */}
                           </select>
                         </div>
@@ -338,7 +563,23 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Contract Type</div>
-                          <select>
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                contractType: e.target.value,
+                              });
+                            }}
+                          >
+                            <option value="" selected disabled>
+                              Select Contract Type
+                            </option>
+                            <option value="PKWTT">PKWT</option>
+                            <option value="PKWTT">PKWTT</option>
+                            <option value="THL">THL</option>
+                            <option value="Karyawan Tetap">
+                              Karyawan Tetap
+                            </option>
                             {/* <option v-htmlFor="type in contractData" :key="type.id" :value="type.id">{{ type.statusName }} </option> */}
                           </select>
                         </div>
@@ -351,6 +592,12 @@ function AddEmployee() {
                             Last Education Institution
                           </div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                lastEducation: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="educationInstitution"
                             placeholder="Universitas / School"
@@ -361,6 +608,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">Major</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                major: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="major"
                             placeholder="Tehnik Sipil..."
@@ -383,6 +636,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">Year of Education</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                yearsOfEducation: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="educationYear"
                             placeholder="Tehnik Sipil..."
@@ -395,6 +654,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">Last Job Position</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                lastDepartment: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="lastPosition"
                             placeholder="PJO (Manager Ops Site)"
@@ -404,7 +669,51 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Experiences</div>
-                          <input type="text" id="experience" placeholder="" />
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                experience: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            id="experience"
+                            placeholder="Experiences"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-xl-6 col-sm-12 col-12 ">
+                        <div className="form-group">
+                          <div className="label">Organization Experience</div>
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                lastDepartment: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            id="OrganizationExp"
+                            placeholder="OrganizationExp"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-xl-6 col-sm-12 col-12 ">
+                        <div className="form-group">
+                          <div className="label">Last Salary</div>
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                lastSalary: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            id="Last Salary"
+                            placeholder="Last Salary"
+                          />
                         </div>
                       </div>
                     </div>
@@ -426,8 +735,14 @@ function AddEmployee() {
                     <div className="row">
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
-                          <label>Peronal Weakness</label>
+                          <label>Personal Weakness</label>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                weakness: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="personalWeakness"
                             placeholder="Have a bad attitude"
@@ -436,8 +751,14 @@ function AddEmployee() {
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
-                          <label>Peronal Power</label>
+                          <label>Personal Power</label>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                advantage: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="personalPower"
                             placeholder="Have a Good Skill in comunication"
@@ -449,13 +770,33 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Father Name</div>
-                          <input type="text" id="fatherName" />
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                fatherName: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            id="fatherName"
+                            placeholder="Father Name..."
+                          />
                         </div>
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Mother Name</div>
-                          <input type="text" id="motherName" />
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                motherName: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            id="motherName"
+                            placeholder="Mother Name..."
+                          />
                         </div>
                       </div>
                     </div>
@@ -464,9 +805,15 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">Husband or Wife Name</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                spouseName: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="husbandOrWife"
-                            placeholder="...."
+                            placeholder="Husband or Wife Name"
                           />
                         </div>
                       </div>
@@ -481,13 +828,33 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Child Name 1</div>
-                          <input type="text" id="childName1" />
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                childName1: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            id="childName1"
+                            placeholder="Child Name...."
+                          />
                         </div>
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Child Name 2</div>
-                          <input type="text" id="childName2" />
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                childName2: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            id="childName2"
+                            placeholder="Child Name...."
+                          />
                         </div>
                       </div>
                     </div>
@@ -495,13 +862,33 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Child Name 3</div>
-                          <input type="text" id="childName3" />
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                childName3: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            id="childName3"
+                            placeholder="Child Name...."
+                          />
                         </div>
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Child Name 4</div>
-                          <input type="text" id="childName4" />
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                childName4: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            id="childName4"
+                            placeholder="Child Name...."
+                          />
                         </div>
                       </div>
                     </div>
@@ -524,6 +911,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <label>Emergency Contact Name</label>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                emergencyContactname: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="emergencyContactName"
                             placeholder="Name"
@@ -534,6 +927,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <label>Phone Number</label>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                emergencyContactphoneNumber: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="emergencyPhoneNumber"
                             placeholder="Phone number"
@@ -546,6 +945,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">Relation</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                emergencyContactrelation: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="relationship"
                             placeholder="relationship with emergency contact"
@@ -556,6 +961,12 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">Address</div>
                           <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                emergencyContactaddress: e.target.value,
+                              });
+                            }}
                             type="text"
                             id="emergencyContactAddress"
                             placeholder="specific address"
@@ -582,20 +993,60 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <label>Start Date</label>
-                          <input type="text" placeholder="Start Date" />
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                startDateWorking: e.target.value,
+                              });
+                            }}
+                            type="date"
+                            placeholder="Start Date"
+                          />
                         </div>
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
-                          <label>Salary Type</label>
-                          <select>
-                            <option value="Select leave" selected disabled>
-                              Frequency{" "}
+                          <div className="label">Photo Profile</div>
+                          <input type="file" id="profilePic" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row"></div>
+                  </div>
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-xl-6 col-sm-12 col-12 ">
+                        <div className="form-group">
+                          <label>Salary</label>
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                salary: e.target.value,
+                              });
+                            }}
+                            type="text"
+                            placeholder="salary"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-xl-6 col-sm-12 col-12 ">
+                        <div className="form-group">
+                          <label>Company</label>
+                          <select
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                companyId: e.target.value,
+                              });
+                            }}
+                          >
+                            <option value="" selected disabled>
+                              Select Company
                             </option>
-                            <option value="leave">Annualy</option>
-                            <option value="leave">Monthly</option>
-                            <option value="leave">Weekly</option>
-                            <option value="leave">Daily</option>
+                            <option value="1">PT Greenland Resource</option>
+                            <option value="2">PT E-minerba</option>
                           </select>
                         </div>
                       </div>
@@ -606,16 +1057,18 @@ function AddEmployee() {
                 <div className="row">
                   <div className="col-xl-12 col-sm-12 col-12 ">
                     <div className="form-btn">
-                      <button 
-                      //  onClick={(e) => {
-                      //   handleAddEmployee(e);
-                      // }}
-                      type="submit" className="btn btn-apply w-auto">
+                      <button
+                        onClick={(e) => {
+                          handleAddEmployee(e);
+                        }}
+                        type="submit"
+                        className="btn btn-apply w-auto"
+                      >
                         Add Team Member
                       </button>
-                      <button 
-                       to={"/employees"}
-                      className="btn btn-secondary">Cancel</button>
+                      <button to={"/employees"} className="btn btn-secondary">
+                        Cancel
+                      </button>
                     </div>
                   </div>
                 </div>

@@ -7,7 +7,6 @@ import App from './App.jsx'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/style.css'
-import './assets/css/styles.scss'
 import './assets/js/main.js'
 // Import the store provider
 // Import the 'store' variable from the appropriate file
