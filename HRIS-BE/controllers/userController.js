@@ -2,35 +2,28 @@ const { compare } = require("../helpers/bcrypt");
 const { sign } = require("jsonwebtoken");
 const { convertToToken } = require("../helpers/jwt");
 const { SECRET_KEY } = process.env;
-const {
-  Project,
-  Category,
-  Company,
-  Bid,
-  User,
-  Sequelize,
-  Rating,
-} = require("../models");
+const { User } = require("../models");
 const { Op } = require("sequelize");
 
 class UsersController {
   static async register(req, res, next) {
     try {
-      const { username, email, password, type, profilePic } = req.body;
+      const { username, email, password, phoneNumber,role, profilePic } = req.body;
       if (!username) {
         throw { name: "Username cannot be empty" };
       } else if (!email) {
         throw { name: "Email cannot be empty" };
       } else if (!password) {
         throw { name: "Password cannot be empty" };
-      } else if (!type) {
+      } else if (!phoneNumber) {
         throw { name: "Type cannot be empty" };
       }
       const user = await User.create({
         username,
         email,
         password,
-        type,
+        phoneNumber,
+        role,
         profilePic,
       });
       res.status(201).json({
@@ -51,7 +44,7 @@ class UsersController {
         throw { name: "Password cannot be empty" };
       }
 
-      const userLogin = await User.findOne({ where: { email } });
+      const userLogin = await User.findOne({ email });
       if (!userLogin) {
         throw { name: "User not found" };
       }
