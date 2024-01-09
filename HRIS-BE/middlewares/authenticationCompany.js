@@ -1,27 +1,27 @@
-const { Company } = require("../models");
-const { convertToPayload } = require("../helpers/jwt");
+// const { Company } = require("../models");
+// const { convertToPayload } = require("../helpers/jwt");
 
-const authenticationCompanies = async (req, res, next) => {
-  try {
-    const { access_token } = req.headers;
-    if (!access_token) {
-      throw { name: "INVALID TOKEN" };
-    }
+// const authenticationCompanies = async (req, res, next) => {
+//   try {
+//     const { access_token } = req.headers;
+//     if (!access_token) {
+//       throw { name: "INVALID TOKEN" };
+//     }
 
-    const payload = convertToPayload(access_token);
-    const { id } = payload;
-    const company = await Company.findByPk(id);
+//     const payload = convertToPayload(access_token);
+//     const { id } = payload;
+//     const company = await Company.findByPk(id);
 
-    if (!company) {
-      throw { name: "INVALID TOKEN" };
-    }
+//     if (!company) {
+//       throw { name: "INVALID TOKEN" };
+//     }
 
-    req.companyId = +company.id;
+//     req.companyId = +company.id;
 
-    next();
-  } catch (err) {
-    next(err);
-  }
-};
+//     next();
+//   } catch (err) {
+//     next(err);
+//   }
+// };
 
-module.exports = authenticationCompanies;
+// module.exports = authenticationCompanies;
