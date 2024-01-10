@@ -21,11 +21,12 @@ function Login() {
     dispatch(login(formLogin))
       .then((response) => {
         // console.log(response, "data");
-        localStorage.setItem("access_token", response.data.access_token);
+        localStorage.setItem("id", response.data.id);
         localStorage.setItem("username", response.data.username);
         localStorage.setItem("email", response.data.email);
-        localStorage.setItem("id", response.data.id);
-        localStorage.setItem("profilePic", response.data.profilePic);
+        localStorage.setItem("role", response.data.role);
+        localStorage.setItem("status", response.data.status);
+        localStorage.setItem("access_token", response.data.access_token);
         navigate("/");
       })
       .catch((error) => {
