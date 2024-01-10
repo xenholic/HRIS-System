@@ -37,7 +37,7 @@ const fetchEmployees = () => {
       },
     })
       .then((response) => {
-        console.log(response, "ini response")
+        console.log(response.json, "ini response")
         if (!response.ok) {
           throw new Error("internal server error");
         }
@@ -61,7 +61,7 @@ export const employeesSuccess = (payload) => {
 
 const fetchEmployeeById = (_id) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/employee/${_id}`, {
+    fetch(`http://localhost:3000/employees/${_id}`, {
       headers: {
         access_token: localStorage.getItem("access_token"),
       },
@@ -91,8 +91,9 @@ const fetchEmployeeByIdSuccess = (payload) => {
 const addNewEmployee = (data) => {
   return (dispatch) => {
     return axios
-      .post("http://localhost:3000/employee", data)
+      .post("http://localhost:3000/employees", data)
       .then((response) => {
+        console.log(response , "ini response add")
         return response;
       })
       .catch((error) => {

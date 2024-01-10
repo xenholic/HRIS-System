@@ -141,7 +141,7 @@ function EmployeeField() {
                       <div className="avatar-group">
                         {employees.length ? (
                           employees.map((item) => {
-                            if(item.field === "site")
+                            if(item.field === "on site")
                             return (
                               <div className="avatar avatar-xs group_img group_header">
                                 <img
@@ -154,7 +154,7 @@ function EmployeeField() {
                                   src={
                                     item.profilePic
                                       ? item.profilePic
-                                      : "assets/img/profiles/ava.jpg"
+                                      : "../assets/img/profiles/ava.jpg"
                                   }
                                 />
                               </div>
@@ -231,7 +231,7 @@ function EmployeeField() {
                       <tbody>
                         {employees.length ? (
                           employees.map((item) => {
-                            if(item.field === "site")
+                            if(item.field === "on site")
                             return (
                               <tr>
                                 <td>
@@ -241,7 +241,7 @@ function EmployeeField() {
                                         src={
                                           item.profilePic
                                             ? item.profilePic
-                                            : "assets/img/profiles/ava.jpg"
+                                            : "../assets/img/profiles/ava.jpg"
                                         }
                                         alt="profile"
                                         className="img-table"
@@ -282,7 +282,7 @@ function EmployeeField() {
                                   <Button
                                     onClick={() => {
                                       handleShow();
-                                      handleDetail(item.id);
+                                      handleDetail(item._id);
                                     }}
                                     variant="primary"
                                   >

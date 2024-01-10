@@ -1,23 +1,157 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const employeeSchema = new Schema({
-    username: {
+const employeeSchema = new mongoose.Schema({
+    name: {
         type: String,
-        required: true
     },
-    roles: {
-        User: {
-            type: Number,
-            default: 2001
+    address: {
+        type: String,
+    },
+    email: {
+        type: String,
+    },
+    salary: {
+        type: Number,
+    },
+    position: {
+        type: String,
+    },
+    profilePicture: {
+        type: String,
+    },
+    pointOfHireArea: {
+        type: String,
+    },
+    contractType: {
+        type: String,
+    },
+    lastSalary: {
+        type: String,
+    },
+    status: {
+        type: String,
+    },
+    companyId: {
+        type: String,
+    },
+    department: {
+        type: String,
+    },
+    field: {
+        type: String,
+    },
+    religion: {
+        type: String,
+    },
+    startDateWorking: {
+        type: Date,
+        required: true,
+    },
+    personalData: {
+        dateOfBirth: {
+            type: String,
         },
-        Editor: Number,
-        Admin: Number
+        placeOfBirth: {
+            type: String,
+        },
+        gender: {
+            type: String,
+        },
+        educationData: {
+            educationLevel: {
+                type: String,
+            },
+            yearOfGraduation: {
+                type: String,
+            },
+            major: {
+                type: String,
+            },
+            university: {
+                type: String,
+            },
+            organizationExperience: {
+                type: String,
+            },
+        },
+        familyData: {
+            mariageStatus: {
+                type: String,
+            },
+            spouseName: {
+                type: String,
+            },
+            motherName: {
+                type: String,
+            },
+            fatherName: {
+                type: String,
+            },
+            numberOfChildren: {
+                childName1: {
+                    type: String,
+                },
+                childName2: {
+                    type: String,
+                },
+                childName3: {
+                    type: String,
+                },
+                childName4: {
+                    type: String,
+                },
+            },
+        },
+        phoneNumber: {
+            type: String,
+        },
+        nikNumber: {
+            type: String,
+        },
+        bpjsKesehatan: {
+            type: String,
+        },
+        bpjsKetenagakerjaan: {
+            type: String,
+        },
+        npwpNumber: {
+            type: String,
+        },
+        experience: {
+            type: String,
+        },
+        lastDepartment: {
+            type: String,
+        },
+        personalCharacteristics: {
+            weakness: {
+                type: String,
+            },
+            strength: {
+                type: String,
+            },
+        },
+        emergencyContact: {
+            name: {
+                type: String,
+            },
+            address: {
+                type: String,
+            },
+            phoneNumber: {
+                type: String,
+            },
+            relationship: {
+                type: String,
+            },
+        },
     },
-    password: {
-        type: String,
-        required: true
-    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
 });
 
-module.exports = mongoose.model('Employee', employeeSchema);
+const Employee = mongoose.model("Employee", employeeSchema);
+
+module.exports = Employee;
