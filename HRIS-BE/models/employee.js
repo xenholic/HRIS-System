@@ -7,6 +7,9 @@ const employeeSchema = new mongoose.Schema({
     address: {
         type: String,
     },
+    addressNow: {
+        type: String,
+    },
     email: {
         type: String,
     },
@@ -149,7 +152,10 @@ const employeeSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    updatedAt: {
+        type: Date,
+    },
 });
 
 const Employee = mongoose.model("Employee", employeeSchema);

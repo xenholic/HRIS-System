@@ -12,6 +12,7 @@ router.post("/login", UsersController.login);
 router.get("/employees", EmployeeController.showAllEmployees);
 router.post("/employees", EmployeeController.addNewEmployees);
 router.get("/employees/:employeeId", EmployeeController.showEmployeeById);
+router.delete("/employees/:employeeId", EmployeeController.deleteEmployeeById);
 // router.post("/companies", authenticationUsers, UsersController.newProposal);
 // router.post("/companies/:companyId", authenticationUsers, UsersController.newProposal);
 // router.get("/job", authenticationUsers, UsersController.showMyJob);
