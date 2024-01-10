@@ -1,16 +1,151 @@
-// const { compare } = require("../helpers/bcrypt");
-// const { sign } = require("jsonwebtoken");
-// const { SECRET_KEY } = process.env;
-// const {
-//   Employee,
-//   Category,
-//   Company,
-//   User
-// } = require("../models");
-// const { Op } = require("sequelize");
-// const sendEmail = require("../nodemailer");
+"use strict"
 
-// class EmployeeController {
+const Employee = require("../models/employee");
+
+class EmployeeController {
+
+
+      // show employee
+  static async showAllEmployees(req, res, next) {
+    try {
+      const employees = await Employee.find();
+      console.log(employees, "ini employee"	)
+      res.status(200).json(employees);
+    } catch (err) {
+        console.log(err, "ini error")
+      next(err);
+    }
+  }
+
+  static async addNewEmployees(req, res, next) {
+    try {
+
+        const { 
+            name,
+            address,
+            email,
+            salary,
+            status = "active",
+            profilePic,
+            position,
+            companyId,
+            department,
+            field,
+            religion,
+            contractType,
+            startDateWorking,
+            pohArea,
+            dateOfBirth,
+            placeOfBirth,
+            gender,
+            educationLevel,
+            yearsOfEducation,
+            major,
+            organizationExp,
+            motherName,
+            university,
+            fatherName,
+            spouseName,
+            mariageStatus,
+            childName1,
+            childName2,
+            childName3,
+            childName4,
+            phoneNumber,
+            domisiliSekarang,
+            nikNumber,
+            lastSalary,
+            bpjsTkNumber,
+            bpjsKesNumber,
+            npwp,
+            experience,
+            lastDepartment,
+            weakness,
+            advantage,
+            emergencyContactname,
+            emergencyContactrelation,
+            emergencyContactaddress,
+            emergencyContactphoneNumber,
+         } = req.body;
+
+      const employees = await Employee.create({
+        name,
+        address,
+        addressNow: domisiliSekarang,
+        email,
+        salary,
+        position,
+        profilePicture: profilePic,
+        pointOfHireArea: pohArea,
+        companyId,
+        department,
+        lastSalary,
+        field,
+        status,
+        religion,
+        contractType,
+        startDateWorking,
+        personalData: {
+            dateOfBirth,
+            placeOfBirth,
+            gender,
+            educationData: {
+                educationLevel,
+                yearOfGraduation: yearsOfEducation,
+                major,
+                university,
+                organizationExperience: organizationExp,
+            },
+            familyData: {
+                mariageStatus,
+                spouseName,
+                motherName,
+                fatherName,
+                numberOfChildren: {
+                    childName1,
+                    childName2,
+                    childName3,
+                    childName4,
+                },
+            },
+            phoneNumber,
+            nikNumber: nikNumber,
+            bpjsKesehatan : bpjsKesNumber,
+            bpjsKetenagakerjaan: bpjsTkNumber,
+            npwpNumber: npwp,
+            experience,
+            lastDepartment,
+            personalCharacteristics: {
+                weakness,
+                strength: advantage,
+            },
+            emergencyContact: {
+                name: emergencyContactname,
+                address: emergencyContactaddress,
+                phoneNumber: emergencyContactphoneNumber,
+                relationship: emergencyContactrelation,
+            },
+        },
+      });
+      res.status(200).json(employees);
+    } catch (err) {
+    console.log(err, "ini error")
+      next(err);
+    }
+  }
+
+  static async showEmployeeById(req, res, next) {
+
+    try {
+      const { employeeId } = req.params;
+      console.log(req.params, "ini params")
+      const employees = await Employee.findById(employeeId);
+      res.status(200).json(employees);
+    } catch (err) {
+      console.log(err)
+      next(err);
+    }
+  }
 
 //     // add showprojects with filter
 //     static async showProjects(req, res, next) {
@@ -564,6 +699,6 @@
 //       next(err);
 //     }
 //   }
-// }
+}
 
-// module.exports = EmployeeController;
+module.exports = EmployeeController;

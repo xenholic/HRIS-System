@@ -24,9 +24,11 @@ function Dasboard() {
   const employees = useSelector((state) => {
     return state.employeeReducer.employees;
   });
+  console.log(employees, "employees");
 const date = new Date().toLocaleDateString();
 
 const field = employees.filter((employee) => {
+  console.log(employee.field, "field")
     return employee.field === "on site"
 });
 const office = employees.filter((employee) => {
