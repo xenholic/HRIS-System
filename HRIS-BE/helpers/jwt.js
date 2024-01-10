@@ -1,5 +1,8 @@
 const jwt = require("jsonwebtoken");
-const secretKey = process.env.SECRET_KEY || adminPTGR
+const dotenv = require("dotenv");
+dotenv.config();
+
+const secretKey = process.env.SECRET_KEY
 
 const convertToToken = (payload) => {
   return jwt.sign(payload, secretKey);

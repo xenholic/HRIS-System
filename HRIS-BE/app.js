@@ -3,18 +3,19 @@
 
   const express = require("express");
   const app = express();
-  const users = require("./routes/users");
-  const companies = require("./routes/companies");
+  const router = require("./routers/index");
   const cors = require("cors");
   const errorHandler = require("./middlewares/errorHandler");
+  const mongooseconnect = require("./config/config");
   
+  mongooseconnect();
   
   app.use(cors());
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
   
-  app.use("/users", users);
-  app.use("/companies", companies);
+  app.use("/", router);
+
   app.use(errorHandler);
   
   module.exports = app;
