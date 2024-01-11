@@ -24,7 +24,12 @@ function Dasboard() {
   const employees = useSelector((state) => {
     return state.employeeReducer.employees;
   });
-  console.log(employees, "employees");
+
+  const companies = useSelector((state) => {
+    return state.employeeReducer.companies;
+  });
+
+  const totalCompanies = companies.length;
 const date = new Date().toLocaleDateString();
 
 const field = employees.filter((employee) => {
@@ -165,7 +170,7 @@ useEffect(() => {
                 <div className="card-body">
                   <div className="card_widget_header">
                     <label>Companies</label>
-                    <h4>30</h4>
+                    <h4>{companies.length}</h4>
                   </div>
                   <div className="card_widget_img">
                     <img src="assets/img/dash2.png" alt="card-img" />

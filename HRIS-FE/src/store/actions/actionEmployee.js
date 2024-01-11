@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 // import swal from "sweetalert";
-import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES } from "./actionType";
+import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES, FETCH_COMPANIES } from "./actionType";
 
 const login = (input) => {
   return (dispatch) => {
@@ -37,7 +37,6 @@ const fetchEmployees = () => {
       },
     })
       .then((response) => {
-        console.log(response.json, "ini response")
         if (!response.ok) {
           throw new Error("internal server error");
         }
@@ -81,7 +80,7 @@ const fetchEmployeeById = (_id) => {
   };
 };
 
-const fetchEmployeeByIdSuccess = (payload) => {
+export const fetchEmployeeByIdSuccess = (payload) => {
   return {
     type: FETCH_EMPLOYEE_BY_ID_USER,
     payload,
@@ -93,7 +92,6 @@ const addNewEmployee = (data) => {
     return axios
       .post("http://localhost:3000/employees", data)
       .then((response) => {
-        console.log(response , "ini response add")
         return response;
       })
       .catch((error) => {
@@ -103,17 +101,28 @@ const addNewEmployee = (data) => {
   };
 };
 
+//fetching employee
 const fetchCompany = (data) => {
   return (dispatch) => {
     return axios
       .get("http://localhost:3000/companies", data)
       .then((response) => {
-        return response;
+        return response.data;
+      })
+      .then((data) => {
+        dispatch(fetchCompaniesSuccess(data));
       })
       .catch((error) => {
         // swal(error.response.data.message);
         console.log(error)
       });
+  };
+};
+
+export const fetchCompaniesSuccess = (payload) => {
+  return {
+    type: FETCH_COMPANIES,
+    payload,
   };
 };
 
