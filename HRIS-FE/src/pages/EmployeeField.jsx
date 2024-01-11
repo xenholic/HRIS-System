@@ -36,6 +36,10 @@ function EmployeeField() {
     return state.employeeReducer.employee;
   });
 
+  const company = useSelector((state) => {
+    return state.employeeReducer.companies;
+  });
+
   useEffect(() => {
     dispatch(fetchEmployees());
     // dispatch(fetchEmployeeById());
@@ -251,9 +255,17 @@ function EmployeeField() {
                                   </div>
                                 </td>
                                 <td>
-                                  <label className="action_label">
-                                    {item.company}{" "}
-                                  </label>
+                                { company ?
+                                  company.map((data) => {
+                                    if (data._id === item.companyId) {
+                                      return (
+                                        <label className="action_label">
+                                          {data.name}
+                                        </label>
+                                      );
+                                    }
+                                  }) : <p>no data</p>
+                                }
                                 </td>
                                 <td>
                                   <label className="action_label2">
