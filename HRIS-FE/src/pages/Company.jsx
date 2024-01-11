@@ -4,7 +4,7 @@ import Topbar from "../components/Topbar";
 import Sidebar from "../components/Sidebar";
 import Modal from "react-bootstrap/Modal";
 import { fetchCompany, addCompany } from "../store/actions/actionEmployee";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

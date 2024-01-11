@@ -2,10 +2,11 @@
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addNewEmployee } from "../store/actions/actionEmployee";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewEmployee, fetchCompany } from "../store/actions/actionEmployee";
 import swal from "sweetalert";
+
 
 function AddEmployee() {
   const navigate = useNavigate();
@@ -66,7 +67,6 @@ function AddEmployee() {
     e.preventDefault();
     dispatch(addNewEmployee(inputFormEmployee))
       .then((response) => {
-        console.log(response, "response"	)
         if (response.statusText === "OK" ) {
           swal("Success!", "New Employee Added!", "success");
           navigate("/employees");
@@ -77,6 +77,17 @@ function AddEmployee() {
         swal("Error!", "Failed to Add New Employee!", "error");
       });
   };
+
+  let company = useSelector((state) => {
+    return state.employeeReducer.companies;
+  });
+  
+  useEffect(() => {
+    dispatch(fetchCompany());
+  }, []);
+
+  console.log(company, "companies")
+
   return (
     <div>
       <Topbar />
@@ -1046,11 +1057,16 @@ function AddEmployee() {
                               });
                             }}
                           >
-                            <option value="" selected disabled>
+                            { company ?
+                              company.map((item) => {
+                                return (
+                                  <option value={item._id}>{item.name}</option>
+                                )
+                              })
+                              :  <option value="" selected disabled>
                               Select Company
                             </option>
-                            <option value="1">PT Greenland Resource</option>
-                            <option value="2">PT E-minerba</option>
+                            }
                           </select>
                         </div>
                       </div>

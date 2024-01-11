@@ -4,9 +4,10 @@ class CompanyController {
 
   static async getAllCompanies(req, res, next) {
     try {
-      const employees = await Employee.find();
-      console.log(employees, "ini employee"	)
-      res.status(200).json(employees);
+
+      const companies = await Company.find();
+
+      res.status(200).json(companies);
     } catch (err) {
       console.log(err)
       next(err);
