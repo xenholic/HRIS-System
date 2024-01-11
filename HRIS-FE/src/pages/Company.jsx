@@ -5,13 +5,17 @@ import Sidebar from "../components/Sidebar";
 import Modal from "react-bootstrap/Modal";
 import { fetchCompany, addCompany } from "../store/actions/actionEmployee";
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Company() {
 
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  let userId = localStorage.getItem("id");
 
   const [inputFormCompany, setInputFormCompany] = useState({
     name: "",
@@ -19,7 +23,11 @@ function Company() {
     address2: "",
     email: "",
     phoneNumber: "",
-    registereCompanyNumber: "",
+    logo: "",
+    description: "",
+    industry: "",
+    value: "",
+    registerCompanyNumber: "",
     incorporationDate: "",
     city: "",
     country: "",
@@ -28,7 +36,23 @@ function Company() {
     facebook: "",
     instagram: "",
     linkedin: "",
+    createdBy: userId,
   });
+
+  const handleAddCompany = (e) => {
+    e.preventDefault();
+    dispatch(addCompany(inputFormCompany))
+      .then((response) => {
+        if (response.statusText === "OK" ) {
+          swal("Success!", "New Company Added!", "success");
+          navigate("/companies");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        swal("Error!", "Failed to Add New Company!", "error");
+      });
+  };
 
   return (
     <div>
@@ -483,6 +507,50 @@ function Company() {
                       type="text" placeholder="Address...." />
                     </div>
                     <div className="form-popup">
+                      <label className="mb-2">Logo</label>
+                      <input 
+                      onChange={(e) => {
+                        setInputFormCompany({
+                          ...inputFormCompany,
+                          logo: e.target.value,
+                        });
+                      }}
+                      type="file" placeholder="..." />
+                    </div>
+                    <div className="form-popup">
+                      <label className="mb-2">Description</label>
+                      <textarea className="col-md-12 p-0" rows="5" cols="60" placeholder=" Add Company Description"
+                       onChange={(e) => {
+                        setInputFormCompany({
+                          ...inputFormCompany,
+                          description: e.target.value,
+                        });
+                      }}
+                      ></textarea>
+                    </div>
+                    <div className="form-popup">
+                      <label className="mb-2">Company Value</label>
+                      <input 
+                      onChange={(e) => {
+                        setInputFormCompany({
+                          ...inputFormCompany,
+                          value: e.target.value,
+                        });
+                      }}
+                      type="text" placeholder="www.example.com" />
+                    </div>
+                    <div className="form-popup">
+                      <label className="mb-2">Industry</label>
+                      <input 
+                      onChange={(e) => {
+                        setInputFormCompany({
+                          ...inputFormCompany,
+                          industry: e.target.value,
+                        });
+                      }}
+                      type="text" placeholder="www.example.com" />
+                    </div>
+                    <div className="form-popup">
                       <label className="mb-2">Web Site</label>
                       <input 
                       onChange={(e) => {
@@ -492,17 +560,6 @@ function Company() {
                         });
                       }}
                       type="text" placeholder="www.example.com" />
-                    </div>
-                    <div className="form-popup">
-                      <label className="mb-2">Country</label>
-                      <input 
-                      onChange={(e) => {
-                        setInputFormCompany({
-                          ...inputFormCompany,
-                          country: e.target.value,
-                        });
-                      }}
-                      type="text" placeholder="Country" />
                     </div>
                     <div className="form-popup">
                       <label className="mb-2">Postal - Code</label>
@@ -546,8 +603,8 @@ function Company() {
                 <div className="modal-footer">
                   <button 
                   onClick={
-                    () => {
-                      console.log(inputFormCompany);
+                    (e) => {
+                      handleAddCompany(e);
                     }
                   }
                   type="submit" className="btn btn-primary">

@@ -9,7 +9,6 @@ class EmployeeController {
   static async showAllEmployees(req, res, next) {
     try {
       const employees = await Employee.find();
-      console.log(employees, "ini employee"	)
       res.status(200).json(employees);
     } catch (err) {
         console.log(err, "ini error")
