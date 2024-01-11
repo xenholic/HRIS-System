@@ -484,7 +484,7 @@ function Employee() {
                             {detailEmployee.personalData.educationData.major}
                           </td>
                           <td className="active">Last Position</td>
-                          <td>{detailEmployee.personalData.lastPosition}</td>
+                          <td>{detailEmployee.personalData.lastDepartment}</td>
                         </tr>
                         <tr>
                           <td className="active">Education</td>
@@ -507,7 +507,7 @@ function Employee() {
                           <td>
                             {
                               detailEmployee.personalData.educationData
-                                .organizationExp
+                                .organizationExperience
                             }
                           </td>
                         </tr>

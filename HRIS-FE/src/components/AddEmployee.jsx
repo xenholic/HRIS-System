@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewEmployee } from "../store/actions/actionEmployee";
+import swal from "sweetalert";
 
 function AddEmployee() {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ function AddEmployee() {
   const [inputFormEmployee, setInputFormEmployee] = useState({
     name: "",
     address: "",
+    addressNow: "",
     email: "",
     salary: "",
     profilePic: "",
@@ -41,7 +43,6 @@ function AddEmployee() {
     childName3: "",
     childName4: "",
     phoneNumber: "",
-    domisiliSekarang: "",
     nikNumber: "",
     lastSalary: "",
     bpjsTkNumber: "",
@@ -65,12 +66,15 @@ function AddEmployee() {
     e.preventDefault();
     dispatch(addNewEmployee(inputFormEmployee))
       .then((response) => {
-        if (response.ok) {
+        console.log(response, "response"	)
+        if (response.statusText === "OK" ) {
+          swal("Success!", "New Employee Added!", "success");
           navigate("/employees");
         }
       })
       .catch((error) => {
         console.log(error);
+        swal("Error!", "Failed to Add New Employee!", "error");
       });
   };
   return (
@@ -478,7 +482,7 @@ function AddEmployee() {
                               });
                             }}
                             type="text"
-                            id="address"
+                            id="npwp"
                             placeholder="No NPWP"
                           />
                         </div>
@@ -495,11 +499,11 @@ function AddEmployee() {
                            onChange={(e) => {
                              setInputFormEmployee({
                                ...inputFormEmployee,
-                               domisiliSekarang: e.target.value,
+                               addressNow: e.target.value,
                              });
                            }}
                            type="text"
-                           id="address"
+                           id="addressNow"
                            placeholder="Domisi Sekarang"
                          />:  <input
                          onChange={(e) => {

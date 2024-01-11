@@ -9,7 +9,6 @@ class EmployeeController {
   static async showAllEmployees(req, res, next) {
     try {
       const employees = await Employee.find();
-      console.log(employees, "ini employee"	)
       res.status(200).json(employees);
     } catch (err) {
         console.log(err, "ini error")
@@ -138,7 +137,7 @@ class EmployeeController {
 
     try {
       const { employeeId } = req.params;
-      console.log(req.params, "ini params")
+
       const employees = await Employee.findById(employeeId);
       res.status(200).json(employees);
     } catch (err) {
@@ -146,6 +145,130 @@ class EmployeeController {
       next(err);
     }
   }
+
+  static async updateEmployee(req, res, next) {
+    try {
+      const { employeeId } = req.params;
+      const { 
+        name,
+        address,
+        addressNow,
+        email,
+        salary,
+        status,
+        profilePic,
+        position,
+        companyId,
+        department,
+        field,
+        religion,
+        contractType,
+        startDateWorking,
+        pohArea,
+        dateOfBirth,
+        placeOfBirth,
+        gender,
+        educationLevel,
+        yearsOfEducation,
+        major,
+        organizationExp,
+        motherName,
+        university,
+        fatherName,
+        spouseName,
+        mariageStatus,
+        childName1,
+        childName2,
+        childName3,
+        childName4,
+        phoneNumber,
+        nikNumber,
+        lastSalary,
+        bpjsTkNumber,
+        bpjsKesNumber,
+        npwp,
+        experience,
+        lastDepartment,
+        weakness,
+        advantage,
+        emergencyContactname,
+        emergencyContactrelation,
+        emergencyContactaddress,
+        emergencyContactphoneNumber,
+     } = req.body;
+
+     if(!addressNow){
+       let dataAddress = address
+       return dataAddress
+     }
+
+      const employees = await Employee.findByIdAndUpdate(employeeId, {
+        name,
+        address,
+        addressNow: dataAddress,
+        email,
+        salary,
+        status,
+        profilePic,
+        position,
+        companyId,
+        department,
+        field,
+        religion,
+        contractType,
+        startDateWorking,
+        pohArea,
+        dateOfBirth,
+        placeOfBirth,
+        gender,
+        educationLevel,
+        yearsOfEducation,
+        major,
+        organizationExp,
+        motherName,
+        university,
+        fatherName,
+        spouseName,
+        mariageStatus,
+        childName1,
+        childName2,
+        childName3,
+        childName4,
+        phoneNumber,
+        nikNumber,
+        lastSalary,
+        bpjsTkNumber,
+        bpjsKesNumber,
+        npwp,
+        experience,
+        lastDepartment,
+        weakness,
+        advantage,
+        emergencyContactname,
+        emergencyContactrelation,
+        emergencyContactaddress,
+        emergencyContactphoneNumber,
+      });
+      res.status(200).json(employees);
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  static async deleteEmployeeById(req, res, next) {
+    try {
+      const { employeeId } = req.params;
+
+      const employees = await Employee.findByIdAndDelete(employeeId);
+
+
+
+      res.status(200).json(employees);
+    } catch (err) {
+      next(err);
+    }
+  }
+
 
 //     // add showprojects with filter
 //     static async showProjects(req, res, next) {
