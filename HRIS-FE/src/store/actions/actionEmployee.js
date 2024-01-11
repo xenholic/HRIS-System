@@ -102,19 +102,26 @@ const addNewEmployee = (data) => {
 };
 
 //fetching employee
-const fetchCompany = (data) => {
+const fetchCompany = () => {
   return (dispatch) => {
-    return axios
-      .get("http://localhost:3000/companies", data)
+
+      fetch("http://localhost:3000/companies",{
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+        },
+      })
       .then((response) => {
-        return response.data;
+        if (!response.ok) {
+          throw new Error("internal server error");
+        }
+        return response.json();
       })
-      .then((data) => {
-        dispatch(fetchCompaniesSuccess(data));
+      .then((response) => {
+        dispatch(fetchCompaniesSuccess(response));
       })
-      .catch((error) => {
+      .catch((err) => {
         // swal(error.response.data.message);
-        console.log(error)
+        console.log(err)
       });
   };
 };

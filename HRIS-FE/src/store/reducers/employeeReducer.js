@@ -17,4 +17,4 @@ function employeeReducer(state = initialState, action) {
     }
 }
 
-export default employeeReducer 
+export default employeeReducer

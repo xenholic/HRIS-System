@@ -9,13 +9,11 @@ import { Link } from "react-router-dom";
 import {
   fetchEmployees,
   fetchEmployeeById,
+  fetchCompany
 } from "../store/actions/actionEmployee";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import Row from "react-bootstrap/Row";
 // import EmployeeTable from "../components/EmployeeTable";
 
 function Employee() {
@@ -52,11 +50,18 @@ function Employee() {
     return state.employeeReducer.employee;
   });
 
+  const company = useSelector((state) => {
+    return state.employeeReducer.companies;
+  });
+
+  console.log(company, "data company")
+
   //fetch dari redux
   useEffect(() => {
     dispatch(fetchEmployees());
-    // dispatch(fetchEmployeeById());
+    dispatch(fetchCompany());
   }, []);
+
   return (
     <div>
       <Topbar />
@@ -189,14 +194,17 @@ function Employee() {
                                 </div>
                               </td>
                               <td>
-                                {item.companyId ? (
-                                  <label className="action_label">
-                                  {item.companyId}{" "}
-                                </label>
-                                ) : (
-                                  <label className="action_label">
-                                    No company Data
-                                </label>)}
+                                { company ?
+                                  company.map((data) => {
+                                    if (data._id === item.companyId) {
+                                      return (
+                                        <label className="action_label">
+                                          {data.name}
+                                        </label>
+                                      );
+                                    }
+                                  }) : <p>no data</p>
+                                }
                                 {/* <label className="action_label">
                                   {item.company}{" "}
                                 </label> */}
