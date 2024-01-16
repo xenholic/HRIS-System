@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-target-blank */
 import { Routes, Route } from "react-router-dom";
-// import AuthLayout from "./_auth/AuthLayout";
-// import RootLayout from "./_root/RootLayout";
 
 import Dasboard from "./pages/Dasboard";
 import Employee from "./pages/Employee";
@@ -10,7 +8,7 @@ import Login from "./pages/Login";
 import EmployeeOffice from "./pages/EmployeeOffice";
 import EmployeeField from "./pages/EmployeeField";
 import Company from "./pages/Company";
-import Calendar from "./pages/Calendar";
+import Approvement from "./pages/Approvement";
 import Leaves from "./pages/Leaves";
 import Review from "./pages/Review";
 import ReviewType from "./pages/ReviewType";
@@ -43,20 +41,14 @@ import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className="">
+    <div className="App">
       <Routes>
         {/* Public Routes */}
-        {/* <Route 
-      // element={<AuthLayout />}
-      > */}
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/sign-up" element={<SignupForm />} /> */}
-        {/* </Route> */}
 
         {/* Private Routes */}
-        {/* <Route element={<RootLayout />}> */}
-        {/* <Route path="/" element={<ProtectLandingPage />}> */}
-          <Route index element={<Dasboard />} />
+        <Route element={<ProtectLandingPage />}>
+          <Route path="/" element={<Dasboard />} />
           <Route path="/employees" element={<Employee />} />
           <Route path="/add-employee" element={<AddEmployee />} />
           {/* <Route path="/add-employee/:id" element={<AddEmployee />} /> */}
@@ -64,7 +56,7 @@ function App() {
           <Route path="/employees/office" element={<EmployeeOffice />} />
           <Route path="/employees/field" element={<EmployeeField />} />
           <Route path="/companies" element={<Company />} />
-          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/approvement" element={<Approvement />} />
           <Route path="/leaves" element={<Leaves />} />
           <Route path="/review" element={<Review />} />
           <Route path="/review/add-review" element={<AddReview />} />
@@ -100,7 +92,7 @@ function App() {
         <Route path="/profile/:id" element={<Profile/>}/>
         <Route path="/update-profile/:id" element={<UpdateProfile/>}/>*/}
           {/* </Route> */}
-        {/* </Route> */}
+        </Route>
       </Routes>
     </div>
   );

@@ -1,8 +1,22 @@
 /* eslint-disable react/no-unknown-property */
-
-import { Link } from "react-router-dom";
+import swal from "sweetalert";
+import { Link, useNavigate } from "react-router-dom";
 
 function Sidebar() {
+  let navigate = useNavigate();
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    swal({
+      title: "Logout Success",
+      text: "You have been logged out successfully",
+      icon: "success",
+      button: "OK",
+    })
+    navigate("/login");
+  };
+  
   return (
     <div>
       <div className="sidebar" id="sidebar">
@@ -67,12 +81,12 @@ function Sidebar() {
                     <span> Company</span>
                   </Link>
                 </li>
-                {/* <li>
-                  <Link to="/calendar">
-                    <img src="../assets/img/calendar.svg" alt="sidebar_img" />{" "}
-                    <span>Calendar</span>
+                <li>
+                  <Link to="/approvement">
+                    <img src="../assets/img/check-square.svg" alt="sidebar_img" />{" "}
+                    <span>Approvement</span>
                   </Link>
-                </li> */}
+                </li>
                 <li>
                   <Link to="/leaves">
                     <img src="../assets/img/leave.svg" alt="sidebar_img" />{" "}
@@ -112,9 +126,12 @@ function Sidebar() {
               </ul>
               <ul className="logout">
                 <li>
-                  <a href="profile.html">
-                    <img src="../assets/img/logout.svg" alt="sidebar_img" />
+                  <a className="">
+                  <button className="btn btn-outline-light" onClick={(e) => handleLogout(e)}>
+                    <img 
+                    src="../assets/img/logout.svg" alt="sidebar_img" />
                     <span>Log out</span>
+                  </button>
                   </a>
                 </li>
               </ul>

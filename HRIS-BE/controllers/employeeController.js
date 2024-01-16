@@ -81,6 +81,7 @@ class EmployeeController {
         lastSalary,
         field,
         status,
+        statusApprove: "pending",
         religion,
         contractType,
         startDateWorking,

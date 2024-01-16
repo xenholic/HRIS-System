@@ -43,6 +43,9 @@ const employeeSchema = new mongoose.Schema({
     field: {
         type: String,
     },
+    statusApprove: {
+        type: String,
+    },
     religion: {
         type: String,
     },
@@ -149,12 +152,18 @@ const employeeSchema = new mongoose.Schema({
             },
         },
     },
+    createdBy: {
+        type: String,
+    },
     createdAt: {
         type: Date,
         default: Date.now
     },
     updatedAt: {
         type: Date,
+    },
+    updatedBy: {
+        type: String,
     },
 });
 

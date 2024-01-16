@@ -29,12 +29,22 @@ class UsersController {
         phoneNumber,
         status: false,
       });
+
+      await Notification.create({
+        username,
+        email,
+        role,
+        password : passwordHash,
+        phoneNumber,
+        status: false,
+      });
+
       res.status(201).json({
         email,
         message: "register success",
       });
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       next(err);
     }
   }
@@ -77,7 +87,7 @@ class UsersController {
         access_token: token,
       });
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       next(err);
     }
   }

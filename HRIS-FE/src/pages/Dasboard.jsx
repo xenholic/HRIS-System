@@ -115,7 +115,7 @@ useEffect(() => {
                 className="mr-1"
                 alt="profile"
               />{" "}
-              Welcome Admin
+              {localStorage.getItem("role").toUpperCase()} { localStorage.getItem("username").toUpperCase()}
             </h4>
             <label>{ date }</label>
           </div>
