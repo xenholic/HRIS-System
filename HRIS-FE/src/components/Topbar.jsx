@@ -174,9 +174,8 @@ function Topbar() {
               </div>
             </div>
           </li>
-          
-
-          <li className="nav-item dropdown has-arrow main-drop">
+  
+          {/* <li className="nav-item dropdown has-arrow main-drop">
             <Link to="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
               <span className="user-img">
                 <img src="../assets/img/profile.jpg" alt="" />
@@ -195,7 +194,7 @@ function Topbar() {
                 <i data-feather="log-out" className="mr-1"></i> Logout
               </a>
             </div>
-          </li>
+          </li> */}
         </ul>
         <div className="dropdown mobile-user-menu show">
           <a

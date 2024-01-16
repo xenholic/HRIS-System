@@ -210,7 +210,7 @@ function Employee() {
                                 </label> */}
                               </td>
                               <td>
-                                <label className="action_label2">
+                                <label className="action_label2 text-wrap">
                                   {item.department}{" "}
                                 </label>
                               </td>

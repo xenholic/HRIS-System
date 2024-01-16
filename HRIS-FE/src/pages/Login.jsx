@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../store/actions/actionEmployee";
+import swal from "sweetalert";
 
 function Login() {
 
@@ -20,17 +21,31 @@ function Login() {
     // console.log(formLogin, "<<< form login");
     dispatch(login(formLogin))
       .then((response) => {
+   
+          localStorage.setItem("id", response.data.id);
+          localStorage.setItem("username", response.data.username);
+          localStorage.setItem("email", response.data.email);
+          localStorage.setItem("role", response.data.role);
+          localStorage.setItem("status", response.data.status);
+          localStorage.setItem("access_token", response.data.access_token);
+          swal({
+            title: "Login Success",
+            text: `welcome to PTGR Super System Mr/Ms ${response.data.username}`,
+            icon: "success",
+            button: "OK",
+          })
+          navigate("/");
+        
+
         // console.log(response, "data");
-        localStorage.setItem("id", response.data.id);
-        localStorage.setItem("username", response.data.username);
-        localStorage.setItem("email", response.data.email);
-        localStorage.setItem("role", response.data.role);
-        localStorage.setItem("status", response.data.status);
-        localStorage.setItem("access_token", response.data.access_token);
-        navigate("/");
       })
       .catch((error) => {
-        console.log(error);
+        swal({
+          title: "Login Failed",
+          text: `Please check ${error.response.data.message}`,
+          icon: "error",
+          button: "OK",
+        })
       }); 
   };
 

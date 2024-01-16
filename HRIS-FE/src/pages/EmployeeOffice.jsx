@@ -160,12 +160,12 @@ function EmployeeOffice() {
                                   src={
                                     item.profilePic
                                       ? item.profilePic
-                                      : "assets/img/profiles/ava.jpg"
+                                      : "../assets/img/profiles/avatar-04.jpg"
                                   }
                                 />
                               </div>
                             );
-                          })
+                          }) 
                         ) : (
                           <p className="text-center text-lg">
                             No Employee to show
@@ -207,6 +207,7 @@ function EmployeeOffice() {
                               src="../assets/img/profiles/avatar-18.jpg"
                             />
                           </div> */}
+                          
                       </div>
                     </div>
                     <div className="member_link">
@@ -247,7 +248,7 @@ function EmployeeOffice() {
                                         src={
                                           item.profilePic
                                             ? item.profilePic
-                                            : "assets/img/profiles/ava.jpg"
+                                            : "../assets/img/profiles/avatar-06.jpg"
                                         }
                                         alt="profile"
                                         className="img-table"
@@ -270,7 +271,7 @@ function EmployeeOffice() {
                                 }
                                 </td>
                                 <td>
-                                  <label className="action_label2">
+                                  <label className="action_label2 text-wrap">
                                     {item.department}{" "}
                                   </label>
                                 </td>

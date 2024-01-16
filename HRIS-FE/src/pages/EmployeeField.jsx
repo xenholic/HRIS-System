@@ -158,7 +158,7 @@ function EmployeeField() {
                                   src={
                                     item.profilePic
                                       ? item.profilePic
-                                      : "../assets/img/profiles/ava.jpg"
+                                      : "../assets/img/profiles/avatar-02.jpg"
                                   }
                                 />
                               </div>
@@ -245,7 +245,7 @@ function EmployeeField() {
                                         src={
                                           item.profilePic
                                             ? item.profilePic
-                                            : "../assets/img/profiles/ava.jpg"
+                                            : "../assets/img/profiles/avatar-03.jpg"
                                         }
                                         alt="profile"
                                         className="img-table"
@@ -268,7 +268,7 @@ function EmployeeField() {
                                 }
                                 </td>
                                 <td>
-                                  <label className="action_label2">
+                                  <label className="action_label2 text-wrap">
                                     {item.department}{" "}
                                   </label>
                                 </td>

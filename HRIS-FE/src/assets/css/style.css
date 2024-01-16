@@ -2857,7 +2857,7 @@ html.menu-opened body {
 	line-height: 18px;
 	top: 11px;
 }
-.logout a {
+.logout button {
     background: #CBD1EE;
     border-radius: 10px;
 }
