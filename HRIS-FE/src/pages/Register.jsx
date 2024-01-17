@@ -21,6 +21,7 @@ function Register() {
         email: "",
         password: "",
         phoneNumber: "",
+        role: "",
       });
 
       const handleRegister = (e) => {
@@ -101,7 +102,7 @@ function Register() {
                         </label>
                         <input className="form-control" type="text" />
                       </div> */}
-                      {/* <div className="form-group">
+                      <div className="form-group">
                         <label className="form-control-label mb-2">
                           Role
                         </label>
@@ -114,10 +115,11 @@ function Register() {
                           }}
                           name="type"
                        className="form-control">
+                            <option value="Manager">Manager</option>
                             <option value="admin">Admin</option>
                             <option value="staff">Staff</option>
                         </select>
-                      </div> */}
+                      </div>
                       <div className="form-group mb-0">
                         <button
                           onClick={(e) => {

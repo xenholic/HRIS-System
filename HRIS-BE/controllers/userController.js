@@ -1,12 +1,12 @@
 const { compare, hash } = require("../helpers/bcrypt");
 const { convertToToken } = require("../helpers/jwt");
-const mockUserList = require("../mockUser");
+const mockUserList = require("../mockUser.js");
 const User = require("../models/user");
 
 class UsersController {
   static async register(req, res, next) {
     try {
-      const { username, email, password, phoneNumber,role = "admin" } = req.body;
+      const { username, email, password, phoneNumber, role = "admin" } = req.body;
 
       //check if email, password, or phonenumber is empty
       if (!username) {
@@ -25,7 +25,7 @@ class UsersController {
       await User.create({
         username,
         email,
-        password : passwordHash,
+        password: passwordHash,
         role,
         phoneNumber,
         isActive: false,
@@ -35,7 +35,7 @@ class UsersController {
         username,
         email,
         role,
-        password : passwordHash,
+        password: passwordHash,
         phoneNumber,
         isActive: false,
       });
@@ -60,6 +60,8 @@ class UsersController {
       }
 
       const userLogin = await User.findOne({ email });
+      console.log(userLogin, "ini user login")
+
 
       if (!userLogin) {
         throw new Error("User not found");
@@ -68,42 +70,46 @@ class UsersController {
       const validPassword = compare(password, userLogin.password);
 
       if (!validPassword) {
-        throw { name: "Invalid password" };
+        throw new Error("Invalid password" );
       }
 
-      let mockUser = mockUserList.find((user) => user.email === email && user.password === password);
-      if (mockUser) {
-        const newUser = await User.create({
-          username: mockUser.username,
-          email: mockUser.email,
-          password: mockUser.password,
-          role: mockUser.role,
-          phoneNumber: mockUser.phoneNumber,
-          isActive: mockUser.isActive,
-        })
+      if (mockUserList.default.email === email && mockUserList.default.password === password) {
+        if (!userLogin) {
+          await User.create({
+            username: mockUserList.default.username,
+            email: mockUserList.default.email,
+            password: hash(mockUserList.default.password),
+            role: mockUserList.default.role,
+            phoneNumber: mockUserList.default.phoneNumber,
+            isActive: mockUserList.default.isActive,
+          })
+        }
       } 
 
-    
+        
+      
+  
+        const payload = {
+          id: userLogin._id,
+          username: userLogin.username,
+          email: userLogin.email,
+          role: userLogin.role,
+          isActive: userLogin.isActive,
+        };
+  
+        const token = convertToToken(payload);
+  
+        res.status(200).json({
+          id: userLogin._id,
+          username: userLogin.username,
+          email,
+          role: userLogin.role,
+          isActive: userLogin.isActive,
+          access_token: token,
+        });
 
-      const payload = { 
-        id: userLogin._id,
-        username: userLogin.username,
-        email: userLogin.email,
-        role: userLogin.role,
-        isActive: userLogin.isActive,
-       };
-      const token = convertToToken(payload);
-
-      res.status(200).json({
-        id: userLogin._id,
-        username: userLogin.username,
-        email,
-        role: userLogin.role,
-        isActive: userLogin.isActive,
-        access_token: token,
-      });
     } catch (err) {
-      // console.log(err)
+      console.log(err)
       next(err);
     }
   }
@@ -332,7 +338,7 @@ class UsersController {
 
   //     const password = "Social login";
   //     const find = await User.findOne({ where: { email } });
-  
+
   //     if (!find) {
   //       const username = displayName;
   //       const newUser = await User.create({
