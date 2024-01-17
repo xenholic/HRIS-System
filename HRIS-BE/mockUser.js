@@ -1,12 +1,11 @@
-const mockUsersList = [
+const mockUserList = 
     {
         username: "Asri Diah Wijayanti",
         email: "asridiah@ptgr.com",
-        password: "adminptgr",
         role: "SuperUser",
+        password: "adminptgr",
         phoneNumber: "+6281234567890",
         isActive: true,
     }
-];
-  
-exports.default = mockUsersList;
+
+exports.default = mockUserList;

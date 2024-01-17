@@ -118,6 +118,12 @@ function Sidebar() {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/register">
+                    <img src="../assets/img/user-plus.svg" alt="sidebar_img" />
+                    <span>Register New User</span>
+                  </Link>
+                </li>
+                <li>
                   <Link to="/profile">
                     <img src="../assets/img/profile.svg" alt="sidebar_img" />{" "}
                     <span>Profile</span>
