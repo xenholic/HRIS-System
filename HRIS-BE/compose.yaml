@@ -8,17 +8,14 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  server:
-    build:
-      context: .
-    environment:
-      NODE_ENV: production
+  hris-be:
+    restart: unless-stopped
+    container_name: 'hris-backend-dev'
+    env_file:
+      - .env
+    build: .
     ports:
-      - 3000:3000
-    volumes:
-      - ./app:/usr/src/app
-      - ./app/.env:/usr/src/app/.env
-
+      - '3000:3000'
       
 
 # The commented out section below is an example of how to define a PostgreSQL

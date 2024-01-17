@@ -1,5 +1,6 @@
 const { compare, hash } = require("../helpers/bcrypt");
 const { convertToToken } = require("../helpers/jwt");
+const mockUserList = require("../mockUser");
 const User = require("../models/user");
 
 class UsersController {
@@ -27,7 +28,7 @@ class UsersController {
         password : passwordHash,
         role,
         phoneNumber,
-        status: false,
+        isActive: false,
       });
 
       await Notification.create({
@@ -36,7 +37,7 @@ class UsersController {
         role,
         password : passwordHash,
         phoneNumber,
-        status: false,
+        isActive: false,
       });
 
       res.status(201).json({
@@ -59,6 +60,7 @@ class UsersController {
       }
 
       const userLogin = await User.findOne({ email });
+
       if (!userLogin) {
         throw new Error("User not found");
       }
@@ -69,12 +71,26 @@ class UsersController {
         throw { name: "Invalid password" };
       }
 
+      let mockUser = mockUserList.find((user) => user.email === email && user.password === password);
+      if (mockUser) {
+        const newUser = await User.create({
+          username: mockUser.username,
+          email: mockUser.email,
+          password: mockUser.password,
+          role: mockUser.role,
+          phoneNumber: mockUser.phoneNumber,
+          isActive: mockUser.isActive,
+        })
+      } 
+
+    
+
       const payload = { 
         id: userLogin._id,
         username: userLogin.username,
         email: userLogin.email,
         role: userLogin.role,
-        status: userLogin.status,
+        isActive: userLogin.isActive,
        };
       const token = convertToToken(payload);
 
@@ -83,7 +99,7 @@ class UsersController {
         username: userLogin.username,
         email,
         role: userLogin.role,
-        status: userLogin.status,
+        isActive: userLogin.isActive,
         access_token: token,
       });
     } catch (err) {
