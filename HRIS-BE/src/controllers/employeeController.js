@@ -1,6 +1,6 @@
 "use strict"
 
-const Employee = require("../src/routers/models/employee");
+const Employee = require("../models/employee");
 
 class EmployeeController {
 
@@ -270,7 +270,7 @@ class EmployeeController {
     }
   }
 
-
+  
 //     // add showprojects with filter
 //     static async showProjects(req, res, next) {
 //       try {

@@ -1,12 +1,11 @@
 "use strict"
 
-
   const express = require("express");
   const app = express();
-  const router = require("./routers/index");
+  const router = require("./src/routers/index");
   const cors = require("cors");
-  const errorHandler = require("./middlewares/errorHandler");
-  const mongooseconnect = require("./config/config");
+  const errorHandler = require("./src/middlewares/errorHandler");
+  const mongooseconnect = require("./src/config/config");
   
   mongooseconnect();
   

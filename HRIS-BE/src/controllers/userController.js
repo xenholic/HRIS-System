@@ -1,6 +1,6 @@
 const { compare, hash } = require("../helpers/bcrypt.js");
 const { convertToToken } = require("../helpers/jwt.js");
-const mockUserList = require("../mockUser.js");
+const mockUserList = require("../../mockUser.js");
 const User = require("../models/user.js");
 
 class UsersController {
