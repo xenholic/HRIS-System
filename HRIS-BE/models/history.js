@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const historySchema = new mongoose.Schema({
+    history: {
+        type: String,
+    },
     status: {
         type: String,
     },
