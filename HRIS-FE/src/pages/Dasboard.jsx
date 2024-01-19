@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { faker } from '@faker-js/faker';
 import {
+  fetchCompany,
   fetchEmployees
 } from "../store/actions/actionEmployee";
 
@@ -29,11 +30,10 @@ function Dasboard() {
     return state.employeeReducer.companies;
   });
 
-  const totalCompanies = companies.length;
+const totalCompanies = companies.length;
 const date = new Date().toLocaleDateString();
 
 const field = employees.filter((employee) => {
-  console.log(employee.field, "field")
     return employee.field === "on site"
 });
 const office = employees.filter((employee) => {
@@ -72,13 +72,13 @@ const data2 = {
   datasets: [
     {
       label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
       label: 'Dataset 2',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
@@ -100,6 +100,7 @@ const options2 = {
 
 useEffect(() => {
   dispatch(fetchEmployees());
+  dispatch(fetchCompany());
   // dispatch(fetchEmployeeById());
 }, []);
   return (
@@ -170,7 +171,7 @@ useEffect(() => {
                 <div className="card-body">
                   <div className="card_widget_header">
                     <label>Companies</label>
-                    <h4>{companies.length}</h4>
+                    <h4>{totalCompanies}</h4>
                   </div>
                   <div className="card_widget_img">
                     <img src="assets/img/dash2.png" alt="card-img" />

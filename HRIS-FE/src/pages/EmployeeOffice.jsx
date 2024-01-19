@@ -160,7 +160,7 @@ function EmployeeOffice() {
                                   src={
                                     item.profilePic
                                       ? item.profilePic
-                                      : "../assets/img/profiles/avatar-04.jpg"
+                                      : "../assets/img/user.jpg"
                                   }
                                 />
                               </div>
@@ -248,7 +248,7 @@ function EmployeeOffice() {
                                         src={
                                           item.profilePic
                                             ? item.profilePic
-                                            : "../assets/img/profiles/avatar-06.jpg"
+                                            : "../assets/img/user.jpg"
                                         }
                                         alt="profile"
                                         className="img-table"

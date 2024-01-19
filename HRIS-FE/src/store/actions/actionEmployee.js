@@ -19,12 +19,14 @@ const login = (input) => {
 
 const register = (input) => {
   return (dispatch) => {
-    return fetch(`http://localhost:3000/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(input),
+    return axios
+    .post(`http://localhost:3000/register`, input)
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      // swal(error.response.data.message);
+      console.log(error)
     });
   };
 };
@@ -104,7 +106,6 @@ const addNewEmployee = (data) => {
 //fetching employee
 const fetchCompany = () => {
   return (dispatch) => {
-
       fetch("http://localhost:3000/companies",{
         headers: {
           access_token: localStorage.getItem("access_token"),

@@ -63,7 +63,7 @@ function Sidebar() {
                 </div>
               </div>
               <ul>
-                <li className="active">
+                <li className="">
                   <Link to="/">
                     <img src="../assets/img/home.svg" alt="sidebar_img" />{" "}
                     <span>Dashboard</span>
@@ -132,7 +132,7 @@ function Sidebar() {
               </ul>
               <ul className="logout">
                 <li>
-                  <a className="">
+                  <a>
                   <button className="btn btn-outline-light" onClick={(e) => handleLogout(e)}>
                     <img 
                     src="../assets/img/logout.svg" alt="sidebar_img" />
