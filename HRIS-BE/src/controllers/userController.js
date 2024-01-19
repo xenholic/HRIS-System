@@ -1,7 +1,7 @@
-const { compare, hash } = require("../helpers/bcrypt");
-const { convertToToken } = require("../helpers/jwt");
+const { compare, hash } = require("../helpers/bcrypt.js");
+const { convertToToken } = require("../helpers/jwt.js");
 const mockUserList = require("../mockUser.js");
-const User = require("../models/user");
+const User = require("../models/user.js");
 
 class UsersController {
   static async register(req, res, next) {

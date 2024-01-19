@@ -1,6 +1,6 @@
 "use strict"
 
-const Employee = require("../models/employee");
+const Employee = require("../src/routers/models/employee");
 
 class EmployeeController {
 
