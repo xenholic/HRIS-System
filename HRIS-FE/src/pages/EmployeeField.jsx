@@ -245,7 +245,7 @@ function EmployeeField() {
                                         src={
                                           item.profilePic
                                             ? item.profilePic
-                                            : "../assets/img/profiles/avatar-03.jpg"
+                                            : "../assets/img/user.jpg"
                                         }
                                         alt="profile"
                                         className="img-table"

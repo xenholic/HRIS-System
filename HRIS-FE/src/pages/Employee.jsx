@@ -14,7 +14,6 @@ import {
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-// import EmployeeTable from "../components/EmployeeTable";
 
 function Employee() {
   // const navigate = useNavigate();
@@ -30,37 +29,40 @@ function Employee() {
   //   setValidated(true);
   // };
 
+    //fetch dari redux
+    useEffect(() => {
+      dispatch(fetchEmployees());
+      dispatch(fetchCompany());
+    }, []);
+
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [detailEmployee, setdetailEmployee] = useState({});
+  const [detailEmployee, setDetailEmployee] = useState({});
+  // const [isAdmin, setIsAdmin] = useState(false);
+
+  // if(localStorage.getItem("role") === "Admin" || localStorage.getItem("role") === "SuperUser"){
+  //   return setIsAdmin(true)
+  // }
 
   // Fetch employee data by id
   const handleDetail = (_id) => {
     dispatch(fetchEmployeeById(_id));
-    setdetailEmployee(employee);
+    setDetailEmployee(employee);
   };
 
-  const employees = useSelector((state) => {
-    return state.employeeReducer.employees;
-  });
+  // Delete employee data by id
+  const handleDelete = (_id) => {
+    // dispatch(fetchEmployeeById(_id));
+    // setdetailEmployee(employee);
+  };
 
-  const employee = useSelector((state) => {
-    return state.employeeReducer.employee;
-  });
+  const employees = useSelector((state) => state.employeeReducer.employees);
+  const employee = useSelector((state) => state.employeeReducer.employee);
+  const company = useSelector((state) => state.employeeReducer.companies);
 
-  const company = useSelector((state) => {
-    return state.employeeReducer.companies;
-  });
 
-  console.log(company, "data company")
-
-  //fetch dari redux
-  useEffect(() => {
-    dispatch(fetchEmployees());
-    dispatch(fetchCompany());
-  }, []);
 
   return (
     <div>
@@ -155,28 +157,16 @@ function Employee() {
                               </td>
                               <td>
                                 <div className="table-img">
-                                 {item.profilePic ? ( <img
+                                 <img
                                     onClick={() => {
                                       handleShow();
                                       handleDetail(item._id);
                                     }}
                                     src={
-                                      item.profilePic
-                                        ? item.profilePic
-                                        : "assets/img/profiles/ava.jpg"
-                                    }
+                                      item.profilePic? item.profilePic : "../assets/img/user.jpg"}
                                     alt="profile"
                                     className="img-table"
-                                  />)
-                                : ( <img
-                                  onClick={() => {
-                                    handleShow();
-                                    handleDetail(item._id);
-                                  }}
-                                  src="../assets/img/profile.jpg"
-                                  alt="profile"
-                                  className="img-table"
-                                  />)}
+                                  />
                                   {/* // <img
                                   //   onClick={() => {
                                   //     handleShow();
@@ -551,17 +541,17 @@ function Employee() {
                           <td className="active">Anak ke -1</td>
                           <td>
                             {detailEmployee.personalData.familyData
-                              .dependentsChild.childName1
+                              .numberOfChildren.childName1
                               ? detailEmployee.personalData.familyData
-                                  .dependentsChild.childName1
+                                  .numberOfChildren.childName1
                               : "no data"}
                           </td>
                           <td className="active">Anak ke -2</td>
                           <td>
                             {detailEmployee.personalData.familyData
-                              .dependentsChild.childName2
+                              .numberOfChildren.childName2
                               ? detailEmployee.personalData.familyData
-                                  .dependentsChild.childName2
+                                  .numberOfChildren.childName2
                               : "no data"}
                           </td>
                         </tr>
@@ -569,17 +559,17 @@ function Employee() {
                           <td className="active">Anak ke -3</td>
                           <td>
                             {detailEmployee.personalData.familyData
-                              .dependentsChild.childName3
+                              .numberOfChildren.childName3
                               ? detailEmployee.personalData.familyData
-                                  .dependentsChild.childName4
+                                  .numberOfChildren.childName4
                               : "no data"}
                           </td>
                           <td className="active">Anak ke -4</td>
                           <td>
                             {detailEmployee.personalData.familyData
-                              .dependentsChild.childName4
+                              .numberOfChildren.childName4
                               ? detailEmployee.personalData.familyData
-                                  .dependentsChild.childName4
+                                  .numberOfChildren.childName4
                               : "no data"}
                           </td>
                         </tr>
@@ -630,12 +620,17 @@ function Employee() {
 
             {/* button close modal  */}
             <Modal.Footer>
+              {/* (isAdmin ? 
+              (<Button variant="secondary" onClick={() => handleDelete(detailEmployee._id)}>
+                Delete
+                </Button>) : null
+              ) */}
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
-              <Button variant="primary" onClick={handleClose}>
+              {/* <Button variant="primary" onClick={handleClose}>
                 Save Changes
-              </Button>
+              </Button> */}
             </Modal.Footer>
           </Modal>
         )}
