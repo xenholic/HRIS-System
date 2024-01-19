@@ -3,10 +3,12 @@ import axios from "axios";
 // import swal from "sweetalert";
 import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES, FETCH_COMPANIES } from "./actionType";
 
+const url = "https://hris-be.vercel.app";
+
 const login = (input) => {
   return (dispatch) => {
     return axios
-      .post("http://localhost:3000/login", input)
+      .post(`${url}/login`, input)
       .then((response) => {
         return response;
       })
@@ -20,7 +22,7 @@ const login = (input) => {
 const register = (input) => {
   return (dispatch) => {
     return axios
-    .post(`http://localhost:3000/register`, input)
+    .post(`${url}/register`, input)
     .then((response) => {
       return response;
     })
@@ -33,7 +35,7 @@ const register = (input) => {
 
 const fetchEmployees = () => {
   return (dispatch) => {
-    fetch("http://localhost:3000/employees", {
+    fetch(`${url}/employees`, {
       headers: {
         access_token: localStorage.getItem("access_token"),
       },
