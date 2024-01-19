@@ -3,7 +3,8 @@ import axios from "axios";
 // import swal from "sweetalert";
 import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES, FETCH_COMPANIES } from "./actionType";
 
-const url = "https://hris-be.vercel.app";
+// const url = "https://hris-be.vercel.app";
+const url = "http://localhost:3000";
 
 const login = (input) => {
   return (dispatch) => {
@@ -64,7 +65,7 @@ export const employeesSuccess = (payload) => {
 
 const fetchEmployeeById = (_id) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/employees/${_id}`, {
+    fetch(`${url}/employees/${_id}`, {
       headers: {
         access_token: localStorage.getItem("access_token"),
       },
@@ -94,7 +95,7 @@ export const fetchEmployeeByIdSuccess = (payload) => {
 const addNewEmployee = (data) => {
   return (dispatch) => {
     return axios
-      .post("http://localhost:3000/employees", data)
+      .post(`${url}/employees`, data)
       .then((response) => {
         return response;
       })
@@ -108,7 +109,7 @@ const addNewEmployee = (data) => {
 //fetching employee
 const fetchCompany = () => {
   return (dispatch) => {
-      fetch("http://localhost:3000/companies",{
+      fetch(`${url}/companies`,{
         headers: {
           access_token: localStorage.getItem("access_token"),
         },
@@ -139,7 +140,7 @@ export const fetchCompaniesSuccess = (payload) => {
 const addCompany = (data) => {
   return (dispatch) => {
     return axios
-      .post("http://localhost:3000/companies", data)
+      .post(`${url}/companies`, data)
       .then((response) => {
         return response;
       })

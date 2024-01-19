@@ -1,4 +1,4 @@
-const Company = require("../src/routers/models/company");
+const Company = require("../models/company");
 
 class CompanyController {
 
@@ -61,6 +61,84 @@ class CompanyController {
       res.status(200).json(company);
     } catch (err) {
       console.log(err)
+      next(err);
+    }
+  }
+
+  static async getCompanyById(req, res, next) {
+    try {
+      const { id } = req.params;
+
+      const company = await Company.findById(id);
+
+      if (!company) {
+        return res.status(404).json({ message: "Company not found" });
+      }
+
+      res.status(200).json(company);
+    } catch (err) {
+      console.log(err);
+      next(err);
+    }
+  }
+
+static async editCompanyById(req, res, next) {
+    try {
+      const { id } = req.params;
+      const { 
+        name,
+        address,
+        email,
+        phoneNumber,
+        logo,
+        description,
+        industry,
+        value,
+        registerCompanyNumber,
+        incorporationDate,
+        city,
+        postalCode,
+        website,
+        facebook,
+        instagram,
+        linkedin,
+       } = req.body;
+
+      const company = await Company.findById(id);
+
+      if (!company) {
+        throw new ERROR("Company not found");
+      }
+
+      // Update the company properties
+      // company.name = name || company.name;
+      // company.address = address || company.location;
+      // company.email = email || company.category;
+      // company.phoneNumber = phoneNumber || company.status;
+
+      // Save the updated company
+      await Company.save(
+        name,
+        address,
+        email,
+        phoneNumber,
+        logo,
+        description,
+        industry,
+        value,
+        registerCompanyNumber,
+        incorporationDate,
+        city,
+        postalCode,
+        website,
+        facebook,
+        instagram,
+        linkedin,
+      );
+
+      res.status(200).json(company);
+    } catch (err) {
+      console.log(err);
       next(err);
     }
   }
