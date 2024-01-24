@@ -12,7 +12,14 @@ function AddEmployee() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  let inputer = {
+    username: localStorage.getItem("username"),
+    email: localStorage.getItem("email"),
+    role: localStorage.getItem("role"),
+  }
+
   const [inputFormEmployee, setInputFormEmployee] = useState({
+    inputer,
     name: "",
     address: "",
     addressNow: "",
@@ -86,7 +93,6 @@ function AddEmployee() {
     dispatch(fetchCompany());
   }, []);
 
-  console.log(company, "companies")
 
   return (
     <div>
@@ -95,7 +101,7 @@ function AddEmployee() {
       <div>
         <div className="page-wrapper">
           <div className="content container-fluid">
-            <form className="row">
+            <form className="row" encType="multipart/form-data">
               <div className="col-xl-12 col-sm-12 col-12 ">
                 <div className="breadcrumb-path mb-4">
                   <ul className="breadcrumb">
@@ -1023,7 +1029,14 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Photo Profile</div>
-                          <input type="file" id="profilePic" />
+                          <input
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                profilePic: e.target.value,
+                              });
+                            }}
+                          type="file" id="profilePic" />
                         </div>
                       </div>
                     </div>
@@ -1060,12 +1073,10 @@ function AddEmployee() {
                             { company ?
                               company.map((item) => {
                                 return (
-                                  <option value={item._id}>{item.name}</option>
+                                  <option key={item._id} value={item._id}>{item.name}</option>
                                 )
                               })
-                              :  <option value="" selected disabled>
-                              Select Company
-                            </option>
+                              :  <option>No Data</option>
                             }
                           </select>
                         </div>

@@ -1,6 +1,7 @@
 "use strict"
 
 const Employee = require("../models/employee");
+const History = require("../models/history");
 
 class EmployeeController {
 
@@ -19,9 +20,13 @@ class EmployeeController {
   static async addNewEmployees(req, res, next) {
     try {
 
-        const { 
+      console.log(req, "ini req")
+
+        const {
+            inputer,
             name,
             address,
+            addressNow,
             email,
             salary,
             status = "active",
@@ -66,6 +71,11 @@ class EmployeeController {
             emergencyContactaddress,
             emergencyContactphoneNumber,
          } = req.body;
+
+         if(!addressNow){
+          let dataAddress = address
+          return dataAddress
+        }
 
       const employees = await Employee.create({
         name,
@@ -127,6 +137,15 @@ class EmployeeController {
             },
         },
       });
+
+      await History.create({
+        history: "create new employee",
+        status: "active",
+        action: `add ${name} as new employee`,
+        createdBy: inputer.username,
+        createdAt: new Date(),
+      });
+
       res.status(200).json(employees);
     } catch (err) {
     console.log(err, "ini error")
@@ -250,6 +269,15 @@ class EmployeeController {
         emergencyContactaddress,
         emergencyContactphoneNumber,
       });
+
+      await History.create({
+        history: "update new employee",
+        status: "active",
+        action: `edit ${name}`,
+        createdBy: inputer,
+        createdAt: new Date(),
+      });
+
       res.status(200).json(employees);
     } catch (err) {
       next(err);
