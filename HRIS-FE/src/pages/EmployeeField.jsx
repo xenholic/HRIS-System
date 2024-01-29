@@ -158,7 +158,7 @@ function EmployeeField() {
                                   src={
                                     item.profilePic
                                       ? item.profilePic
-                                      : "../assets/img/profiles/avatar-02.jpg"
+                                      : "../assets/img/user.jpg"
                                   }
                                 />
                               </div>

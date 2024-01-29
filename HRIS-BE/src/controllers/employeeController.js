@@ -9,10 +9,29 @@ class EmployeeController {
       // show employee
   static async showAllEmployees(req, res, next) {
     try {
-      const employees = await Employee.find();
-      res.status(200).json(employees);
+      const page = parseInt(req.query.page) || 1; // Get the page number from the query parameters, default to 1 if not provided
+      const limit = parseInt(req.query.limit) || 10; // Get the limit (number of items per page) from the query parameters, default to 10 if not provided
+
+      const startIndex = (page - 1) * limit;
+      const endIndex = page * limit;
+
+      const totalEmployees = await Employee.countDocuments();
+      const totalPages = Math.ceil(totalEmployees / limit);
+
+      const employees = await Employee.find().skip(startIndex).limit(limit);
+
+      const pagination = {
+        currentPage: page,
+        totalPages: totalPages,
+        totalEmployees: totalEmployees,
+      };
+
+      res.status(200).json({
+        employees: employees,
+        pagination: pagination,
+      });
     } catch (err) {
-        console.log(err, "ini error")
+      console.log(err, "ini error");
       next(err);
     }
   }

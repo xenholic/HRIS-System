@@ -31,6 +31,7 @@ function Dasboard() {
   });
 
 const totalCompanies = companies.length;
+
 const date = new Date().toLocaleDateString();
 
 const field = employees.filter((employee) => {
@@ -112,11 +113,11 @@ useEffect(() => {
           <div className="page-name mb-4">
             <h4 className="m-0">
               <img
-                src="assets/img/profile.jpg"
+                src="../assets/img/user.jpg"
                 className="mr-1"
                 alt="profile"
               />{" "}
-              {localStorage.getItem("role").toUpperCase()} { localStorage.getItem("username").toUpperCase()}
+              { localStorage.getItem("username").toUpperCase()}
             </h4>
             <label>{ date }</label>
           </div>

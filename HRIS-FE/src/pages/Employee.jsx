@@ -29,22 +29,14 @@ function Employee() {
   //   setValidated(true);
   // };
 
-    //fetch dari redux
-    useEffect(() => {
-      dispatch(fetchEmployees());
-      dispatch(fetchCompany());
-    }, []);
+
 
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const [detailEmployee, setDetailEmployee] = useState({});
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [detailEmployee, setDetailEmployee] = useState({});
-  // const [isAdmin, setIsAdmin] = useState(false);
 
-  // if(localStorage.getItem("role") === "Admin" || localStorage.getItem("role") === "SuperUser"){
-  //   return setIsAdmin(true)
-  // }
 
   // Fetch employee data by id
   const handleDetail = (_id) => {
@@ -61,8 +53,18 @@ function Employee() {
   const employees = useSelector((state) => state.employeeReducer.employees);
   const employee = useSelector((state) => state.employeeReducer.employee);
   const company = useSelector((state) => state.employeeReducer.companies);
+  const pagination = useSelector((state) => state.employeeReducer.pagination);
+  console.log(pagination, "pagination");
 
+  const handlePageChange = (pageNumber) => {
+    fetchEmployees(pageNumber);
+  }
 
+  //fetch dari redux
+  useEffect(() => {
+    dispatch(fetchEmployees());
+    dispatch(fetchCompany());
+  }, []);
 
   return (
     <div>
@@ -157,13 +159,13 @@ function Employee() {
                               </td>
                               <td>
                                 <div className="table-img">
-                                 <img
+                                  <img
                                     onClick={() => {
                                       handleShow();
                                       handleDetail(item._id);
                                     }}
                                     src={
-                                      item.profilePic? item.profilePic : "../assets/img/user.jpg"}
+                                      item.profilePic ? item.profilePic : "../assets/img/user.jpg"}
                                     alt="profile"
                                     className="img-table"
                                   />
@@ -184,7 +186,7 @@ function Employee() {
                                 </div>
                               </td>
                               <td>
-                                { company ?
+                                {company ?
                                   company.map((data) => {
                                     if (data._id === item.companyId) {
                                       return (
@@ -247,17 +249,17 @@ function Employee() {
                   </table>
                 </div>
               </div>
-                  <div className="row pagination_path">
-                    <div className="col-sm-12 col-md-5 ml-10">
-                      <div
-                        className="dataTables_info"
-                        role="status"
-                        aria-live="polite"
-                      >
-                        Showing 1 to 10 of 12 entries
-                      </div>
-                    </div>
-                    <div className="col-sm-12 col-md-7">
+              <div className="row pagination_path">
+                <div className="col-sm-12 col-md-5 ml-10">
+                  <div
+                    className="dataTables_info"
+                    role="status"
+                    aria-live="polite"
+                  >
+                    Showing 1 to 10 of {pagination.totalEmployees} entries
+                  </div>
+                </div>
+                <div className="col-sm-12 col-md-7">
                       <div className="dataTables_paginate paging_simple_number">
                         <ul className="pagination">
                           <li className="paginate_button page-item previous disabled">
@@ -312,7 +314,33 @@ function Employee() {
                         </ul>
                       </div>
                     </div>
+                {/* <div className="col-sm-12 col-md-7">
+                  <div className="dataTables_paginate paging_simple_number">
+                    <div className="row">
+                      <div className="col-12">
+                        <nav aria-label="Page navigation">
+                           <ul className="pagination">
+                            {pagination.totalPages.map((page) => (
+                              <li
+                                key={page}
+                                className={`page-item ${page === pagination.currentPages ? "active" : ""
+                                  }`}
+                              >
+                                <button
+                                  className="page-link"
+                                  onClick={() => handlePageChange(page)}
+                                >
+                                  {page}
+                                </button>
+                              </li>
+                            ))}
+                          </ul> 
+                        </nav>
+                      </div>
+                    </div>
                   </div>
+                </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -543,7 +571,7 @@ function Employee() {
                             {detailEmployee.personalData.familyData
                               .numberOfChildren.childName1
                               ? detailEmployee.personalData.familyData
-                                  .numberOfChildren.childName1
+                                .numberOfChildren.childName1
                               : "no data"}
                           </td>
                           <td className="active">Anak ke -2</td>
@@ -551,7 +579,7 @@ function Employee() {
                             {detailEmployee.personalData.familyData
                               .numberOfChildren.childName2
                               ? detailEmployee.personalData.familyData
-                                  .numberOfChildren.childName2
+                                .numberOfChildren.childName2
                               : "no data"}
                           </td>
                         </tr>
@@ -561,7 +589,7 @@ function Employee() {
                             {detailEmployee.personalData.familyData
                               .numberOfChildren.childName3
                               ? detailEmployee.personalData.familyData
-                                  .numberOfChildren.childName4
+                                .numberOfChildren.childName4
                               : "no data"}
                           </td>
                           <td className="active">Anak ke -4</td>
@@ -569,7 +597,7 @@ function Employee() {
                             {detailEmployee.personalData.familyData
                               .numberOfChildren.childName4
                               ? detailEmployee.personalData.familyData
-                                  .numberOfChildren.childName4
+                                .numberOfChildren.childName4
                               : "no data"}
                           </td>
                         </tr>
@@ -579,7 +607,7 @@ function Employee() {
                           <td>
                             {detailEmployee.personalData.emergencyContact.name
                               ? detailEmployee.personalData.emergencyContact
-                                  .name
+                                .name
                               : "no data"}
                           </td>
                           <td className="active">Relation :</td>
@@ -587,7 +615,7 @@ function Employee() {
                             {detailEmployee.personalData.emergencyContact
                               .relation
                               ? detailEmployee.personalData.emergencyContact
-                                  .relation
+                                .relation
                               : "no data"}
                           </td>
                         </tr>
@@ -597,7 +625,7 @@ function Employee() {
                             {detailEmployee.personalData.emergencyContact
                               .address
                               ? detailEmployee.personalData.emergencyContact
-                                  .address
+                                .address
                               : "no data"}
                           </td>
                           <td className="active">Phone Number :</td>
@@ -605,7 +633,7 @@ function Employee() {
                             {detailEmployee.personalData.emergencyContact
                               .phoneNumber
                               ? detailEmployee.personalData.emergencyContact
-                                  .phoneNumber
+                                .phoneNumber
                               : "no data"}
                           </td>
                         </tr>
@@ -620,17 +648,14 @@ function Employee() {
 
             {/* button close modal  */}
             <Modal.Footer>
-              {/* (isAdmin ? 
-              (<Button variant="secondary" onClick={() => handleDelete(detailEmployee._id)}>
+              ( thisAdmin ?
+              <Button variant="secondary" onClick={() => handleDelete(detailEmployee._id)}>
                 Delete
-                </Button>) : null
-              ) */}
+              </Button> : null
+              )
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
-              {/* <Button variant="primary" onClick={handleClose}>
-                Save Changes
-              </Button> */}
             </Modal.Footer>
           </Modal>
         )}
