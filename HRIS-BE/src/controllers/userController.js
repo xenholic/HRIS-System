@@ -60,8 +60,6 @@ class UsersController {
       }
 
       const userLogin = await User.findOne({ email });
-      console.log(userLogin, "ini user login")
-
 
       if (!userLogin) {
         throw new Error("User not found");

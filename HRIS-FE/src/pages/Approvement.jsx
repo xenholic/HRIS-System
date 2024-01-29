@@ -2,6 +2,7 @@
 
 import Topbar from "../components/Topbar";
 import Sidebar from "../components/Sidebar";
+import { Button } from "react-bootstrap";
 
 function Calendar() {
   return (
@@ -29,56 +30,127 @@ function Calendar() {
                 <h3>Approvement</h3>
               </div>
             </div>
-            <div className="row">
-              <div className="col-lg-3 col-md-4">
-                <div className="card">
-                  <div className="card-body">
-                    <h2 className="calendar_head">Calendar</h2>
-                  </div>
-                  <div className="calendar_events">
-                    <h4 className="card-title">
-                      Drag and drop your event or click in the calendar
-                    </h4>
-                    <div id="calendar-events" className="mb-3">
-                      <div className="calendar-events" data-className="bg-info">
-                        <i className="fas fa-square bg-primary"></i> New Theme Release
-                      </div>
-                      <div className="calendar-events" data-className="bg-success">
-                        <i className="fas fa-square bg-success"></i>My Event
-                      </div>
-                      <div className="calendar-events" data-className="bg-danger">
-                        <i className="fas fa-square bg-warning"></i> Meet Manager
-                      </div>
-                      <div className="calendar-events" data-className="bg-warning">
-                        <i className="fas fa-square bg-secondary"></i> Create New
-                        theme
-                      </div>
-                    </div>
-                    <div className="checkbox  mb-3">
-                      <input id="drop-remove" type="checkbox" />
-                      <label for="drop-remove">Remove after drop</label>
-                    </div>
-                    <a
-                      href="#"
-                      data-toggle="modal"
-                      data-target="#add_new_event"
-                      className="btn mb-3 btn-primary btn-block"
-                    >
-                      <i className="fas fa-plus"></i> Create New
-                    </a>
-                  </div>
+            <div className="table-responsive">
+                  <table className="table  custom-table no-footer">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Company Name</th>
+                        <th>Department</th>
+                        <th>Field of Work</th>
+                        <th>Position</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {/* {employees.length ? (
+                        employees.map((item, index) => { */}
+                          {/* return ( */}
+                            <tr>
+                              <td>
+                                <label className="">
+                                  {/* {index + 1} */}
+                                  </label>
+                              </td>
+                              <td>
+                                <div className="table-img">
+                                  <img
+                                    // onClick={() => {
+                                    //   handleShow();
+                                    //   handleDetail(item._id);
+                                    // }}
+                                    // src={
+                                    //   item.profilePic ? item.profilePic : "../assets/img/user.jpg"}
+                                    // alt="profile"
+                                    className="img-table"
+                                  />
+                                  {/* // <img
+                                  //   onClick={() => {
+                                  //     handleShow();
+                                  //     handleDetail(item.id);
+                                  //   }}
+                                  //   src={
+                                  //     item.profilePic
+                                  //       ? item.profilePic
+                                  //       : "assets/img/profiles/ava.jpg"
+                                  //   }
+                                  //   alt="profile"
+                                  //   className="img-table"
+                                  // /> */}
+                                  <label>
+                                    {/* {item.name} */}
+                                    </label>
+                                </div>
+                              </td>
+                              <td>
+                                {/* {company ?
+                                  company.map((data) => {
+                                    if (data._id === item.companyId) {
+                                      return (
+                                        <label className="action_label">
+                                          {data.name}
+                                        </label>
+                                      );
+                                    }
+                                  }) : <p>no data</p>
+                                } */}
+                                {/* <label className="action_label">
+                                  {item.company}{" "}
+                                </label> */}
+                              </td>
+                              <td>
+                                <label className="action_label2 text-wrap">
+                                  {/* {item.department}{" "} */}
+                                </label>
+                              </td>
+                              <td>
+                                <label className="action_label2">
+                                  {/* {item.field} */}
+                                </label>
+                              </td>
+                              <td>
+                                <label className="">
+                                  {/* {item.position}  */}
+                                  </label>
+                              </td>
+                              <td>
+                                <label className="action_label">
+                                  {/* {item.status} */}
+                                </label>
+                              </td>
+                              <td>
+                                {/* <button
+                                  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"
+                                >
+                                  Employee Detail
+                                </button> */}
+                                <Button
+                                  // onClick={() => {
+                                  //   handleShow();
+                                  //   handleDetail(item._id);
+                                  // }}
+                                  variant="primary"
+                                >
+                                  {" "}
+                                  Employee Detail{" "}
+                                </Button>
+                              </td>
+                            </tr>
+                          {/* );
+                        }) */}
+                      {/* ) : ( */}
+                        <p className="text-center text-lg">
+                          No Employee to show
+                        </p>
+                      {/* )} */}
+                      {/* <EmployeeTable /> */}
+                    </tbody>
+                  </table>
                 </div>
-              </div>
-              <div className="col-lg-9 col-md-8">
-                <div className="card bg-white">
-                  <div className="card-body">
-                    <div id="calendar"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div className="customize_popup">
+            {/* <div className="customize_popup">
               <div
                 className=""
               >
@@ -128,7 +200,7 @@ function Calendar() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
         </div>

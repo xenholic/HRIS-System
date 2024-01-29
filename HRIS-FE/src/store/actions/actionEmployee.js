@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 // import swal from "sweetalert";
-import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES, FETCH_COMPANIES } from "./actionType";
+import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES, FETCH_COMPANIES,PAGINATION_EMPLOYEES } from "./actionType";
 
 // const url = "https://hris-be.vercel.app";
 const url = "http://localhost:3000";
@@ -34,25 +34,35 @@ const register = (input) => {
   };
 };
 
-const fetchEmployees = () => {
+const fetchEmployees = (page) => {
   return (dispatch) => {
-    fetch(`${url}/employees`, {
+    fetch(`${url}/employees?page=${page}&limit=${10}`, {
       headers: {
         access_token: localStorage.getItem("access_token"),
       },
     })
       .then((response) => {
+        console.log(response , "ini response")
         if (!response.ok) {
           throw new Error("internal server error");
         }
         return response.json();
       })
       .then((data) => {
-        dispatch(employeesSuccess(data));
+        console.log(data.pagination , "ini data")
+        dispatch(paginationSuccess(data.pagination))
+        dispatch(employeesSuccess(data.employees));
       })
       .catch((error) => {
         console.log(error);
       });
+  };
+};
+
+export const paginationSuccess = (payload) => {
+  return {
+    type: PAGINATION_EMPLOYEES,
+    payload,
   };
 };
 
