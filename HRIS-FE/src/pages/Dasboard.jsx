@@ -29,6 +29,9 @@ function Dasboard() {
   const companies = useSelector((state) => {
     return state.employeeReducer.companies;
   });
+  const pagination = useSelector((state) => {
+    return state.employeeReducer.pagination;
+  });
 
 const totalCompanies = companies.length;
 
@@ -159,7 +162,7 @@ useEffect(() => {
                 <div className="card-body">
                   <div className="card_widget_header">
                     <label>Employees</label>
-                    <h4>{employees.length}</h4>
+                    <h4>{pagination.totalEmployees}</h4>
                   </div>
                   <div className="card_widget_img">
                     <img src="assets/img/dash1.png" alt="card-img" />

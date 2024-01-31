@@ -39,7 +39,16 @@ class EmployeeController {
   static async addNewEmployees(req, res, next) {
     try {
 
-      console.log(req, "ini req")
+      console.log(req.file, "ini req")
+        // const {profilePic, ktpUpload} = req.file.path;
+        // if(req.files){
+        //   let path = ''
+        //   req.files.forEach(function (files, index, array) {
+        //       path = path + files.path + ','
+        //   })
+        //   path = path.substring(0, path.lastIndexOf(","))
+        //   req.body.profilePic = path
+        // }
 
         const {
             inputer,
@@ -49,11 +58,12 @@ class EmployeeController {
             email,
             salary,
             status = "active",
-            profilePic,
             position,
             companyId,
             department,
             field,
+            // profilePic,
+            // ktpUpload,
             religion,
             contractType,
             startDateWorking,
@@ -103,8 +113,9 @@ class EmployeeController {
         email,
         salary,
         position,
-        profilePicture: profilePic,
+        // profilePicture: profilePic,
         pointOfHireArea: pohArea,
+        // ktpUpload,
         companyId,
         department,
         lastSalary,

@@ -37,6 +37,9 @@ const employeeSchema = new mongoose.Schema({
     companyId: {
         type: String,
     },
+    ktpUpload: {
+        type: String,
+    },
     department: {
         type: String,
     },

@@ -38,6 +38,7 @@ import AddEmployee from "./components/AddEmployee";
 import AddReview from "./components/AddReview";
 import ProtectLandingPage from "./middwares/ProtectLandingPage";
 import Register from "./pages/Register";
+import DeletedEmployee from "./pages/DeletedEmployee";
 
 function App() {
   return (
@@ -82,6 +83,7 @@ function App() {
           <Route path="/profile-review" element={<ProfileReview />} />
           <Route path="/profile-setting" element={<ProfileSetting />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/employee-deleted" element={<DeletedEmployee />} />
           {/*  <Route index element={<Home />} />
         <Route path="/explore" element={<Explore/>}/>
         <Route path="/saved" element={<Saved/>}/>

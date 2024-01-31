@@ -1,4 +1,5 @@
 const Company = require("../models/company");
+const Document = require("../models/document");
 
 class CompanyController {
 
@@ -142,6 +143,69 @@ static async editCompanyById(req, res, next) {
       next(err);
     }
   }
+
+static async deleteCompanyById(req, res, next) {
+    try {
+
+      const { id } = req.params;
+
+      const company = await Company.findById(id);
+
+      if (!company) {
+        throw new ERROR("Company not found");
+      }
+
+      await Company.deleteOne({ _id: id });
+
+      res.status(200).json({ message: "Company has been deleted" });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async uploadDocument(req, res, next) {
+    try {
+      const { id } = req.params;
+      const { document } = req.body;
+
+      const company = await Company.findByPk(id);
+
+      if (!company) {
+        throw { name: "Company not found" };
+      }
+
+      const upload = multer({
+        storage: multer.diskStorage({
+          destination: function (req, file, cb) {
+            cb(null, "public/uploads");
+          },
+          filename: function (req, file, cb) {
+            cb(null, file.originalname);
+          },
+        }),
+      }).single("document");
+
+      upload(req, res, async function (err) {
+        if (err instanceof multer.MulterError) {
+          return next(err);
+        } else if (err) {
+          return next(err);
+        }
+
+        const { path } = req.file;
+
+        const response = await Company.update(
+          { document: path },
+          { where: { id } }
+        );
+
+        res.status(200).json({ message: "Document uploaded" });
+      });
+    } catch (err) {
+      next(err);
+    }
+  }
+
 
   // add showprojects with filter
   // static async showProjects(req, res, next) {
