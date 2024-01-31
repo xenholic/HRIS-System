@@ -2,6 +2,8 @@
 
 const Employee = require("../models/employee");
 const History = require("../models/history");
+// const path = require('path');
+const multer = require('multer');
 
 class EmployeeController {
 
@@ -39,16 +41,7 @@ class EmployeeController {
   static async addNewEmployees(req, res, next) {
     try {
 
-      console.log(req.file, "ini req")
-        // const {profilePic, ktpUpload} = req.file.path;
-        // if(req.files){
-        //   let path = ''
-        //   req.files.forEach(function (files, index, array) {
-        //       path = path + files.path + ','
-        //   })
-        //   path = path.substring(0, path.lastIndexOf(","))
-        //   req.body.profilePic = path
-        // }
+      // console.log(req.body.ktpUpload, "ini req")
 
         const {
             inputer,
@@ -62,8 +55,8 @@ class EmployeeController {
             companyId,
             department,
             field,
-            // profilePic,
-            // ktpUpload,
+            profilePic,
+            ktpUpload,
             religion,
             contractType,
             startDateWorking,
@@ -106,6 +99,8 @@ class EmployeeController {
           return dataAddress
         }
 
+      console.log(ktpUpload, "ini ktp upload")
+
       const employees = await Employee.create({
         name,
         address,
@@ -113,9 +108,9 @@ class EmployeeController {
         email,
         salary,
         position,
-        // profilePicture: profilePic,
+        profilePicture: profilePic,
         pointOfHireArea: pohArea,
-        // ktpUpload,
+        ktpUpload,
         companyId,
         department,
         lastSalary,

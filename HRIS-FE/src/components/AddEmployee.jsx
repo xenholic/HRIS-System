@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewEmployee, fetchCompany } from "../store/actions/actionEmployee";
 import swal from "sweetalert";
-import { set } from "../../../HRIS-BE/app";
 
 
 function AddEmployee() {
@@ -26,8 +25,8 @@ function AddEmployee() {
     addressNow: "",
     email: "",
     salary: "",
-    profilePic: "",
-    // ktpUpload: "",
+    profilePic: {},
+    ktpUpload: {},
     position: "",
     companyId: "",
     department: "",
@@ -67,6 +66,7 @@ function AddEmployee() {
     emergencyContactaddress: "",
     emergencyContactphoneNumber: "",
   });
+  console.log(inputFormEmployee.ktpUpload, "inputFormEmployee");
 
   const [checkbox, setCheckbox] = useState(false);
   const checkboxOn = () => setCheckbox(true);
@@ -76,7 +76,7 @@ function AddEmployee() {
     e.preventDefault();
     dispatch(addNewEmployee(inputFormEmployee))
       .then((response) => {
-        if (response.statusText === "OK" ) {
+        if (response.statusText === "OK") {
           swal("Success!", "New Employee Added!", "success");
           navigate("/employees");
         }
@@ -90,7 +90,7 @@ function AddEmployee() {
   let company = useSelector((state) => {
     return state.employeeReducer.companies;
   });
-  
+
   useEffect(() => {
     dispatch(fetchCompany());
   }, []);
@@ -103,7 +103,7 @@ function AddEmployee() {
       <div>
         <div className="page-wrapper">
           <div className="content container-fluid">
-            <form className="row" method="post" enctype="multipart/form-data"> 
+            <form className="row" method="post" encType="multipart/form-data">
               <div className="col-xl-12 col-sm-12 col-12 ">
                 <div className="breadcrumb-path mb-4">
                   <ul className="breadcrumb">
@@ -509,33 +509,33 @@ function AddEmployee() {
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Domisil Sekarang</div>
-                          <input 
-                          onClick={checkboxOn}
-                          type="checkbox" id="Domisili Sekarang"/><span>{" "}Ceklist jika domisili sama dengan KTP</span>
-                          
-                          { !checkbox ? 
-                           <input
-                           onChange={(e) => {
-                             setInputFormEmployee({
-                               ...inputFormEmployee,
-                               addressNow: e.target.value,
-                             });
-                           }}
-                           type="text"
-                           id="addressNow"
-                           placeholder="Domisi Sekarang"
-                         />:  <input
-                         onChange={(e) => {
-                           setInputFormEmployee({
-                             ...inputFormEmployee,
-                             domisiliSekarang: e.target.value,
-                           });
-                         }}
-                         type="text"
-                         id="address"
-                         placeholder="Domisi Sekarang" disabled
-                       />
-                        }
+                          <input
+                            onClick={checkboxOn}
+                            type="checkbox" id="Domisili Sekarang" /><span>{" "}Ceklist jika domisili sama dengan KTP</span>
+
+                          {!checkbox ?
+                            <input
+                              onChange={(e) => {
+                                setInputFormEmployee({
+                                  ...inputFormEmployee,
+                                  addressNow: e.target.value,
+                                });
+                              }}
+                              type="text"
+                              id="addressNow"
+                              placeholder="Domisi Sekarang"
+                            /> : <input
+                              onChange={(e) => {
+                                setInputFormEmployee({
+                                  ...inputFormEmployee,
+                                  domisiliSekarang: e.target.value,
+                                });
+                              }}
+                              type="text"
+                              id="address"
+                              placeholder="Domisi Sekarang" disabled
+                            />
+                          }
 
                         </div>
                       </div>
@@ -545,11 +545,17 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">KTP Upload</div>
                           <input
-                           onChange={(e) => setInputFormEmployee({...inputFormEmployee, ktpUpload: e.target.files[0]})}
-                            className="mt-2"
+                            onChange={(e) => {
+                              setInputFormEmployee({
+                                ...inputFormEmployee,
+                                ktpUpload: e.target.files[0],
+                              })
+                            }}
+                            className="form-control"
                             type="file"
                             id="ktpUpload"
                             name="ktpUpload"
+                            accept="image/*"
                           />
                         </div>
                       </div>
@@ -1079,13 +1085,16 @@ function AddEmployee() {
                         <div className="form-group">
                           <div className="label">Photo Profile</div>
                           <input
+
                             onChange={(e) => {
                               setInputFormEmployee({
                                 ...inputFormEmployee,
                                 profilePic: e.target.files[0],
-                              });
+                              })
                             }}
-                          type="file" id="profilePic" name="profilePic" />
+                            accept="image/*"
+                            className="form-control"
+                            type="file" id="profilePic" name="profilePic" />
                         </div>
                       </div>
                     </div>
@@ -1119,13 +1128,13 @@ function AddEmployee() {
                               });
                             }}
                           >
-                            { company ?
+                            {company ?
                               company.map((item) => {
                                 return (
                                   <option key={item._id} value={item._id}>{item.name}</option>
                                 )
                               })
-                              :  <option>No Data</option>
+                              : <option>No Data</option>
                             }
                           </select>
                         </div>
