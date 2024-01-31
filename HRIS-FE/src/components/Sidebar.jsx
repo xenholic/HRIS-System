@@ -120,7 +120,13 @@ function Sidebar() {
                 <li>
                   <Link to="/register">
                     <img src="../assets/img/user-plus.svg" alt="sidebar_img" />
-                    <span>Register New User</span>
+                    <span>Register New Staff</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/employee-deleted">
+                    <img src="../assets/img/trash-2.svg" alt="sidebar_img" />
+                    <span>Deleted Employee Data</span>
                   </Link>
                 </li>
                 <li>

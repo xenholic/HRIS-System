@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewEmployee, fetchCompany } from "../store/actions/actionEmployee";
 import swal from "sweetalert";
+import { set } from "../../../HRIS-BE/app";
 
 
 function AddEmployee() {
@@ -26,6 +27,7 @@ function AddEmployee() {
     email: "",
     salary: "",
     profilePic: "",
+    // ktpUpload: "",
     position: "",
     companyId: "",
     department: "",
@@ -101,7 +103,7 @@ function AddEmployee() {
       <div>
         <div className="page-wrapper">
           <div className="content container-fluid">
-            <form className="row" encType="multipart/form-data">
+            <form className="row" method="post" enctype="multipart/form-data"> 
               <div className="col-xl-12 col-sm-12 col-12 ">
                 <div className="breadcrumb-path mb-4">
                   <ul className="breadcrumb">
@@ -537,6 +539,53 @@ function AddEmployee() {
 
                         </div>
                       </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-xl-6 col-sm-12 col-12">
+                        <div className="form-group">
+                          <div className="label">KTP Upload</div>
+                          <input
+                           onChange={(e) => setInputFormEmployee({...inputFormEmployee, ktpUpload: e.target.files[0]})}
+                            className="mt-2"
+                            type="file"
+                            id="ktpUpload"
+                            name="ktpUpload"
+                          />
+                        </div>
+                      </div>
+                      {/* <div className="col-xl-6 col-sm-12 col-12 ">
+                        <div className="form-group">
+                          <div className="label">Domisil Sekarang</div>
+                          <input 
+                          onClick={checkboxOn}
+                          type="checkbox" id="Domisili Sekarang"/><span>{" "}Ceklist jika domisili sama dengan KTP</span>
+                          
+                          { !checkbox ? 
+                           <input
+                           onChange={(e) => {
+                             setInputFormEmployee({
+                               ...inputFormEmployee,
+                               addressNow: e.target.value,
+                             });
+                           }}
+                           type="text"
+                           id="addressNow"
+                           placeholder="Domisi Sekarang"
+                         />:  <input
+                         onChange={(e) => {
+                           setInputFormEmployee({
+                             ...inputFormEmployee,
+                             domisiliSekarang: e.target.value,
+                           });
+                         }}
+                         type="text"
+                         id="address"
+                         placeholder="Domisi Sekarang" disabled
+                       />
+                        }
+
+                        </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -1033,10 +1082,10 @@ function AddEmployee() {
                             onChange={(e) => {
                               setInputFormEmployee({
                                 ...inputFormEmployee,
-                                profilePic: e.target.value,
+                                profilePic: e.target.files[0],
                               });
                             }}
-                          type="file" id="profilePic" />
+                          type="file" id="profilePic" name="profilePic" />
                         </div>
                       </div>
                     </div>

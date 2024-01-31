@@ -115,7 +115,7 @@ function Employee() {
               <div className="row">
                 <div className="col-xl-10 col-sm-8 col-12 ">
                   <label className="employee_count">
-                    {employees.length} People
+                    {pagination.totalEmployees} People
                   </label>
                 </div>
                 <div className="col-xl-1 col-sm-2 col-12 ">
