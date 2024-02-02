@@ -3,8 +3,7 @@ const router = express.Router();
 const UsersController = require("../controllers/userController");
 const EmployeeController = require("../controllers/employeeController");
 const CompanyController = require("../controllers/companyController");
-const upload = require("../middlewares/upload");
-
+const {upload} = require("../helpers/upload");
 // const authenticationUsers = require("../middlewares/authenticationUser");
 // middleware that is specific to this router
 router.post("/register", UsersController.register);
@@ -13,7 +12,9 @@ router.post("/login", UsersController.login);
 
 //employees
 router.get("/employees", EmployeeController.showAllEmployees);
-router.post("/employees", upload.array('data[]'), EmployeeController.addNewEmployees);
+// router.post('/singleFile', upload.single('file'), EmployeeController.singleFileUpload);
+// router.post("/multipleFiles", upload.array('files'), EmployeeController.multipleFileUpload);
+router.post("/employees/add-employee",upload.array('files'), EmployeeController.addNewEmployees);
 router.get("/employees/:employeeId", EmployeeController.showEmployeeById);
 // router.put("/employees/:employeeId", EmployeeController.editEmployeeById);
 // router.put("/employees/:employeeId", EmployeeController.deleteEmployeeById);

@@ -19,9 +19,6 @@ const employeeSchema = new mongoose.Schema({
     position: {
         type: String,
     },
-    profilePicture: {
-        type: String,
-    },
     pointOfHireArea: {
         type: String,
     },
@@ -35,9 +32,6 @@ const employeeSchema = new mongoose.Schema({
         type: String,
     },
     companyId: {
-        type: String,
-    },
-    ktpUpload: {
         type: String,
     },
     department: {

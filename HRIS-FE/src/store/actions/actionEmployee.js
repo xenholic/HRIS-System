@@ -2,6 +2,7 @@
 import axios from "axios";
 // import swal from "sweetalert";
 import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES, FETCH_COMPANIES,PAGINATION_EMPLOYEES } from "./actionType";
+import { ADD_EMPLOYEE } from "./actionType";
 
 // const url = "https://hris-be.vercel.app";
 const url = "http://localhost:3000";
@@ -102,19 +103,61 @@ export const fetchEmployeeByIdSuccess = (payload) => {
   };
 };
 
-const addNewEmployee = (data) => {
-  return (dispatch) => {
-    return axios
-      .post(`${url}/employees`, data)
-      .then((response) => {
-        return response;
-      })
-      .catch((error) => {
-        // swal(error.response.data.message);
-        console.log(error)
-      });
+
+ const addNewEmployee = (data) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.post(`${url}/employees/add-employee`, data);
+      console.log(response, "response dari add employee");
+      dispatch(addEmployeeSuccess(response.data));
+    } catch (error) {
+      // swal(error.response.data.message);
+      console.log(error, "error nih dari add employee");
+      dispatch(addEmployeeFailure(error));
+    }
   };
 };
+
+export const addEmployeeSuccess = (payload) => {
+  return {
+    type: ADD_EMPLOYEE,
+    payload,
+  };
+};
+
+// const singleFileUpload = async (data) => {
+//   try {
+//       await axios.post(`${url}/singleFile`, data);
+//   } catch (error) {
+//       throw error;
+//   }
+// }
+// const getSingleFiles = async () => {
+//   try {
+//           const {data} = await axios.get(url + '/getSingleFiles');
+//           return data;
+//   } catch (error) {
+//       throw error;
+//   }
+// }
+
+// const multipleFilesUpload = async (data) => {
+//   try {
+//     console.log(data, "ini data")
+//       await axios.post(`${url}/multipleFiles`, data);
+//   } catch (error) {
+//       throw error;
+//   }
+// }
+// const getMultipleFiles = async () => {
+//   try{
+//       const {data} = await axios.get(url + '/getMultipleFiles');
+//       return data;
+//   }
+//   catch(error){
+//       throw error;
+//   }
+// }
 
 //fetching employee
 const fetchCompany = () => {
