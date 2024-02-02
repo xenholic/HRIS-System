@@ -5,19 +5,7 @@ const errorHandler = (err, req, res, next) => {
   let code = 500;
   let message = "Internal Server Error";
 
-  if (name === "Username cannot be empty") {
-    code = 400;
-    message = name;
-  } else if (name === "Name cannot be empty") {
-    code = 400;
-    message = name;
-  } else if (name === "Email cannot be empty") {
-    code = 400;
-    message = name;
-  } else if (name === "Password cannot be empty") {
-    code = 400;
-    message = name;
-  } else if (name === "Type cannot be empty") {
+  if (name === "Username cannot be empty" || name === "Name cannot be empty" || name === "Email cannot be empty" || name === "Password cannot be empty" || name === "Type cannot be empty") {
     code = 400;
     message = name;
   } else if (name === "Invalid password") {

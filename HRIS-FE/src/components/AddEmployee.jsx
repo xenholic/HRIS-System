@@ -25,8 +25,7 @@ function AddEmployee() {
     addressNow: "",
     email: "",
     salary: "",
-    profilePic: {},
-    ktpUpload: {},
+    documentUpload: "",
     position: "",
     companyId: "",
     department: "",
@@ -66,26 +65,46 @@ function AddEmployee() {
     emergencyContactaddress: "",
     emergencyContactphoneNumber: "",
   });
-  console.log(inputFormEmployee.ktpUpload, "inputFormEmployee");
+  // console.log(inputFormEmployee.documentUpload , "inputFormEmployee");
+
 
   const [checkbox, setCheckbox] = useState(false);
   const checkboxOn = () => setCheckbox(true);
-  // const checkboxOff = () => setCheckbox(false);
 
   const handleAddEmployee = (e) => {
+    console.log(inputFormEmployee.documentUpload, "inputFormEmployee")
     e.preventDefault();
+    const formData = new FormData();
+    for (let i = 0; i < inputFormEmployee.documentUpload.length; i++) {
+      formData.append('documentUpload', inputFormEmployee.documentUpload[i]);                      
+  }
+    formData.append('inputer', inputFormEmployee.inputer);
     dispatch(addNewEmployee(inputFormEmployee))
       .then((response) => {
+        console.log(response, "response")
         if (response.statusText === "OK") {
           swal("Success!", "New Employee Added!", "success");
           navigate("/employees");
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error, "error add employee");
         swal("Error!", "Failed to Add New Employee!", "error");
       });
   };
+
+//   const uploadSingleFile = async () => {
+//     const formData = new FormData();
+//     formData.append('file', singleFile);
+//     await singleFileUpload(formData);
+// }
+// const UploadMultipleFiles = async () => {
+//     const formData = new FormData();
+//     for (let i = 0; i < multipleFiles.length; i++) {
+//         formData.append('files', multipleFiles[i]);                      
+//     }
+//     await multipleFilesUpload(formData);
+// }
 
   let company = useSelector((state) => {
     return state.employeeReducer.companies;
@@ -540,59 +559,6 @@ function AddEmployee() {
                         </div>
                       </div>
                     </div>
-                    <div className="row">
-                      <div className="col-xl-6 col-sm-12 col-12">
-                        <div className="form-group">
-                          <div className="label">KTP Upload</div>
-                          <input
-                            onChange={(e) => {
-                              setInputFormEmployee({
-                                ...inputFormEmployee,
-                                ktpUpload: e.target.files[0],
-                              })
-                            }}
-                            className="form-control"
-                            type="file"
-                            id="ktpUpload"
-                            name="ktpUpload"
-                            accept="image/*"
-                          />
-                        </div>
-                      </div>
-                      {/* <div className="col-xl-6 col-sm-12 col-12 ">
-                        <div className="form-group">
-                          <div className="label">Domisil Sekarang</div>
-                          <input 
-                          onClick={checkboxOn}
-                          type="checkbox" id="Domisili Sekarang"/><span>{" "}Ceklist jika domisili sama dengan KTP</span>
-                          
-                          { !checkbox ? 
-                           <input
-                           onChange={(e) => {
-                             setInputFormEmployee({
-                               ...inputFormEmployee,
-                               addressNow: e.target.value,
-                             });
-                           }}
-                           type="text"
-                           id="addressNow"
-                           placeholder="Domisi Sekarang"
-                         />:  <input
-                         onChange={(e) => {
-                           setInputFormEmployee({
-                             ...inputFormEmployee,
-                             domisiliSekarang: e.target.value,
-                           });
-                         }}
-                         type="text"
-                         id="address"
-                         placeholder="Domisi Sekarang" disabled
-                       />
-                        }
-
-                        </div>
-                      </div> */}
-                    </div>
                   </div>
                 </div>
               </div>
@@ -698,16 +664,23 @@ function AddEmployee() {
                       </div>
                     </div>
                     <div className="row">
-                      <div className="col-xl-6 col-sm-12 col-12 ">
+                      {/* <div className="col-xl-6 col-sm-12 col-12">
                         <div className="form-group">
-                          <div className="label">Sertification</div>
+                          <div className="label">Document Upload</div>
                           <input
+                            onChange={(e) => setInputFormEmployee({
+                              ...inputFormEmployee,
+                              documentUpload: e.target.files
+                            })
+                            }
+                            className="form-control"
                             type="file"
-                            id="sertification"
-                            placeholder="Universitas / School"
+                            id="documentUpload"
+                            name="documentUpload"
+                            accept="image/*"
                           />
                         </div>
-                      </div>
+                      </div> */}
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <div className="label">Year of Education</div>
@@ -1083,18 +1056,12 @@ function AddEmployee() {
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
-                          <div className="label">Photo Profile</div>
+                          <div className="label">All Document Upload</div>
                           <input
-
-                            onChange={(e) => {
-                              setInputFormEmployee({
-                                ...inputFormEmployee,
-                                profilePic: e.target.files[0],
-                              })
-                            }}
-                            accept="image/*"
+                            onChange={(e) => inputFormEmployee.documentUpload = e.target.files}
+                            multiple="multiple"
                             className="form-control"
-                            type="file" id="profilePic" name="profilePic" />
+                            type="file" id="documentUpload" name="documentUpload" />
                         </div>
                       </div>
                     </div>
