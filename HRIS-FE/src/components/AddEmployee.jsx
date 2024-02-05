@@ -2,7 +2,7 @@
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewEmployee, fetchCompany } from "../store/actions/actionEmployee";
 import swal from "sweetalert";
@@ -17,6 +17,8 @@ function AddEmployee() {
     email: localStorage.getItem("email"),
     role: localStorage.getItem("role"),
   }
+  
+  const [documentUpload, setDocumentUpload] = useState([])
 
   const [inputFormEmployee, setInputFormEmployee] = useState({
     inputer,
@@ -25,7 +27,6 @@ function AddEmployee() {
     addressNow: "",
     email: "",
     salary: "",
-    documentUpload: "",
     position: "",
     companyId: "",
     department: "",
@@ -65,26 +66,19 @@ function AddEmployee() {
     emergencyContactaddress: "",
     emergencyContactphoneNumber: "",
   });
-  // console.log(inputFormEmployee.documentUpload , "inputFormEmployee");
 
 
   const [checkbox, setCheckbox] = useState(false);
   const checkboxOn = () => setCheckbox(true);
 
   const handleAddEmployee = (e) => {
-    console.log(inputFormEmployee.documentUpload, "inputFormEmployee")
     e.preventDefault();
-    const formData = new FormData();
-    for (let i = 0; i < inputFormEmployee.documentUpload.length; i++) {
-      formData.append('documentUpload', inputFormEmployee.documentUpload[i]);                      
-  }
-    formData.append('inputer', inputFormEmployee.inputer);
     dispatch(addNewEmployee(inputFormEmployee))
       .then((response) => {
         console.log(response, "response")
         if (response.statusText === "OK") {
           swal("Success!", "New Employee Added!", "success");
-          navigate("/employees");
+          navigate("/employees/upload");
         }
       })
       .catch((error) => {
@@ -122,7 +116,8 @@ function AddEmployee() {
       <div>
         <div className="page-wrapper">
           <div className="content container-fluid">
-            <form className="row" method="post" encType="multipart/form-data">
+            
+            {/* <form className="row" method="post" encType="multipart/form-data"> */}
               <div className="col-xl-12 col-sm-12 col-12 ">
                 <div className="breadcrumb-path mb-4">
                   <ul className="breadcrumb">
@@ -134,6 +129,10 @@ function AddEmployee() {
                   <h3>Create Employees</h3>
                 </div>
               </div>
+              <div class="progress mb-4">
+                    <div class="progress-bar w-5" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <form className="row" method="post" encType="multipart/form-data">
               <div className="col-xl-12 col-sm-12 col-12 ">
                 <div className="card">
                   <div className="card-header">
@@ -1056,21 +1055,6 @@ function AddEmployee() {
                       </div>
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
-                          <div className="label">All Document Upload</div>
-                          <input
-                            onChange={(e) => inputFormEmployee.documentUpload = e.target.files}
-                            multiple="multiple"
-                            className="form-control"
-                            type="file" id="documentUpload" name="documentUpload" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row"></div>
-                  </div>
-                  <div className="card-body">
-                    <div className="row">
-                      <div className="col-xl-6 col-sm-12 col-12 ">
-                        <div className="form-group">
                           <label>Salary</label>
                           <input
                             onChange={(e) => {
@@ -1084,6 +1068,11 @@ function AddEmployee() {
                           />
                         </div>
                       </div>
+                    </div>
+                    <div className="row"></div>
+                  </div>
+                  <div className="card-body">
+                    <div className="row">
                       <div className="col-xl-6 col-sm-12 col-12 ">
                         <div className="form-group">
                           <label>Company</label>
@@ -1111,25 +1100,35 @@ function AddEmployee() {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-xl-12 col-sm-12 col-12 ">
+                  <div className="col-xl-12 col-sm-12 col-14 ">
                     <div className="form-btn">
-                      <button
+                    <div class="d-flex justify-content-center">
+                    <button 
+                      onClick={(e) => {
+                        handleAddEmployee(e);
+                      }}
+                    id="form-example-prev-step" class="btn btn-primary w-100 me-2">Next Step</button>
+                    <button id="form-example-next-step" class="btn btn-primary w-100">Cancel</button>
+                </div>
+                      {/* <button
                         onClick={(e) => {
                           handleAddEmployee(e);
                         }}
                         type="submit"
-                        className="btn btn-apply w-auto"
+                        className="btn btn-primary w-auto text-nowrap mx-2"
                       >
-                        Add Team Member
+                        Next Upload Document
                       </button>
-                      <button to={"/employees"} className="btn btn-secondary">
+                      <button 
+                      to={"/employees"} className="btn btn-danger">
                         Cancel
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
               </div>
-            </form>
+              </form>
+            {/* </form> */}
           </div>
         </div>
       </div>

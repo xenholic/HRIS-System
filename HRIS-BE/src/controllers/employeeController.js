@@ -2,34 +2,37 @@
 
 const Employee = require("../models/employee");
 const History = require("../models/history");
+const multipleDocument = require("../models/multipleDocument");
 // const path = require('path');
-const multer = require('multer');
 
 class EmployeeController {
 
   //file upload controller
 
 
-  static async singleFileUpload(req, res, next) {
-    try {
-      console.log(req.file, "ini req file")
-      const file = new singleDocument({
-        fileName: req.file.originalname,
-        filePath: req.file.path,
-        fileType: req.file.mimetype,
-        fileSize: fileSizeFormatter(req.file.size, 2) // 0.00
-      });
-      await file.save();
-      res.status(201).send('File Uploaded Successfully');
-    } catch (error) {
-      res.status(400).send(error.message);
-    }
-  }
+  // static async singleFileUpload(req, res, next) {
+  //   try {
+  //     console.log(req.file, "ini req file")
+  //     const file = new singleDocument({
+  //       fileName: req.file.originalname,
+  //       filePath: req.file.path,
+  //       fileType: req.file.mimetype,
+  //       fileSize: fileSizeFormatter(req.file.size, 2) // 0.00
+  //     });
+  //     await file.save();
+  //     res.status(201).send('File Uploaded Successfully');
+  //   } catch (error) {
+  //     res.status(400).send(error.message);
+  //   }
+  // }
   static async multipleFileUpload(req, res, next) {
     try {
+      // console.log(req, "body multiple file")
+      console.log(req.file, "ini req file ke 1")
       console.log(req.files, "ini req file ke 2")
       let filesArray = [];
       req.files.forEach(element => {
+        console.log(element, "ini element")
         const file = {
           fileName: element.originalname,
           filePath: element.path,
@@ -38,10 +41,10 @@ class EmployeeController {
         }
         filesArray.push(file);
       });
-      const multipleFiles = new multipleDocument({
-        files: filesArray
-      });
-      await multipleFiles.save();
+      // const multipleFiles = new multipleDocument({
+      //   files: filesArray
+      // });
+      // await multipleFiles.save();
       res.status(201).send('Files Uploaded Successfully');
     } catch (error) {
       console.log(error, "ini error")
@@ -49,14 +52,14 @@ class EmployeeController {
     }
   }
 
-  static async getallSingleFiles(req, res, next) {
-    try {
-      const files = await SingleFile.find();
-      res.status(200).send(files);
-    } catch (error) {
-      res.status(400).send(error.message);
-    }
-  }
+  // static async getallSingleFiles(req, res, next) {
+  //   try {
+  //     const files = await SingleFile.find();
+  //     res.status(200).send(files);
+  //   } catch (error) {
+  //     res.status(400).send(error.message);
+  //   }
+  // }
   static async getallMultipleFiles(req, res, next) {
     try {
       const files = await MultipleFile.find();
@@ -108,19 +111,7 @@ class EmployeeController {
 
   static async addNewEmployees(req, res, next) {
     try {
-      console.log(req, "ini req file ke 3")
-      // console.log(req, "ini tes req file")
-      // let filesArray = [];
-      // req.files.forEach(element => {
-      //   const file = {
-      //     fileName: element.originalname,
-      //     filePath: element.path,
-      //     fileType: element.mimetype,
-      //     fileSize: fileSizeFormatter(element.size, 2)
-      //   }
-      //   filesArray.push(file);
-      // });
-
+      console.log(req.body, "ini req body")
       const {
         inputer,
         name,
