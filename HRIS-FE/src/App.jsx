@@ -36,6 +36,7 @@ import ProfileSetting from "./pages/Profile-setting";
 import EmployeeGrid from "./pages/Employee-grid";
 import AddEmployee from "./components/AddEmployee";
 import AddReview from "./components/AddReview";
+import AddDocumentEmployee from "./components/AddDocumentEmployee";
 import ProtectLandingPage from "./middwares/ProtectLandingPage";
 import Register from "./pages/Register";
 import DeletedEmployee from "./pages/DeletedEmployee";
@@ -52,7 +53,7 @@ function App() {
           <Route path="/" element={<Dasboard />} />
           <Route path="/employees" element={<Employee />} />
           <Route path="/add-employee" element={<AddEmployee />} />
-          {/* <Route path="/add-employee/:id" element={<AddEmployee />} /> */}
+          <Route path="/add-employee/step-2" element={<AddDocumentEmployee />} />
           <Route path="/employees-grid" element={<EmployeeGrid />} />
           <Route path="/employees/office" element={<EmployeeOffice />} />
           <Route path="/employees/field" element={<EmployeeField />} />

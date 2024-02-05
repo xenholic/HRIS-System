@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 // import swal from "sweetalert";
-import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES, FETCH_COMPANIES,PAGINATION_EMPLOYEES } from "./actionType";
-import { ADD_EMPLOYEE } from "./actionType";
+import { FETCH_EMPLOYEE_BY_ID_USER, FETCH_EMPLOYEES, FETCH_COMPANIES, PAGINATION_EMPLOYEES } from "./actionType";
 
 // const url = "https://hris-be.vercel.app";
 const url = "http://localhost:3000";
@@ -24,14 +23,14 @@ const login = (input) => {
 const register = (input) => {
   return (dispatch) => {
     return axios
-    .post(`${url}/register`, input)
-    .then((response) => {
-      return response;
-    })
-    .catch((error) => {
-      // swal(error.response.data.message);
-      console.log(error)
-    });
+      .post(`${url}/register`, input)
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {
+        // swal(error.response.data.message);
+        console.log(error)
+      });
   };
 };
 
@@ -43,14 +42,14 @@ const fetchEmployees = (page) => {
       },
     })
       .then((response) => {
-        console.log(response , "ini response")
+        console.log(response, "ini response")
         if (!response.ok) {
           throw new Error("internal server error");
         }
         return response.json();
       })
       .then((data) => {
-        console.log(data.pagination , "ini data")
+        console.log(data.pagination, "ini data")
         dispatch(paginationSuccess(data.pagination))
         dispatch(employeesSuccess(data.employees));
       })
@@ -104,34 +103,28 @@ export const fetchEmployeeByIdSuccess = (payload) => {
 };
 
 
- const addNewEmployee = (data) => {
+const addNewEmployee = (data, files) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post(`${url}/employees/add-employee`, data);
-      console.log(response, "response dari add employee");
-      dispatch(addEmployeeSuccess(response.data));
+      axios.post(`${url}/employees/add-employee`, data);
     } catch (error) {
       // swal(error.response.data.message);
       console.log(error, "error nih dari add employee");
-      dispatch(addEmployeeFailure(error));
     }
   };
 };
 
-export const addEmployeeSuccess = (payload) => {
-  return {
-    type: ADD_EMPLOYEE,
-    payload,
+const uploadDocumentEmployee = (data) => {
+  return async (dispatch) => {
+    try {
+      await axios.post(`${url}/employees/upload`, data);
+    } catch (error) {
+      // swal(error.response.data.message);
+      console.log(error, "error nih dari add employee");
+    }
   };
 };
 
-// const singleFileUpload = async (data) => {
-//   try {
-//       await axios.post(`${url}/singleFile`, data);
-//   } catch (error) {
-//       throw error;
-//   }
-// }
 // const getSingleFiles = async () => {
 //   try {
 //           const {data} = await axios.get(url + '/getSingleFiles');
@@ -141,14 +134,6 @@ export const addEmployeeSuccess = (payload) => {
 //   }
 // }
 
-// const multipleFilesUpload = async (data) => {
-//   try {
-//     console.log(data, "ini data")
-//       await axios.post(`${url}/multipleFiles`, data);
-//   } catch (error) {
-//       throw error;
-//   }
-// }
 // const getMultipleFiles = async () => {
 //   try{
 //       const {data} = await axios.get(url + '/getMultipleFiles');
@@ -162,11 +147,11 @@ export const addEmployeeSuccess = (payload) => {
 //fetching employee
 const fetchCompany = () => {
   return (dispatch) => {
-      fetch(`${url}/companies`,{
-        headers: {
-          access_token: localStorage.getItem("access_token"),
-        },
-      })
+    fetch(`${url}/companies`, {
+      headers: {
+        access_token: localStorage.getItem("access_token"),
+      },
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error("internal server error");
@@ -262,9 +247,10 @@ export {
   fetchEmployeeById,
   addNewEmployee,
   addCompany,
-  fetchCompany
-//   addProjectCompany,
-//   paymentMidtrans,
-//   ratingCompany,
-//   choosenBid,
+  fetchCompany,
+  uploadDocumentEmployee
+  //   addProjectCompany,
+  //   paymentMidtrans,
+  //   ratingCompany,
+  //   choosenBid,
 };
